@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>RDView - DISPO</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="assets/img/favicons/favicon.ico">
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="index.html" class="logo-rdview"></a>
+      <ul class="menu-list">
+        <a href="index.html" class="nav-link" target="_blank"><li>Accueil</li></a>
+        <a href="detail-profile.html" class="nav-link" target="_blank"><li>Mon Profile</li></a>
+        <a href="faq.html" class="nav-link" target="_blank"><li>Comment ça marche?</li></a>
+      </ul>
+    </nav>
+    <div class="profile-cover"></div>
+    <div class="profile-details">
+      <div class="pdp">
+        <span tooltip="En ligne" flow="right"></span>
+      </div>
+      <div class="profile-name">
+        <h5>Michel Michel</h5>
+        <p>Naturopathe</p>
+      </div>
+      <div class="profile-location">
+        <span class="location-icon"></span>
+        <p>Paris</p>
+      </div>
+      <div class="profile-buttons">
+        <a href="disponibilites.html" class="btn-white btn" target="_blank">mes disponibilités</a>
+        <a href="contact.html" class="btn-green btn" target="_blank">m'envoyer un message</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="main-wrap">
+    <section id="left-side">
+      <div class="about">
+        <h4 class="title1">à propos de moi</h4>
+        <p class="p-gray-light">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.</p>
+      </div>
+      <div class="social-links">
+        <ul>
+          <a href="#" target="_blank"><li class="facebook-link social-icon"></li></a>
+          <a href="#" target="_blank"><li class="twitter-link social-icon"></li></a>
+          <a href="#" target="_blank"><li class="wordpress-link social-icon"></li></a>
+          <a href="#" target="_blank"><li class="linkedin-link social-icon"></li></a>
+        </ul>
+      </div>
+      <div class="tags">
+        <div class="tags-line">
+          <p>Naturopathie</p>
+          <p>Cure</p>
+          <p>Plantes</p>
+        </div>
+        <div class="tags-line">
+          <p>Nature</p>
+          <p>Santé</p>
+        </div>
+      </div>
+
+      <div class="left-buttons">
+        <a href="detail-profile.html" class="btn-white btn" target="_blank">voir mon profile</a>
+        <a href="detail-profile.html#detail-box-video" class="btn-green btn" target="_blank">regarder ma vidéo</a>
+      </div>
+      <div class="experience-box">
+        <h4 class="title1">Mon experience</h4>
+        <p class="p-gray-light">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna ali.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna ali.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, Lorem ipsum dolor.</br>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonumm.</p>
+        <a href="detail-profile.html" class="read-more" target="_blank">Lire la suite...</a>
+      </div>
+      <div class="pourquoi-visio-box">
+        <h4 class="title1">pourquoi la visio ?</h4>
+        <p class="p-gray-light">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna ali.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna ali.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, Lorem ipsum dolor.</p>
+        <a href="detail-profile.html" class="read-more" target="_blank">Lire la suite...</a>
+      </div>
+    </section>
+    <section id="right-side">
+      <p class="intro-dispo">Ces disponibilités sont indiquées à titre informatif uniquement, vous pourrez sélectionner un créneau lors de votre commande</p>
+      <h3 class="section-title">Mes disponibilités</h3>
+      <div class="content-wrap content-wrap-dispo">
+        <div class="semaine-mois-selection">
+          <div class="semaine-mois-button">
+            <span>semaine</span>
+            <span>mois</span>
+          </div>
+        </div>
+        <div class="semaine-mois-actuel">
+          <p>juillet 2017</p>
+          <div class="aujourd-selection">
+            <a href="#" target="_blank"><span class="arrow-left-icon"></span></a>
+            <a href="#" target="_blank">aujoud'hui</a>
+            <a href="#" target="_blank"><span class="arrow-right-icon"></span></a>
+          </div>
+        </div>
+        <table>
+          <tr class="days-row">
+            <td>LUN. <span>17</span></td>
+            <td>MAR. 18</td>
+            <td>MER. 19</td>
+            <td>JEU. 20</td>
+            <td>VEN. 21</td>
+            <td class="dispo-disable">SAM. 22</td>
+            <td class="dispo-disable">DIM. 23</td>
+          </tr>
+          <tr>
+            <td>10:00</td>
+            <td>10:00</td>
+            <td>10:00</td>
+            <td>10:00</td>
+            <td>10:00</td>
+            <td class="dispo-disable">10:00</td>
+            <td class="dispo-disable">10:00</td>
+          </tr>
+          <tr>
+            <td class="dispo-active">10:30</td>
+            <td>10:30</td>
+            <td>10:30</td>
+            <td>10:30</td>
+            <td class="dispo-active">10:30</td>
+            <td class="dispo-disable">10:30</td>
+            <td class="dispo-disable">10:30</td>
+          </tr>
+          <tr>
+            <td class="dispo-active">11:00</td>
+            <td>11:00</td>
+            <td>11:00</td>
+            <td>11:00</td>
+            <td class="dispo-active">11:00</td>
+            <td class="dispo-disable">11:00</td>
+            <td class="dispo-disable">11:00</td>
+          </tr>
+          <tr>
+            <td class="dispo-active">11:30</td>
+            <td>11:30</td>
+            <td>11:30</td>
+            <td>11:30</td>
+            <td>11:30</td>
+            <td class="dispo-disable">11:30</td>
+            <td class="dispo-disable">11:30</td>
+          </tr>
+          <tr>
+            <td class="dispo-active">12:00</td>
+            <td class="dispo-active">12:00</td>
+            <td>12:00</td>
+            <td>12:00</td>
+            <td>12:00</td>
+            <td class="dispo-disable">12:00</td>
+            <td class="dispo-disable">12:00</td>
+          </tr>
+          <tr>
+            <td class="dispo-active">13:30</td>
+            <td class="dispo-active">13:30</td>
+            <td>13:30</td>
+            <td>13:30</td>
+            <td>13:30</td>
+            <td class="dispo-disable">13:30</td>
+            <td class="dispo-disable">13:30</td>
+          </tr>
+          <tr>
+            <td class="dispo-active">14:00</td>
+            <td>14:00</td>
+            <td>14:00</td>
+            <td>14:00</td>
+            <td>14:00</td>
+            <td class="dispo-disable">14:00</td>
+            <td class="dispo-disable">14:00</td>
+          </tr>
+          <tr>
+            <td class="dispo-active">14:30</td>
+            <td>14:30</td>
+            <td class="dispo-active">14:30</td>
+            <td>14:30</td>
+            <td>14:30</td>
+            <td class="dispo-disable">14:30</td>
+            <td class="dispo-disable">14:30</td>
+          </tr>
+          <tr>
+            <td class="dispo-active">15:00</td>
+            <td>15:00</td>
+            <td class="dispo-active">15:00</td>
+            <td>15:00</td>
+            <td>15:00</td>
+            <td class="dispo-disable">15:00</td>
+            <td class="dispo-disable">15:00</td>
+          </tr>
+          <tr>
+            <td>15:30</td>
+            <td>15:30</td>
+            <td>15:30</td>
+            <td>15:30</td>
+            <td>15:30</td>
+            <td class="dispo-disable">15:30</td>
+            <td class="dispo-disable">15:30</td>
+          </tr>
+          <tr>
+            <td>15:30</td>
+            <td>15:30</td>
+            <td>15:30</td>
+            <td>15:30</td>
+            <td>15:30</td>
+            <td class="dispo-disable">15:30</td>
+            <td class="dispo-disable">15:30</td>
+          </tr>
+          <tr>
+            <td>16:00</td>
+            <td>16:00</td>
+            <td>16:00</td>
+            <td>16:00</td>
+            <td>16:00</td>
+            <td class="dispo-disable">16:00</td>
+            <td class="dispo-disable">16:00</td>
+          </tr>
+          <tr>
+            <td>16:30</td>
+            <td>16:30</td>
+            <td>16:30</td>
+            <td>16:30</td>
+            <td>16:30</td>
+            <td class="dispo-disable">16:30</td>
+            <td class="dispo-disable">16:30</td>
+          </tr>
+          <tr>
+            <td>17:00</td>
+            <td>17:00</td>
+            <td>17:00</td>
+            <td>17:00</td>
+            <td>17:00</td>
+            <td class="dispo-disable">17:00</td>
+            <td class="dispo-disable">17:00</td>
+          </tr>
+
+        </table>
+      </div>
+
+
+    </section>
+  </section>
+
+  <!--    <div id="calendar"></div>   -->
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="assets/js/jquery-ui.min.js" type="text/javascript"></script>
+<script src="assets/js/min/functions-min.js" type="text/javascript"></script>
+
+</body>
+</html>

@@ -1,0 +1,149 @@
+header
+  nav
+    height: 70px
+    display: flex
+    justify-content: space-between
+    align-items: center
+    background: $blue-dark
+    .logo-rdview
+      margin-left: 120px
+      width: 60px
+      height: 48px
+      background: url("../img/logo-rdview.svg")
+    ul
+      list-style: none
+      display: flex
+      margin-right: 120px
+      a
+        margin-right: 60px
+        &:last-child
+          margin-right: 0
+  .profile-cover
+    height: 550px
+    background: url("../img/couverture.jpg")
+    background-repeat: no-repeat
+    background-size: cover
+  .profile-details
+    display: flex
+    justify-content: space-between
+    align-items: center
+    background: $white
+    height: 120px
+
+    .profile-buttons
+      display: flex
+      margin-right: 120px
+
+    .pdp
+      cursor: pointer
+      position: relative
+      top: -70px
+      left: 120px
+      width: 200px
+      height: 200px
+      background: url("../img/portrait.jpg")
+      background-position: center
+      background-repeat: no-repeat
+      background-size: cover
+      border-radius: 100%
+      border: 4pt solid $white
+      span
+        display: block
+        width: 30px
+        height: 30px
+        border-radius: 100%
+        background: #2ecc71
+        position: absolute
+        left: 83%
+        top: 70%
+      /* START TOOLTIP STYLES
+      [tooltip]
+        position: relative
+        /* opinion 1
+        &::before, &::after
+          text-transform: none
+          /* opinion 2
+          font-size: .9em
+          /* opinion 3
+          line-height: 1
+          user-select: none
+          pointer-events: none
+          position: absolute
+          display: none
+          opacity: 0
+        &::before
+          content: ''
+          border: 5px solid transparent
+          /* opinion 4
+          z-index: 1001
+          /* absurdity 1
+        &::after
+          content: attr(tooltip)
+          text-align: center
+          min-width: 3em
+          max-width: 21em
+          white-space: nowrap
+          overflow: hidden
+          text-overflow: ellipsis
+          padding: 1ch 1.5ch
+          border-radius: .3ch
+          box-shadow: 0 1em 2em -0.5em rgba(0, 0, 0, 0.35)
+          background: #333
+          color: #fff
+          z-index: 1000
+          /* absurdity 2
+        &:hover
+          &::before, &::after
+            display: block
+
+
+      [tooltip]
+        &[flow^="right"]
+          &::before
+            top: 50%
+            border-left-width: 0
+            border-right-color: #333
+            right: calc(0em - 5px)
+            transform: translate(0.5em, -50%)
+          &::after
+            top: 50%
+            left: calc(100% + 5px)
+            transform: translate(0.5em, -50%)
+        &:not([flow]):hover
+          &::before, &::after
+            animation: tooltips-vert 300ms ease-out forwards
+        &[flow^="right"]:hover
+          &::before, &::after
+            animation: tooltips-horz 300ms ease-out forwards
+
+      @keyframes tooltips-vert
+        to
+          opacity: .9
+          transform: translate(-50%, 0)
+
+
+      @keyframes tooltips-horz
+        to
+          opacity: .9
+          transform: translate(0, -50%)
+
+    .profile-name
+      h5
+        color: $blue-dark
+        font-size: 32px
+        font-weight: 600
+        margin: 0
+      p
+        color: $gray-dark
+        margin: 0
+
+    .profile-location
+      display: flex
+      color: $gray-dark
+      span
+        width: 20px
+        height: 20px
+        display: block
+        margin-right: 10px
+      p
+        margin: 0

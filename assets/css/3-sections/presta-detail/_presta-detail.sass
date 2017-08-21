@@ -1,0 +1,129 @@
+.content-wrap-detail
+  display: flex
+  flex-direction: column
+  background: $white
+  padding: 40px
+  .presta-box-detail
+    display: flex
+    align-items: center
+    flex-direction: column
+    border-bottom: 4px solid $white
+    text-align: center
+    padding: 50px 30px
+    background: $gray-very-white
+    background-size: 150px
+    background-repeat: no-repeat
+    background-position: -30px -30px
+    position: relative
+
+    .comment-separate
+      margin-left: -30px
+      margin-top: 0
+      margin-bottom: 0
+      width: calc(100% + 60px)
+      height: 1.3px
+      background: $gray-light
+      border: 0
+
+    .comment-separate-light
+      @extend .comment-separate
+      height: 0.8px
+
+
+    .review-wrap
+      display: flex
+      flex-direction: column
+      .review-box
+        display: flex
+        align-content: space-between
+        margin: 24px 0
+        .reviewer-name
+          text-align: left
+          //margin: auto 0
+          margin-right: 60px
+          h4
+            color: $green-light
+            font-size: 14px
+            margin: 0
+          p
+            color: $gray-light
+            font-size: 9px
+            margin: 0
+        .reviewer-stars
+          display: flex
+          //align-items: center
+          margin-right: 60px
+          .star-icon
+            display: block
+            width: 14px
+            height: 14px
+            &:nth-child(5)
+              opacity: 0.3
+          .star-num
+            color: $gray-light
+            font-size: 10px
+        .reviewer-comment
+          text-align: left
+          .comment-title
+            font-size: 15px
+            color: $gray-dark
+            margin: 0
+          .comment-text
+            color: $gray-light
+            font-size: 14px
+            margin: 0
+
+
+    .buttons-wrap
+      display: flex
+      justify-content: space-between
+      margin-top: 40px
+      .btn-green
+        width: 200px
+      .btn-white
+        width: 200px
+
+
+
+  .presta-details-big
+    display: flex
+    align-items: center
+    margin: 40px 0
+    transform: scale(1.4)
+    span
+      width: 15px
+      height: 15px
+      background-position: center
+      background-repeat: no-repeat
+      background-size: cover
+      margin-right: 10px
+      &:nth-of-type(2)
+        margin-right: 0
+    hr
+      width: 1.1px
+      height: 20px
+      border: 0
+      background: $gray-light
+      margin: 0 10px
+
+  .title1-detail
+    margin-top: 0
+
+  .tags-detail
+    .tags-line
+      display: flex
+      justify-content: center
+      margin-top: 40px
+      &:last-child
+        margin-top: 20px
+      p
+        background: $white
+        padding: 7px 24px
+        border-left: solid 4px $green-light
+        margin: 0 20px 0 0
+        cursor: pointer
+        transition: all 0.3s ease-in-out
+        &:last-child
+          margin-right: 0
+        &:hover
+          background: lighten($gray-light,40%)

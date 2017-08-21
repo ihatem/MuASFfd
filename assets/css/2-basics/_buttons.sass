@@ -1,0 +1,53 @@
+.btn
+  font-size: 11px
+  padding: 14px 0px
+  text-transform: uppercase
+  font-weight: 500
+  transition: .2s all ease-in-out
+
+.btn-white
+  display: flex
+  justify-content: center
+  cursor: pointer
+  background: rgba(255,255,255,0)
+  border: 2px solid $green-light
+  width: 150px
+  color: $green-light
+  margin-right: 10px
+  &:hover
+    color: $white
+    background: $green-dark
+    border: 2px solid $green-dark
+
+
+
+.btn-green
+  display: flex
+  justify-content: center
+  cursor: pointer
+  background: $green-light
+  border: 2px solid $green-light
+  color: white
+  width: 150px
+  &:hover
+    background: $green-dark
+    border: 2px solid $green-dark
+
+.btn-green-gradient
+  font-size: 13px
+  padding: 11px 13px
+  background: $green-light
+
+  background: -webkit-linear-gradient(to right, $green-dark, $green-light)
+  background: -moz-linear-gradient(to right, $green-dark, $green-light)
+  background: -o-linear-gradient(to right, $green-dark, $green-light)
+  background: linear-gradient(to right, $green-dark, $green-light)
+
+  text-transform: uppercase
+  border: 0
+  color: white
+  font-weight: 500
+  transition: .2s all ease-in-out
+  &:hover
+    transform: scale(1.04)
+    box-shadow: 0 7px 14px rgba(0,0,0,0.1), 0 10px 10px rgba(0,0,0,0.1)

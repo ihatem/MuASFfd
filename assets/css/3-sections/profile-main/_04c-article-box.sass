@@ -1,0 +1,102 @@
+.article-box
+  border-bottom: 4px solid $white
+  background: $gray-very-white
+  //background: pink
+  width: calc(100%/3)
+  margin-right: 30px
+  transition: .3s all ease-in-out
+  &:hover
+    border-bottom: 4px solid $green-light
+  &:last-child
+    margin-right: 0
+  .article-link
+    margin: 0
+    transition: 300ms all ease-in-out
+    &:hover
+      color: darken($purple, 10%)
+
+  .article-snippet
+    margin-top: 0
+  .article-couv
+    height: 200px
+    width: 100%
+    position: relative
+    overflow: hidden
+
+    transition: .3s all ease-in-out
+
+    .article-couv-pic
+      display: block
+      width: 100%
+      height: 100%
+
+      background:
+        image: url('../img/couverture.jpg')
+        size: 140%
+        position: center
+        repeat: no-repeat
+
+      transition: 300ms all ease-in-out
+      &::after
+        content: ""
+        position: absolute
+        top: 0
+        right: 0
+        background: rgba(50, 197, 210, 0)
+        width: 100%
+        height: 100%
+      &:hover
+        background:
+          size: 160%
+          position: center
+      &:hover::after
+        background: rgba(50, 197, 210, 0.2)
+
+
+    .couv-date
+      position: absolute
+      right: 20px
+      top: 20px
+      height: 50px
+      width: 50px
+      background: $green-light
+      border-radius: 50px
+      z-index: 2
+
+      display: flex
+      flex-direction: row
+      align-items: center
+      justify-content: center
+
+      text-align: center
+      color: white
+      font-size: 12px
+    .couv-tag
+      color: $white
+      text-transform: uppercase
+      position: absolute
+      bottom: 20px
+      padding: 5px 14px
+      background: $green-light
+      z-index: 2
+  h4
+    text-transform: none
+  h4, p, a
+    padding: 0 30px
+  .article-met
+    display: flex
+    padding: 20px 30px
+    .article-comment, .article-likes
+      display: flex
+      color: $green-dark
+      .comment-icon, .likes-icon
+        display: block
+        width: 15px
+        height: 15px
+        margin-right: 10px
+      .p-met
+        color: $green-dark
+        padding: 0
+        margin-right: 10px
+      &:last-child
+        margin-right: 0

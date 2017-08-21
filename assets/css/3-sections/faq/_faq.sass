@@ -1,0 +1,111 @@
+#main-wrap-faq
+  display: flex
+  flex-direction: column
+  background: $gray-very-white
+  .faq-title
+    margin: 0 auto
+    margin-top: 50px
+    text-align: center
+    color: $gray-dark
+    h4
+      text-transform: uppercase
+      font-size: 24px
+      margin: 0
+    p
+      text-transform: capitalize
+      margin: 0
+
+  #left-right-faq-wrap
+    display: flex
+    flex-direction: row
+    #left-side
+      width: 30%
+      padding: 50px 100px
+      .faq-sections-wrap
+        .faq-section-box
+          display: flex
+          background: $white
+          padding: 20px
+          margin-bottom: 20px
+          border-left: 4px solid $white
+          transition: .3s all ease-in-out
+          &:hover
+            border-left: 4px solid $green-light
+
+          .icon-wrap
+            width: 10%
+            margin-right: 7px
+            span
+              display: block
+              width: 22px
+              height: 22px
+
+          .faq-title-text
+            width: 90%
+            h4,p
+              color: $gray-light
+              margin: 0
+            h4
+              color: $gray-dark
+    #right-side
+      width: 70%
+      //padding: 50px
+      .faq-content-box
+        background: $white
+        padding: 40px
+        margin-bottom: 40px
+        p
+          color: $gray-light
+
+        h4
+          color: $gray-dark
+          margin: 0 0 20px 0
+        .list-line
+          display: flex
+          margin-top: 20px
+          p
+            color: $gray-light
+
+          .list-num
+            color: $white
+
+            display: flex
+            flex-direction: row
+            align-items: center
+            justify-content: center
+
+            width:  23px
+            height: 23px
+            background: $green-light
+            border-radius: 100%
+
+            margin-right: 20px
+          p
+            margin: 3px 0 0 0
+        .title-line
+          display: flex
+          justify-content: space-between
+          align-items: center
+          margin-bottom: 20px
+
+          h4
+            margin: 0
+          .plus-button
+            color: $gray-dark
+            cursor: pointer
+
+            display: flex
+            flex-direction: row
+            align-items: center
+            justify-content: center
+
+            width:  18px
+            height: 18px
+            border: 2px solid $gray-dark
+            border-radius: 100%
+        .p-toggle
+          color: $gray-light
+          display: none
+
+ul
+  color: $gray-light

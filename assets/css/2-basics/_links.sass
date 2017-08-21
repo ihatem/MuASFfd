@@ -1,0 +1,29 @@
+a
+  font-family: "graphik"
+  text-decoration: none
+.nav-link
+  text-transform: uppercase
+  color: white
+  &::after
+    content: ""
+    display: block
+    margin: 0 auto
+    width: 0
+    height: 3px
+    background-color: #32c5d2
+    -webkit-transition: opacity 0.3s ease, width 0.3s ease
+    -moz-transition: opacity 0.3s ease, width 0.3s ease
+    -o-transition: opacity 0.3s ease, width 0.3s ease
+    transition: opacity 0.3s ease, width 0.3s ease
+    -ms-transition: opacity 0.3s ease, width 0.3s ease
+  &:hover
+    color: #32c5d2
+    &::after
+      width: 100%
+
+.read-more
+  color: $green-light
+  text-decoration: none
+  transition: .3s all ease-in-out
+  &:hover
+    color: $green-dark

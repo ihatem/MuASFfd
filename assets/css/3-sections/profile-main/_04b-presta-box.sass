@@ -1,0 +1,53 @@
+.presta-box
+  display: flex
+  align-items: center
+  flex-direction: column
+  border-bottom: 4px solid $white
+  text-align: center
+  padding: 50px 30px
+  //background: $gray-very-white
+  background: url("../img/icons/visio2.svg"), $gray-very-white
+  background-size: 150px
+  background-repeat: no-repeat
+  background-position: -30px -30px
+  width: calc(100%/3)
+  margin-right: 30px
+  transition: .3s all ease-in-out
+  position: relative
+  &:hover
+    border-bottom: 4px solid $green-light
+  &:last-child
+    margin-right: 0
+
+  .presta-box-title
+    margin-bottom: 16px
+    transition: 300ms all ease-in-out
+    &:hover
+      color: darken($purple, 10%)
+  .price
+    margin: 0
+    font-family: "graphik"
+    font-weight: 300
+    font-size: 40px
+    p
+      margin: 0
+    sup
+      font-size: 1.3rem
+  .presta-details
+    display: flex
+    align-items: center
+    span
+      width: 15px
+      height: 15px
+      background-position: center
+      background-repeat: no-repeat
+      background-size: cover
+      margin-right: 10px
+    hr
+      width: 1px
+      height: 20px
+      border: 0
+      background: $gray-light
+      margin: 0 10px
+  button
+    margin: 20px 0

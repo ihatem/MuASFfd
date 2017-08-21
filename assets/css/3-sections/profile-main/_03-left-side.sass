@@ -1,0 +1,56 @@
+#left-side
+  width: 20%
+  padding: 50px 100px
+  .about
+    text-align: center
+    h4
+      color: $gray-white
+
+  .social-links
+    ul
+      list-style: none
+      display: flex
+      justify-content: center
+      padding: 0
+      margin: 40px 0
+      a
+        margin-right: 30px
+        &:last-child
+          margin-right: 0
+        .social-icon
+          width: 25px
+          height: 25px
+
+
+  .tags
+    .tags-line
+      display: flex
+      justify-content: center
+      margin-top: 40px
+      &:last-child
+        margin-top: 20px
+      p
+        background: $white
+        padding: 7px 24px
+        border-left: solid 4px $green-light
+        margin: 0 20px 0 0
+        cursor: pointer
+        transition: all 0.3s ease-in-out
+        &:last-child
+          margin-right: 0
+        &:hover
+          background: lighten($gray-light,40%)
+
+  .left-buttons
+    display: flex
+    justify-content: space-between
+    align-items: center
+    margin: 40px 0
+
+  .experience-box
+    background: $white
+    padding: 40px
+  .pourquoi-visio-box
+    margin-top: 40px
+    background: $white
+    padding: 40px
