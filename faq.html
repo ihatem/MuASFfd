@@ -15,7 +15,9 @@
       <ul class="menu-list">
         <a href="index.html" class="nav-link" target="_blank"><li>Accueil</li></a>
         <a href="detail-profile.html" class="nav-link" target="_blank"><li>Mon Profile</li></a>
-        <a href="#" class="nav-link" target="_blank"><li>Comment ça marche?</li></a>
+        <a href="contact.html" class="nav-link" target="_blank"><li>m'envoyer un message</li></a>
+        <a href="disponibilites.html" class="nav-link" target="_blank"><li>mes disponibilités</li></a>
+        <a href="faq.html" class="nav-link" target="_blank"><li>Comment ça marche?</li></a>
       </ul>
     </nav>
     <div class="profile-cover"></div>
@@ -29,12 +31,19 @@
       </div>
       <div class="profile-location">
         <span class="location-icon"></span>
-        <p>Paris</p>
+        <p>Paris, France</p>
       </div>
-      <div class="profile-buttons">
-        <a href="disponibilites.html" class="btn-white btn" target="_blank">mes disponibilités</a>
-        <a href="contact.html" class="btn-green btn" target="_blank">m'envoyer un message</a>
+      <div class="profile-dispo">
+        <span class="dispo-icon"></span>
+        <p>En ligne</p>
       </div>
+
+      <!--
+<div class="profile-buttons">
+        <a href="disponibilites.html" class="btn-white btn" target="_blank"><span>mes disponibilités</span></a>
+        <a href="contact.html" class="btn-green btn" target="_blank"><span>m'envoyer un message</span></a>
+      </div>-->
+
     </div>
   </header>
 
@@ -120,7 +129,7 @@
 
         <div class="faq-content-box">
           <h4>Puis-je échanger / envoyer des mails avec mon prestataire avant une commande ?</h4>
-          <p>Oui, vous pouvez communiquer avec le prestataire avant de réserver une consultation. Pour cela, il vous suffit de cliquer sur le lien « M’envoyer un mail » en haut de la page.</p>
+          <p class="p-toggle">Oui, vous pouvez communiquer avec le prestataire avant de réserver une consultation. Pour cela, il vous suffit de cliquer sur le lien « M’envoyer un mail » en haut de la page.</p>
         </div>
 
         <div class="faq-content-box">
@@ -128,96 +137,216 @@
             <h4>Ai-je besoin d’un matériel spécifique pour la visioconférence ?</h4>
             <span class="plus-button">+</span>
           </div>
-          <p class="p-toggle">Non, vous n’avez besoin d’aucun outil spécifique pour les prestations en visioconférence. Vous avez simplement besoin d’une caméra (sur votre ordinateur / tablette / téléphone). Il est cependant à noter qu’une webcam externe améliorera la qualité de vidéo lors de votre échange.<br>
+          <div class="div-toggle">
+            <p class="p-toggle">Non, vous n’avez besoin d’aucun outil spécifique pour les prestations en visioconférence. Vous avez simplement besoin d’une caméra (sur votre ordinateur / tablette / téléphone). Il est cependant à noter qu’une webcam externe améliorera la qualité de vidéo lors de votre échange.<br>
 
-          Afin d’avoir la meilleure expérience de visioconférence, il est recommandé d’utiliser une bande passante suffisamment grande pour permettre une vidéo fluide (minimum 3G ou 4G quand vous êtes sur téléphone / tablette).</p>
+            Afin d’avoir la meilleure expérience de visioconférence, il est recommandé d’utiliser une bande passante suffisamment grande pour permettre une vidéo fluide (minimum 3G ou 4G quand vous êtes sur téléphone / tablette).</p>
+          </div>
 
           <div class="title-line">
             <h4>Comment lancer un appel en visioconférence avec le prestataire ?</h4>
             <span class="plus-button">+</span>
           </div>
-          <p class="p-toggle">Pour lancer la visioconférence (appel immédiat ou sur rendez-vous), il vous suffit de cliquer sur le lien qui vous a été communiqué lors de votre commande. Celui-ci vous a également été envoyé par email. Un simple clic et vous arriverez sur une page intermédiaire qui avertira le prestataire de votre appel.<br>
+          <div class="div-toggle">
+            <p class="p-toggle">Pour lancer la visioconférence (appel immédiat ou sur rendez-vous), il vous suffit de cliquer sur le lien qui vous a été communiqué lors de votre commande. Celui-ci vous a également été envoyé par email. Un simple clic et vous arriverez sur une page intermédiaire qui avertira le prestataire de votre appel.<br>
 
-          Dans le cas où le prestataire n’est pas disponible ou occupé, pas de panique, vous pourrez le relancer ultérieurement.<br>
+            Dans le cas où le prestataire n’est pas disponible ou occupé, pas de panique, vous pourrez le relancer ultérieurement.<br>
 
-          Le lien qui vous a été envoyé reste actif jusqu’à la fin de la prestation / consultation.<br></p>
+            Le lien qui vous a été envoyé reste actif jusqu’à la fin de la prestation / consultation.<br></p>
+          </div>
 
           <div class="title-line">
             <h4>Le prestataire ne me voit pas, est-ce normal ?</h4>
             <span class="plus-button">+</span>
           </div>
-          <p class="p-toggle">Oui, le prestataire peut avoir décidé pour certaines prestations que sa caméra soit allumée et celle de son client éteinte.<br>
+          <div class="div-toggle">
+            <p class="p-toggle">Oui, le prestataire peut avoir décidé pour certaines prestations que sa caméra soit allumée et celle de son client éteinte.<br>
 
-          Mais il peut également s’agir d’un problème technique de votre côté. Assurez-vous, dans ce cas, que votre équipement fonctionne bien.</p>
+            Mais il peut également s’agir d’un problème technique de votre côté. Assurez-vous, dans ce cas, que votre équipement fonctionne bien.</p>
+          </div>
 
           <div class="title-line">
             <h4>Que puis-je faire pendant un appel en visioconférence ?</h4>
             <span class="plus-button">+</span>
           </div>
-          <div>
-            <p>Vous pouvez :</p>
-            <ul>
-              <li>Envoyer des documents</li>
-              <li>Couper votre caméra</li>
-              <li>Couper le son</li>
-              <li>Partager votre écran (mais il vous faut pour cela d’abord télécharger un plug-in que vous trouverez sur la page de visioconférence)</li>
-              <li>Couper l’appel</li>
-            </ul>
+
+          <div class="div-toggle">
+            <p>Vous pouvez :<br></p>
+              <ul>
+                <li>Envoyer des documents</li>
+                <li>Couper votre caméra</li>
+                <li>Couper le son</li>
+                <li>Partager votre écran (mais il vous faut pour cela d’abord télécharger un plug-in que vous trouverez sur la page de visioconférence)</li>
+                <li>Couper l’appel</li>
+              </ul>
           </div>
 
           <div class="title-line">
             <h4>Puis-je mettre en pause ma visioconférence ?</h4>
             <span class="plus-button">+</span>
           </div>
-          <p class="p-toggle">Seul le prestataire peut mettre en pause pendant une visioconférence. Si c’est le cas, vous verrez que le temps ne défilera plus sur votre chronomètre.<br>
+          <div class="div-toggle">
+            <p class="p-toggle">Seul le prestataire peut mettre en pause pendant une visioconférence. Si c’est le cas, vous verrez que le temps ne défilera plus sur votre chronomètre.<br>
 
-          Si vous souhaitez arrêter momentanément la session, vous pouvez arrêter l’appel en cours. A la reprise de l’appel, le chronomètre reviendra à zéro (0), mais le temps passé précédemment aura été enregistré.</p>
+            Si vous souhaitez arrêter momentanément la session, vous pouvez arrêter l’appel en cours. A la reprise de l’appel, le chronomètre reviendra à zéro (0), mais le temps passé précédemment aura été enregistré.</p>
+          </div>
 
           <div class="title-line">
             <h4>Si la visioconférence se coupe pendant la session ?</h4>
             <span class="plus-button">+</span>
           </div>
-          <p class="p-toggle">Si la vidéo se coupe pour des raisons diverses (techniques / batterie, etc.) : pas de panique. Il vous suffit d’attendre et de relancer l’échange dès que les conditions se seront améliorées. Le problème peut aussi venir du côté prestataire.<br>
+          <div class="div-toggle">
+            <p class="p-toggle">Si la vidéo se coupe pour des raisons diverses (techniques / batterie, etc.) : pas de panique. Il vous suffit d’attendre et de relancer l’échange dès que les conditions se seront améliorées. Le problème peut aussi venir du côté prestataire.<br>
 
-          Pour la moindre question, vous pouvez joindre le prestataire par mail en cliquant sur le bouton : « Envoyer un mail ».</p>
+            Pour la moindre question, vous pouvez joindre le prestataire par mail en cliquant sur le bouton : « Envoyer un mail ».</p>
+          </div>
 
           <div class="title-line">
             <h4>Puis-je relancer plusieurs fois mon appel ?</h4>
             <span class="plus-button">+</span>
           </div>
-          <p class="p-toggle">Vous pouvez relancer autant que vous le voulez vos appels en visioconférence.</p>
+          <div class="div-toggle">
+            <p class="p-toggle">Vous pouvez relancer autant que vous le voulez vos appels en visioconférence.</p>
+          </div>
 
           <div class="title-line">
             <h4>Sur quel réseau internet puis-je utiliser la visioconférence ?</h4>
             <span class="plus-button">+</span>
           </div>
-          <p class="p-toggle">N’importe quel opérateur peut être utilisé pour la plateforme. Par contre, le système de visioconférence ne fonctionne sur mobile qu’avec une couverture 3G / 4G.</p>
+          <div class="div-toggle">
+            <p class="p-toggle">N’importe quel opérateur peut être utilisé pour la plateforme. Par contre, le système de visioconférence ne fonctionne sur mobile qu’avec une couverture 3G / 4G.</p>
+          </div>
 
           <div class="title-line">
             <h4>Avec quel navigateur internet puis-je utiliser la visioconférence ?</h4>
             <span class="plus-button">+</span>
           </div>
-          <p class="p-toggle">Nous conseillons fortement l’utilisation de <a href=" https://www.google.fr/chrome/browser" target="_blank">Chrome</a> pour utiliser le système de visioconférence RDView.<br>
+          <div class="div-toggle">
+            <p class="p-toggle">Nous conseillons fortement l’utilisation de <a href=" https://www.google.fr/chrome/browser" target="_blank">Chrome</a> pour utiliser le système de visioconférence RDView.<br>
 
-          La visioconférence est aussi disponible sur Firefox, Interne explorer 10 (les anciennes versions d’Internet Explorer ne fonctionnent malheureusement pas avec Igotalent) et Opéra. Il peut arriver que les nouvelles versions posent des problèmes pour la visioconférence entre les membres ; le temps que nos développeurs les mettent à jour.
+            La visioconférence est aussi disponible sur Firefox, Interne explorer 10 (les anciennes versions d’Internet Explorer ne fonctionnent malheureusement pas avec Igotalent) et Opéra. Il peut arriver que les nouvelles versions posent des problèmes pour la visioconférence entre les membres ; le temps que nos développeurs les mettent à jour.
 
-          Malheureusement, l’utilisation de la visioconférence via Safari et Internet Edge (IE) n’est pas encore disponible.
+            Malheureusement, l’utilisation de la visioconférence via Safari et Internet Edge (IE) n’est pas encore disponible.
 
-          Si vous avez la moindre question technique, n’hésitez pas à joindre l’équipe RDView par mail: <a href="mailto:contact@corebow.com" target="_blank">contact@corebow.com</a></p>
+            Si vous avez la moindre question technique, n’hésitez pas à joindre l’équipe RDView par mail: <a href="mailto:contact@corebow.com" target="_blank">contact@corebow.com</a></p>
+          </div>
 
           <div class="title-line">
             <h4>Comment se termine une prestation ?</h4>
             <span class="plus-button">+</span>
           </div>
-          <p class="p-toggle">C’est le prestataire qui indiquera à la fin de votre échange que la prestation est terminée. A ce moment et à ce moment seulement, vous serez débité du montant prévu.</p>
+          <div class="div-toggle">
+            <p class="p-toggle">C’est le prestataire qui indiquera à la fin de votre échange que la prestation est terminée. A ce moment et à ce moment seulement, vous serez débité du montant prévu.</p>
+          </div>
         </div>
         <div class="faq-content-box">
-          <h4></h4>
+          <div class="title-line">
+            <h4>Comment choisir une prestation ?</h4>
+            <span class="plus-button">+</span>
+          </div>
+          <div class="div-toggle">
+            <p class="p-toggle">Il vous suffit lors de votre arrivée sur la page d’accueil de sélectionner une prestation en cliquant sur le bouton ‘commander’.</p>
+          </div>
+          <div class="title-line">
+            <h4>Quelles sont les options des prestations proposées ?</h4>
+            <span class="plus-button">+</span>
+          </div>
+          <div class="div-toggle">
+            <p class="p-toggle">Un prestataire peut proposer une prestation sous plusieurs formes :<br></p>
 
+              <ul>
+                <li>Paiement à la minute</li>
+                <li>Paiement au forfait</li>
+                <li>Prestation gratuite</li>
+              </ul>
+          </div>
+          <div class="title-line">
+            <h4>Comment acheter une prestation ?</h4>
+            <span class="plus-button">+</span>
+          </div>
+          <div class="div-toggle">
+            <p class="p-toggle">Une fois la prestation sélectionnée, la commande se fait rapidement en 3 étapes:<br></p>
+
+            <ul>
+              <li>Remplir vos coordonnées</li>
+              <li>Sélectionner un créneau de rendez-vous</li>
+              <li>Renseigner vos informations de paiement</li>
+            </ul>
+
+            <p class="p-toggle">Lorsque vous rentrez les informations de votre carte de paiement, aucun montant n’est prélevé.<br>
+
+            Le montant de votre consultation ne sera prélevé qu’une fois que votre consultation sera finalisée.</p>
+          </div>
+          <div class="title-line">
+            <h4>Quelles sont les conditions de paiement d’une prestation ?</h4>
+            <span class="plus-button">+</span>
+          </div>
+          <div class="div-toggle">
+            <p class="p-toggle">Le paiement s’effectue par carte de crédit (personnelle ou professionnelle). Lors de votre commande aucun montant ne sera prélevé. Votre carte bancaire ne sera débitée qu’après votre consultation.<br>
+
+            Si vous avez des questions, n’hésitez pas à joindre le prestataire.</p>
+          </div>
+          <div class="title-line">
+            <h4>Qu’est-ce que le ‘3D Secure’ (vérification lors du paiement) ?</h4>
+            <span class="plus-button">+</span>
+          </div>
+          <div class="div-toggle">
+            <p class="p-toggle">Le 3D Secure, c’est une garantie. Cette sécurité permet uniquement de s’assurer que c’est bien vous qui utilisez votre carte. C’est un code que vous recevez sur votre mobile et que vous rentrez dans l’espace dédié.</p>
+          </div>
+          <div class="title-line">
+            <h4>Puis-je annuler la commande d’une prestation ?</h4>
+            <span class="plus-button">+</span>
+          </div>
+          <div class="div-toggle">
+            <p class="p-toggle">Les conditions d’annulation dépendent de chaque prestataire.<br>
+            Nous vous invitons à consulter ses conditions générales de vente (en bas de la page) et si nécessaire à lui demander de plus amples informations via son formulaire de contact «M’envoyer un message»</p>
+          </div>
+          <div class="title-line">
+            <h4>Puis-je réserver une prestation alors que le prestataire est hors ligne / occupé ?</h4>
+            <span class="plus-button">+</span>
+          </div>
+          <div class="div-toggle">
+            <p class="p-toggle">Oui, vous pouvez réserver la prestation si le prestataire est absent ou déjà en ligne.</p>
+          </div>
+          <div class="title-line">
+            <h4>Ai-je une facture lorsqu’une prestation est terminée ?</h4>
+            <span class="plus-button">+</span>
+          </div>
+          <div class="div-toggle">
+            <p class="p-toggle">Oui, vous recevrez une facture par mail suite à la finalisation d’une prestation. Vous pourrez toujours la demander au prestataire si vous ne l’avez pas reçue par mail ou que vous l’avez égarée.</p>
+          </div>
+          <div class="title-line">
+            <h4>Comment joindre les équipes techniques de RDView?</h4>
+            <span class="plus-button">+</span>
+          </div>
+          <div class="div-toggle">
+            <p class="p-toggle">Nous sommes à votre entière disposition dès que vous avez une question ou suggestion.<br></p>
+              <ul>
+                <li>par courrier postal : 24 rue de Dunkerque, 75010 Paris, FRANCE</li>
+                <li>par courriel : contact@rdview.live</li>
+              </ul>
+          </div>
         </div>
       </section>
     </section>
   </section>
+
+  <footer>
+    <div class="footer-copyright">
+      <div class="footer-links">
+        <a class="read-more" href="#">Conditions de vente</a>
+        <span class="dot-separator">
+        </span>
+        <a class="read-more" href="#">Politique de confidentialité</a>
+      </div>
+      <p>© Powered by igotalent / piktalent 2016</p>
+    </div>
+    <div class="footer-img-wrap">
+      <span class="master-card-img"></span>
+      <span class="visa-img"></span>
+      <span class="mangopay-img"></span>
+    </div>
+  </footer>
 
 
 

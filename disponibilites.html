@@ -15,6 +15,8 @@
       <ul class="menu-list">
         <a href="index.html" class="nav-link" target="_blank"><li>Accueil</li></a>
         <a href="detail-profile.html" class="nav-link" target="_blank"><li>Mon Profile</li></a>
+        <a href="contact.html" class="nav-link" target="_blank"><li>m'envoyer un message</li></a>
+        <a href="disponibilites.html" class="nav-link" target="_blank"><li>mes disponibilités</li></a>
         <a href="faq.html" class="nav-link" target="_blank"><li>Comment ça marche?</li></a>
       </ul>
     </nav>
@@ -29,12 +31,20 @@
       </div>
       <div class="profile-location">
         <span class="location-icon"></span>
-        <p>Paris</p>
+        <p>Paris, France</p>
       </div>
+      <div class="profile-dispo">
+        <span class="dispo-icon"></span>
+        <p>En ligne</p>
+      </div>
+
+      <!--
       <div class="profile-buttons">
-        <a href="disponibilites.html" class="btn-white btn" target="_blank">mes disponibilités</a>
-        <a href="contact.html" class="btn-green btn" target="_blank">m'envoyer un message</a>
+        <a href="disponibilites.html" class="btn-white btn" target="_blank"><span>mes disponibilités</span></a>
+        <a href="contact.html" class="btn-green btn" target="_blank"><span>m'envoyer un message</span></a>
       </div>
+      -->
+
     </div>
   </header>
 
@@ -44,12 +54,21 @@
         <h4 class="title1">à propos de moi</h4>
         <p class="p-gray-light">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.</p>
       </div>
+      <div class="about-logo">
+        <a href="http://naturopathe-gironde.com" target="_blank" title="Visitez mon site!" class="about-logo-img"></a>
+        <hr>
+        <div class="about-logo-link">
+          <a href="http://naturopathe-gironde.com" target="_blank"><span class="link-icon"></span></a>
+          <a href="http://naturopathe-gironde.com">naturopathe-gironde.com</a>
+        </div>
+      </div>
       <div class="social-links">
         <ul>
           <a href="#" target="_blank"><li class="facebook-link social-icon"></li></a>
           <a href="#" target="_blank"><li class="twitter-link social-icon"></li></a>
           <a href="#" target="_blank"><li class="wordpress-link social-icon"></li></a>
           <a href="#" target="_blank"><li class="linkedin-link social-icon"></li></a>
+          <a href="#" target="_blank" ><li class="mail-link social-icon" tooltip="mail@domain.com" flow="down"></li></a>
         </ul>
       </div>
       <div class="tags">
@@ -242,10 +261,24 @@
     </section>
   </section>
 
+  <footer>
+    <div class="footer-copyright">
+      <div class="footer-links">
+        <a class="read-more" href="#">Conditions de vente</a>
+        <span class="dot-separator">
+        </span>
+        <a class="read-more" href="#">Politique de confidentialité</a>
+      </div>
+      <p>© Powered by igotalent / piktalent 2016</p>
+    </div>
+    <div class="footer-img-wrap">
+      <span class="master-card-img"></span>
+      <span class="visa-img"></span>
+      <span class="mangopay-img"></span>
+    </div>
+  </footer>
+
   <!--    <div id="calendar"></div>   -->
-
-
-
 
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 <script src="assets/js/jquery-ui.min.js" type="text/javascript"></script>

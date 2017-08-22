@@ -16,6 +16,17 @@
     background-position: -30px -30px
     position: relative
 
+    .title-buttons-wrap
+      display: flex
+      justify-content: space-between
+      align-items: center
+      width: 100%
+      button
+        margin: 0
+
+    .p-gray-light
+      margin: 0
+
     .comment-separate
       margin-left: -30px
       margin-top: 0
@@ -89,7 +100,7 @@
     display: flex
     align-items: center
     margin: 40px 0
-    transform: scale(1.4)
+    transform: scale(1.1)
     span
       width: 15px
       height: 15px
@@ -97,8 +108,6 @@
       background-repeat: no-repeat
       background-size: cover
       margin-right: 10px
-      &:nth-of-type(2)
-        margin-right: 0
     hr
       width: 1.1px
       height: 20px
@@ -107,15 +116,13 @@
       margin: 0 10px
 
   .title1-detail
-    margin-top: 0
+    margin: 0
 
   .tags-detail
     .tags-line
       display: flex
       justify-content: center
-      margin-top: 40px
-      &:last-child
-        margin-top: 20px
+      margin: 40px 0
       p
         background: $white
         padding: 7px 24px

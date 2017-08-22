@@ -1,5 +1,4 @@
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
-@import url(1-tools/jquery-ui.min.css);
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -180,6 +179,121 @@ td,
 th {
   padding: 0; }
 
+/* START TOOLTIP STYLES */
+[tooltip] {
+  position: relative;
+  /* opinion 1 */ }
+  [tooltip]::before, [tooltip]::after {
+    text-transform: none;
+    /* opinion 2 */
+    font-size: 0.9em;
+    /* opinion 3 */
+    line-height: 1;
+    user-select: none;
+    pointer-events: none;
+    position: absolute;
+    display: none;
+    opacity: 0; }
+  [tooltip]::before {
+    content: "";
+    border: 5px solid transparent;
+    /* opinion 4 */
+    z-index: 1001;
+    /* absurdity 1 */ }
+  [tooltip]::after {
+    content: attr(tooltip);
+    /* magic! */
+    /* most of the rest of this is opinion */
+    font-family: Helvetica, sans-serif;
+    text-align: center;
+    /*Let the content set the size of the tooltips
+     *but this will also keep them from being obnoxious */
+    min-width: 3em;
+    max-width: 21em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 1ch 1.5ch;
+    border-radius: 0.3ch;
+    box-shadow: 0 1em 2em -0.5em rgba(0, 0, 0, 0.35);
+    background: #333;
+    color: #fff;
+    z-index: 1000;
+    /* absurdity 2 */ }
+  [tooltip]:hover::before, [tooltip]:hover::after {
+    display: block; }
+
+/* Applies to all tooltips */
+/* Make the tooltips respond to hover */
+/* don't show empty tooltips */
+[tooltip='']::before, [tooltip='']::after {
+  display: none !important; }
+
+/* FLOW: UP */
+[tooltip]:not([flow])::before, [tooltip][flow^="up"]::before {
+  bottom: 100%;
+  border-bottom-width: 0;
+  border-top-color: #333; }
+[tooltip]:not([flow])::after, [tooltip][flow^="up"]::after {
+  bottom: calc(100% + 5px); }
+[tooltip]:not([flow])::before, [tooltip]:not([flow])::after {
+  left: 50%;
+  transform: translate(-50%, -0.5em); }
+[tooltip][flow^="up"]::before, [tooltip][flow^="up"]::after {
+  left: 50%;
+  transform: translate(-50%, -0.5em); }
+[tooltip][flow^="down"]::before {
+  top: 100%;
+  border-top-width: 0;
+  border-bottom-color: #333; }
+[tooltip][flow^="down"]::after {
+  top: calc(100% + 5px); }
+[tooltip][flow^="down"]::before, [tooltip][flow^="down"]::after {
+  left: 50%;
+  transform: translate(-50%, 0.5em); }
+[tooltip][flow^="left"]::before {
+  top: 50%;
+  border-right-width: 0;
+  border-left-color: #333;
+  left: calc(0em - 5px);
+  transform: translate(-0.5em, -50%); }
+[tooltip][flow^="left"]::after {
+  top: 50%;
+  right: calc(100% + 5px);
+  transform: translate(-0.5em, -50%); }
+[tooltip][flow^="right"]::before {
+  top: 50%;
+  border-left-width: 0;
+  border-right-color: #333;
+  right: calc(0em - 5px);
+  transform: translate(0.5em, -50%); }
+[tooltip][flow^="right"]::after {
+  top: 50%;
+  left: calc(100% + 5px);
+  transform: translate(0.5em, -50%); }
+[tooltip]:not([flow]):hover::before, [tooltip]:not([flow]):hover::after {
+  animation: tooltips-vert 300ms ease-out forwards; }
+[tooltip][flow^="up"]:hover::before, [tooltip][flow^="up"]:hover::after {
+  animation: tooltips-vert 300ms ease-out forwards; }
+[tooltip][flow^="down"]:hover::before, [tooltip][flow^="down"]:hover::after {
+  animation: tooltips-vert 300ms ease-out forwards; }
+[tooltip][flow^="left"]:hover::before, [tooltip][flow^="left"]:hover::after {
+  animation: tooltips-horz 300ms ease-out forwards; }
+[tooltip][flow^="right"]:hover::before, [tooltip][flow^="right"]:hover::after {
+  animation: tooltips-horz 300ms ease-out forwards; }
+
+/* FLOW: DOWN */
+/* FLOW: LEFT */
+/* FLOW: RIGHT */
+/* KEYFRAMES */
+@keyframes tooltips-vert {
+  to {
+    opacity: 0.9;
+    transform: translate(-50%, 0); } }
+@keyframes tooltips-horz {
+  to {
+    opacity: 0.9;
+    transform: translate(0, -50%); } }
 .btn {
   font-size: 11px;
   padding: 14px 0px;
@@ -249,7 +363,7 @@ th {
 * {
   font-family: "graphik"; }
 
-.background-default, .facebook-link, .twitter-link, .wordpress-link, .linkedin-link, .time-icon, .visio-icon, .likes-icon, .comment-icon, .location-icon, .money-icon, .star-icon, .duration-icon, .general-icon, .echange-icon, .webcam-icon, .cart-icon, .phone-icon, .contact-icon, .arrow-left-icon, .arrow-right-icon {
+.background-default, .facebook-link, .twitter-link, .wordpress-link, .linkedin-link, .mail-link, .time-icon, .visio-icon, .cabinet-icon, .session-icon, .likes-icon, .comment-icon, .location-icon, .money-icon, .star-icon, .duration-icon, .general-icon, .echange-icon, .webcam-icon, .cart-icon, .phone-icon, .contact-icon, .arrow-left-icon, .arrow-right-icon, .link-icon {
   background-position: center !important;
   background-repeat: no-repeat !important;
   background-size: contain !important;
@@ -279,11 +393,23 @@ th {
   .linkedin-link:hover {
     filter: grayscale(0%); }
 
+.mail-link {
+  background: url("../img/icons/mail-g.svg");
+  filter: grayscale(100%); }
+  .mail-link:hover {
+    filter: grayscale(0%); }
+
 .time-icon {
   background: url("../img/icons/time.svg"); }
 
 .visio-icon {
   background: url("../img/icons/visio.svg"); }
+
+.cabinet-icon {
+  background: url("../img/icons/cabinet.svg"); }
+
+.session-icon {
+  background: url("../img/icons/user.svg"); }
 
 .likes-icon {
   background: url("../img/icons/like.svg"); }
@@ -328,6 +454,9 @@ th {
 
 .arrow-right-icon {
   background: url("../img/icons/arrow-right.svg"); }
+
+.link-icon {
+  background: url("../img/icons/link.svg"); }
 
 a {
   font-family: "graphik";
@@ -434,8 +563,7 @@ header .profile-details {
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 100%;
-    border: 4pt solid white;
-    /* START TOOLTIP STYLES */ }
+    border: 4pt solid white; }
     header .profile-details .pdp span {
       display: block;
       width: 30px;
@@ -445,65 +573,6 @@ header .profile-details {
       position: absolute;
       left: 83%;
       top: 70%; }
-    header .profile-details .pdp [tooltip] {
-      position: relative;
-      /* opinion 1 */ }
-      header .profile-details .pdp [tooltip]::before, header .profile-details .pdp [tooltip]::after {
-        text-transform: none;
-        /* opinion 2 */
-        font-size: 0.9em;
-        /* opinion 3 */
-        line-height: 1;
-        user-select: none;
-        pointer-events: none;
-        position: absolute;
-        display: none;
-        opacity: 0; }
-      header .profile-details .pdp [tooltip]::before {
-        content: "";
-        border: 5px solid transparent;
-        /* opinion 4 */
-        z-index: 1001;
-        /* absurdity 1 */ }
-      header .profile-details .pdp [tooltip]::after {
-        content: attr(tooltip);
-        text-align: center;
-        min-width: 3em;
-        max-width: 21em;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        padding: 1ch 1.5ch;
-        border-radius: 0.3ch;
-        box-shadow: 0 1em 2em -0.5em rgba(0, 0, 0, 0.35);
-        background: #333;
-        color: #fff;
-        z-index: 1000;
-        /* absurdity 2 */ }
-      header .profile-details .pdp [tooltip]:hover::before, header .profile-details .pdp [tooltip]:hover::after {
-        display: block; }
-    header .profile-details .pdp [tooltip][flow^="right"]::before {
-      top: 50%;
-      border-left-width: 0;
-      border-right-color: #333;
-      right: calc(0em - 5px);
-      transform: translate(0.5em, -50%); }
-    header .profile-details .pdp [tooltip][flow^="right"]::after {
-      top: 50%;
-      left: calc(100% + 5px);
-      transform: translate(0.5em, -50%); }
-    header .profile-details .pdp [tooltip]:not([flow]):hover::before, header .profile-details .pdp [tooltip]:not([flow]):hover::after {
-      animation: tooltips-vert 300ms ease-out forwards; }
-    header .profile-details .pdp [tooltip][flow^="right"]:hover::before, header .profile-details .pdp [tooltip][flow^="right"]:hover::after {
-      animation: tooltips-horz 300ms ease-out forwards; }
-@keyframes tooltips-vert {
-  to {
-    opacity: 0.9;
-    transform: translate(-50%, 0); } }
-@keyframes tooltips-horz {
-  to {
-    opacity: 0.9;
-    transform: translate(0, -50%); } }
   header .profile-details .profile-name h5 {
     color: #343e46;
     font-size: 32px;
@@ -522,6 +591,20 @@ header .profile-details {
       margin-right: 10px; }
     header .profile-details .profile-location p {
       margin: 0; }
+  header .profile-details .profile-dispo {
+    display: flex;
+    margin-right: 120px;
+    align-items: center; }
+    header .profile-details .profile-dispo span {
+      width: 10px;
+      height: 10px;
+      background: #2ecc71;
+      border-radius: 100%;
+      display: block;
+      margin-right: 10px; }
+    header .profile-details .profile-dispo p {
+      color: #2ecc71;
+      margin: 0; }
 
 #main-wrap {
   background: #f9fafb;
@@ -534,6 +617,40 @@ header .profile-details {
     text-align: center; }
     #left-side .about h4 {
       color: #c6c6c6; }
+  #left-side .about-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    margin-top: 24px; }
+    #left-side .about-logo .about-logo-img {
+      display: block;
+      margin: 0 auto;
+      width: 100%;
+      height: 50px;
+      background-image: url("../img/logo-naturopathe.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center; }
+    #left-side .about-logo hr {
+      width: 100%;
+      height: 1px;
+      border: 0;
+      background: #8e8e8e;
+      margin: 11px 0; }
+    #left-side .about-logo .about-logo-link {
+      display: flex; }
+      #left-side .about-logo .about-logo-link span {
+        width: 15px;
+        height: 15px;
+        display: block;
+        margin-right: 15px; }
+      #left-side .about-logo .about-logo-link a {
+        font-size: 13px;
+        color: #8e8e8e;
+        transition: 300ms all ease-in-out; }
+        #left-side .about-logo .about-logo-link a:hover {
+          color: #32c5d2; }
   #left-side .social-links ul {
     list-style: none;
     display: flex;
@@ -578,7 +695,7 @@ header .profile-details {
     padding: 40px; }
 
 #right-side {
-  padding: 50px 120px 50px 0; }
+  padding: 50px 90px 50px 0; }
   #right-side .right-intro h4 {
     font-size: 25px;
     margin-bottom: 0; }
@@ -625,7 +742,10 @@ header .profile-details {
       font-size: 1.3rem; }
   .presta-box .presta-details {
     display: flex;
-    align-items: center; }
+    align-items: center;
+    margin-bottom: 10px; }
+    .presta-box .presta-details:last-child {
+      margin-bottom: 0; }
     .presta-box .presta-details span {
       width: 15px;
       height: 15px;
@@ -733,6 +853,75 @@ header .profile-details {
       .article-box .article-met .article-comment:last-child, .article-box .article-met .article-likes:last-child {
         margin-right: 0; }
 
+footer {
+  padding: 50px 120px;
+  display: flex;
+  justify-content: space-between; }
+  footer .footer-copyright .footer-links {
+    display: flex;
+    align-items: center; }
+    footer .footer-copyright .footer-links .dot-separator {
+      display: block;
+      width: 5px;
+      height: 5px;
+      background: #32c5d2;
+      border-radius: 100%;
+      margin: 0 10px; }
+  footer .footer-copyright p {
+    margin: 15px 0 0 0;
+    color: #8e8e8e;
+    font-size: 14px; }
+  footer .footer-img-wrap {
+    display: flex;
+    align-items: flex-end; }
+    footer .footer-img-wrap .master-card-img {
+      cursor: pointer;
+      display: block;
+      height: 30px;
+      width: 45px;
+      margin-right: 30px;
+      background-image: url("../img/icons/master-color.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      filter: grayscale(100%);
+      opacity: 0.4;
+      transition: 300ms all ease-in-out; }
+      footer .footer-img-wrap .master-card-img:hover {
+        opacity: 1;
+        filter: grayscale(0%); }
+    footer .footer-img-wrap .visa-img {
+      cursor: pointer;
+      display: block;
+      height: 30px;
+      width: 45px;
+      margin-right: 30px;
+      background-image: url("../img/icons/visa-color.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      filter: grayscale(100%);
+      opacity: 0.4;
+      transition: 300ms all ease-in-out; }
+      footer .footer-img-wrap .visa-img:hover {
+        opacity: 1;
+        filter: grayscale(0%); }
+    footer .footer-img-wrap .mangopay-img {
+      cursor: pointer;
+      display: block;
+      width: 100px;
+      height: 30px;
+      background-image: url("../img/icons/mangopay-color.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      filter: grayscale(100%);
+      opacity: 0.4;
+      transition: 300ms all ease-in-out; }
+      footer .footer-img-wrap .mangopay-img:hover {
+        opacity: 1;
+        filter: grayscale(0%); }
+
 .content-wrap-detail {
   display: flex;
   flex-direction: column;
@@ -750,6 +939,15 @@ header .profile-details {
     background-repeat: no-repeat;
     background-position: -30px -30px;
     position: relative; }
+    .content-wrap-detail .presta-box-detail .title-buttons-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%; }
+      .content-wrap-detail .presta-box-detail .title-buttons-wrap button {
+        margin: 0; }
+    .content-wrap-detail .presta-box-detail .p-gray-light {
+      margin: 0; }
     .content-wrap-detail .presta-box-detail .comment-separate, .content-wrap-detail .presta-box-detail .comment-separate-light {
       margin-left: -30px;
       margin-top: 0;
@@ -812,7 +1010,7 @@ header .profile-details {
     display: flex;
     align-items: center;
     margin: 40px 0;
-    transform: scale(1.4); }
+    transform: scale(1.1); }
     .content-wrap-detail .presta-details-big span {
       width: 15px;
       height: 15px;
@@ -820,8 +1018,6 @@ header .profile-details {
       background-repeat: no-repeat;
       background-size: cover;
       margin-right: 10px; }
-      .content-wrap-detail .presta-details-big span:nth-of-type(2) {
-        margin-right: 0; }
     .content-wrap-detail .presta-details-big hr {
       width: 1.1px;
       height: 20px;
@@ -829,13 +1025,11 @@ header .profile-details {
       background: #8e8e8e;
       margin: 0 10px; }
   .content-wrap-detail .title1-detail {
-    margin-top: 0; }
+    margin: 0; }
   .content-wrap-detail .tags-detail .tags-line {
     display: flex;
     justify-content: center;
-    margin-top: 40px; }
-    .content-wrap-detail .tags-detail .tags-line:last-child {
-      margin-top: 20px; }
+    margin: 40px 0; }
     .content-wrap-detail .tags-detail .tags-line p {
       background: white;
       padding: 7px 24px;
@@ -981,9 +1175,13 @@ header .profile-details {
             height: 18px;
             border: 2px solid #707070;
             border-radius: 100%; }
-        #main-wrap-faq #left-right-faq-wrap #right-side .faq-content-box .p-toggle {
-          color: #8e8e8e;
-          display: none; }
+        #main-wrap-faq #left-right-faq-wrap #right-side .faq-content-box .div-toggle {
+          display: none;
+          margin: 0 0 20px 0;
+          padding: 0; }
+          #main-wrap-faq #left-right-faq-wrap #right-side .faq-content-box .div-toggle .p-toggle {
+            margin: 0;
+            color: #8e8e8e; }
 
 ul {
   color: #8e8e8e; }

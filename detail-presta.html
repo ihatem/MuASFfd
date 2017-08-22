@@ -15,6 +15,8 @@
       <ul class="menu-list">
         <a href="index.html" class="nav-link" target="_blank"><li>Accueil</li></a>
         <a href="detail-profile.html" class="nav-link" target="_blank"><li>Mon Profile</li></a>
+        <a href="contact.html" class="nav-link" target="_blank"><li>m'envoyer un message</li></a>
+        <a href="disponibilites.html" class="nav-link" target="_blank"><li>mes disponibilités</li></a>
         <a href="faq.html" class="nav-link" target="_blank"><li>Comment ça marche?</li></a>
       </ul>
     </nav>
@@ -29,12 +31,19 @@
       </div>
       <div class="profile-location">
         <span class="location-icon"></span>
-        <p>Paris</p>
+        <p>Paris, France</p>
       </div>
-      <div class="profile-buttons">
-        <a href="disponibilites.html" class="btn-white btn" target="_blank">mes disponibilités</a>
-        <a href="contact.html" class="btn-green btn" target="_blank">m'envoyer un message</a>
+      <div class="profile-dispo">
+        <span class="dispo-icon"></span>
+        <p>En ligne</p>
       </div>
+
+      <!--
+<div class="profile-buttons">
+        <a href="disponibilites.html" class="btn-white btn" target="_blank"><span>mes disponibilités</span></a>
+        <a href="contact.html" class="btn-green btn" target="_blank"><span>m'envoyer un message</span></a>
+      </div>-->
+
     </div>
   </header>
 
@@ -44,12 +53,21 @@
         <h4 class="title1">à propos de moi</h4>
         <p class="p-gray-light">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.</p>
       </div>
+      <div class="about-logo">
+        <a href="http://naturopathe-gironde.com" target="_blank" title="Visitez mon site!" class="about-logo-img"></a>
+        <hr>
+        <div class="about-logo-link">
+          <a href="http://naturopathe-gironde.com" target="_blank"><span class="link-icon"></span></a>
+          <a href="http://naturopathe-gironde.com">naturopathe-gironde.com</a>
+        </div>
+      </div>
       <div class="social-links">
         <ul>
           <a href="#" target="_blank"><li class="facebook-link social-icon"></li></a>
           <a href="#" target="_blank"><li class="twitter-link social-icon"></li></a>
           <a href="#" target="_blank"><li class="wordpress-link social-icon"></li></a>
           <a href="#" target="_blank"><li class="linkedin-link social-icon"></li></a>
+          <a href="#" target="_blank" ><li class="mail-link social-icon" tooltip="mail@domain.com" flow="down"></li></a>
         </ul>
       </div>
       <div class="tags">
@@ -84,7 +102,27 @@
       <h3 class="section-title-detail">Détails de la prestation</h3>
       <div class="content-wrap-detail">
         <div class="presta-box-detail">
-          <h5 class="title1 title1-detail">dormir mieux</h5>
+          <div class="title-buttons-wrap">
+            <button class="btn-white btn">revenir</button>
+            <h5 class="title1 title1-detail">dormir mieux</h5>
+            <button class="btn-green btn">prendre un rendez-view</button>
+          </div>
+          <div class="presta-details-big">
+            <span class="money-icon"></span>
+            <p class="p-met">30 euros</p>
+            <hr></hr>
+            <span class="visio-icon"></span>
+            <p class="p-met">en visio</p>
+            <hr></hr>
+            <span class="time-icon"></span>
+            <p class="p-met">30 minutes</p>
+            <hr></hr>
+            <span class="cabinet-icon"></span>
+            <p class="p-met">en cabinet</p>
+            <hr></hr>
+            <span class="session-icon"></span>
+            <p class="p-met">session individuelle</p>
+          </div>
           <p class="p-gray-light">Itaque tum Scaevola cum in eam ipsam mentionem incidisset, exposuit nobis sermonem Laeli de amicitia habitum ab illo secum et cum altero genero, C. Fannio Marci filio, paucis diebus post mortem Africani. Eius disputationis sententias memoriae mandavi, quas hoc libro exposui arbitratu meo; quasi enim ipsos induxi loquentes, ne 'inquam' et 'inquit' saepius interponeretur, atque ut tamquam a praesentibus coram haberi sermo videretur.<br><br>
 
           Constituendi autem sunt qui sint in amicitia fines et quasi termini diligendi. De quibus tres video sententias ferri, quarum nullam probo, unam, ut eodem modo erga amicum adfecti simus, quo erga nosmet ipsos, alteram, ut nostra in amicos benevolentia illorum erga nos benevolentiae pariter aequaliterque respondeat, tertiam, ut, quanti quisque se ipse facit, tanti fiat ab amicis.</p>
@@ -96,16 +134,6 @@
               <p>Nature</p>
               <p>Santé</p>
             </div>
-          </div>
-
-          <div class="presta-details-big">
-            <span class="money-icon"></span>
-            <p class="p-met">30 euros</p>
-            <hr></hr>
-            <span class="visio-icon"></span>
-            <hr></hr>
-            <span class="time-icon"></span>
-            <p class="p-met">30 minutes</p>
           </div>
 
           <hr class="comment-separate"></hr>
@@ -184,12 +212,10 @@
               </div>
             </div>
 
-            <hr class="comment-separate-light"></hr>
-
-            <div class="buttons-wrap">
+            <!--<div class="buttons-wrap">
               <button class="btn-white btn">revenir</button>
               <button class="btn-green btn">prendre un rendez-view</button>
-            </div>
+            </div>-->
 
 
           </div>
@@ -198,6 +224,23 @@
       </div>
     </section>
   </section>
+
+  <footer>
+    <div class="footer-copyright">
+      <div class="footer-links">
+        <a class="read-more" href="#">Conditions de vente</a>
+        <span class="dot-separator">
+        </span>
+        <a class="read-more" href="#">Politique de confidentialité</a>
+      </div>
+      <p>© Powered by igotalent / piktalent 2016</p>
+    </div>
+    <div class="footer-img-wrap">
+      <span class="master-card-img"></span>
+      <span class="visa-img"></span>
+      <span class="mangopay-img"></span>
+    </div>
+  </footer>
 
 
 

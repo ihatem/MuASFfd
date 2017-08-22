@@ -36,7 +36,7 @@ $(document).ready(function() {
   });
 
   $('.title-line').click(function() {
-    $(this).next().slideToggle("slow");
+    $(this).closest('div').next("div").slideToggle("slow");
   });
 
   $('#calendar').datepicker({
