@@ -363,7 +363,7 @@ th {
 * {
   font-family: "graphik"; }
 
-.background-default, .facebook-link, .twitter-link, .wordpress-link, .linkedin-link, .mail-link, .time-icon, .visio-icon, .cabinet-icon, .session-icon, .likes-icon, .comment-icon, .location-icon, .money-icon, .star-icon, .duration-icon, .general-icon, .echange-icon, .webcam-icon, .cart-icon, .phone-icon, .contact-icon, .arrow-left-icon, .arrow-right-icon, .link-icon {
+.background-default, .facebook-link, .twitter-link, .wordpress-link, .linkedin-link, .mail-link, .time-icon, .visio-icon, .cabinet-icon, .session-icon, .likes-icon, .comment-icon, .location-icon, .money-icon, .star-icon, .duration-icon, .general-icon, .echange-icon, .webcam-icon, .cart-icon, .phone-icon, .contact-icon, .arrow-left-icon, .arrow-left-icon2, .arrow-right-icon, .link-icon {
   background-position: center !important;
   background-repeat: no-repeat !important;
   background-size: contain !important;
@@ -451,6 +451,9 @@ th {
   background: url("../img/icons/arrow-left.svg"); }
   .arrow-left-icon:hover {
     background: url("../img/icons/arrow-left-white.svg"); }
+
+.arrow-left-icon2 {
+  background: url("../img/icons/arrow-left.svg"); }
 
 .arrow-right-icon {
   background: url("../img/icons/arrow-right.svg"); }
@@ -732,7 +735,7 @@ header .profile-details {
     .presta-box .presta-box-title:hover {
       color: #9262ae; }
   .presta-box .price {
-    margin: 0;
+    margin: 0 0 16px 0;
     font-family: "graphik";
     font-weight: 300;
     font-size: 40px; }
@@ -744,8 +747,6 @@ header .profile-details {
     display: flex;
     align-items: center;
     margin-bottom: 10px; }
-    .presta-box .presta-details:last-child {
-      margin-bottom: 0; }
     .presta-box .presta-details span {
       width: 15px;
       height: 15px;
@@ -759,8 +760,10 @@ header .profile-details {
       border: 0;
       background: #8e8e8e;
       margin: 0 10px; }
+  .presta-box .p-d-2 {
+    margin: 0; }
   .presta-box button {
-    margin: 20px 0; }
+    margin-top: 20px; }
 
 .article-box {
   border-bottom: 4px solid white;
@@ -944,8 +947,28 @@ footer {
       justify-content: space-between;
       align-items: center;
       width: 100%; }
+      .content-wrap-detail .presta-box-detail .title-buttons-wrap .retour-presta {
+        display: flex; }
+        .content-wrap-detail .presta-box-detail .title-buttons-wrap .retour-presta a {
+          color: #8e8e8e; }
+        .content-wrap-detail .presta-box-detail .title-buttons-wrap .retour-presta span {
+          margin-right: 7px;
+          display: block;
+          width: 16px;
+          height: 16px; }
+        .content-wrap-detail .presta-box-detail .title-buttons-wrap .retour-presta:hover a {
+          color: #707070; }
+        .content-wrap-detail .presta-box-detail .title-buttons-wrap .retour-presta:hover span {
+          background: url("../img/icons/arrow-left-dark.svg"); }
       .content-wrap-detail .presta-box-detail .title-buttons-wrap button {
+        width: 200px;
         margin: 0; }
+    .content-wrap-detail .presta-box-detail .title-buttons-wrap-bottom {
+      display: flex;
+      justify-content: center; }
+      .content-wrap-detail .presta-box-detail .title-buttons-wrap-bottom button {
+        margin-top: 20px;
+        width: 250px; }
     .content-wrap-detail .presta-box-detail .p-gray-light {
       margin: 0; }
     .content-wrap-detail .presta-box-detail .comment-separate, .content-wrap-detail .presta-box-detail .comment-separate-light {

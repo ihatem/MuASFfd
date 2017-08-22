@@ -21,8 +21,31 @@
       justify-content: space-between
       align-items: center
       width: 100%
+
+      .retour-presta
+        display: flex
+        a
+          color: $gray-light
+        span
+          margin-right: 7px
+          display: block
+          width: 16px
+          height: 16px
+        &:hover a
+          color: $gray-dark
+        &:hover span
+          background: url("../img/icons/arrow-left-dark.svg")
+
       button
+        width: 200px
         margin: 0
+
+    .title-buttons-wrap-bottom
+      display: flex
+      justify-content: center
+      button
+        margin-top: 20px
+        width: 250px
 
     .p-gray-light
       margin: 0
