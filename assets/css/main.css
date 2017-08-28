@@ -1499,10 +1499,12 @@ ul {
         display: block;
         width: 40px;
         height: 40px;
-        filter: grayscale(100%); }
+        filter: grayscale(100%);
+        transition: 3000ms all ease-in-out; }
       .contact-wrap-commande .commande-progress div p {
         color: #8e8e8e;
-        text-transform: uppercase; }
+        text-transform: uppercase;
+        transition: 3000ms all ease-in-out; }
       .contact-wrap-commande .commande-progress div .cmd-prg-selected {
         color: #32c5d2;
         filter: grayscale(0); }

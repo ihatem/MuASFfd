@@ -976,11 +976,20 @@
     if ($("#commande-form").css("display") != "none") {
       $("#commande-form").toggleClass("form-disabled");
       $("#calendar-form").toggleClass("form-disabled");
+
+      $(".progress-bar").css("width", "25%");
+      $(".form-icon").next().css("color", "#8e8e8e");
+      $(".form-icon").css("filter", "grayscale(100%)");
+
       $(".btn-white").addClass("btn-white-disabled");
     }
     else if ($("#paiement-form").css("display") != "none") {
       $("#paiement-form").toggleClass("form-disabled");
       $("#commande-form").toggleClass("form-disabled");
+
+      $(".progress-bar").css("width", "50%");
+      $(".form-icon").next().css("color", "#8e8e8e");
+      $(".form-icon").css("filter", "grayscale(100%)");
     }
   });
 
