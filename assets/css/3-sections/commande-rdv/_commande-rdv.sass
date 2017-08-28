@@ -1,0 +1,473 @@
+.contact-wrap-commande
+  //background: pink !important
+  position: relative !important
+  padding: 0 !important
+  width: 65% !important
+  padding-bottom: 60px !important
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%) !important
+
+  .buttons-wrap
+    width: 70%
+    display: flex
+    flex-direction: row
+    align-items: center
+    justify-content: space-between
+    margin: 0 auto
+
+    .btn-white-disabled
+      border: 1px solid $gray-light
+      color: $gray-light
+      cursor: default
+      &:hover
+        border: 1px solid $gray-light
+        background: transparent
+        color: $gray-light
+
+  .progress-bar
+    height: 6px
+
+    background: $green-light
+    background: -webkit-linear-gradient(to right, $green-dark, $green-light)
+    background: -moz-linear-gradient(to right, $green-dark, $green-light)
+    background: -o-linear-gradient(to right, $green-dark, $green-light)
+    background: linear-gradient(to right, $green-dark, $green-light)
+
+    transition: 3000ms all ease-in-out
+
+    width: 25%
+
+  .commande-progress
+    display: flex
+    justify-content: space-between
+    margin: 20px 0
+    padding: 0 60px
+    div
+      display: flex
+      flex-direction: column
+      align-items: center
+      span
+        display: block
+        width: 40px
+        height: 40px
+        filter: grayscale(100%)
+      p
+        color: $gray-light
+        text-transform: uppercase
+
+      .cmd-prg-selected
+        color: $green-light
+        filter: grayscale(0)
+
+
+  .commande-choisie
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding: 40px 60px
+
+    background: $green-light
+    background: -webkit-linear-gradient(to right, $green-dark, $green-light)
+    background: -moz-linear-gradient(to right, $green-dark, $green-light)
+    background: -o-linear-gradient(to right, $green-dark, $green-light)
+    background: linear-gradient(to right, $green-dark, $green-light)
+
+    .cmd-choisie-text
+      h5, h2
+        color: $white
+        text-transform: uppercase
+        margin: 0
+        font-weight: 100
+      h2
+        margin-top: 8px
+    .prix-button
+      color: $white
+      font-size: 30px
+      font-weight: 100
+      background: $purple
+      padding: 10px 30px
+      height: 30px
+      sup
+        font-size: 1.1rem
+
+.calendar-commande
+  padding: 60px
+
+  .form-disabled
+    display: none
+
+
+  .calendar-form, .confirmation-form, .paiement-form, .commande-form
+    width: 100%
+    //height: 800px
+    background: $white
+    padding: 60px 0 0 0
+    //display: none
+
+    .semaine-mois-selection
+      display: flex
+      justify-content: center
+
+    .semaine-mois-actuel
+      display: flex
+      justify-content: space-between
+      margin: 30px 0
+
+    .commande-form-title
+      margin-bottom: 60px
+      display: flex
+      flex-direction: column
+      align-items: center
+      justify-content: center
+      h4,p
+        text-align: center
+        margin: 0
+        font-weight: 100
+        color: $gray-light
+        width: 80%
+      h4
+        padding-bottom: 10px
+        text-transform: uppercase
+        font-size: 36px
+    .commande-form-wrap
+      display: flex
+      flex-direction: column
+      align-items: center
+
+
+
+
+      .input-wrap-checkbox
+        width: 70%
+        display: flex
+        align-items: center
+        input
+          margin-right: 10px
+
+        label
+          font-size: 14px
+          font-weight: 100
+          color: $gray-light
+
+
+      .input-wrap-copy
+        input
+          width: calc(75% - 10px) !important
+          margin-right: 10px !important
+          border-radius: 0 !important
+
+        .btn-copy
+          width: 25% !important
+          display: flex
+          align-items: center
+          justify-content: center
+          background: $green-light
+          color: $white
+          text-transform: uppercase
+          font-size: 15px
+          border: 2px solid $white
+          transition: 300ms all ease-in-out
+          &:hover
+            background: $green-dark
+
+          .copy-icon
+            display: block
+            width: 20px
+            height: 20px
+            margin-right: 5px
+
+      .input-wrap-copy, .input-wrap, .input-wrap-cb
+        display: flex
+        width: 80%
+        margin-bottom: 50px
+        position: relative
+
+        .expiration-wrap
+          width: 100%
+          display: flex
+          span
+            width: 30%
+          .span-ccv
+            display: flex
+            align-items: center
+            justify-content: center
+            text-align: center
+            .ccv-info
+              margin-left: 5px
+              font-size: 10px
+              width: 15px
+              height: 15px
+              background: $gray-light
+              border-radius: 100%
+              display: flex
+              align-items: center
+              justify-content: center
+              color: $white
+
+
+
+
+          .ccv-form-wrap, .date-form-wrap
+            display: flex
+            width: 20%
+            font-size: 0
+            border: 2px solid $white
+            border-radius: 7px
+            transition: 300ms all ease-in-out
+
+            .inputs-ccv
+              text-align: center
+              font-size: 16px
+              width: 100%
+
+            .inputs-date
+              border: 0
+              border-radius: 0
+              font-size: 16px
+              width: 10%
+              text-align: center
+              padding: 10px 0
+              &:first-child
+                width: 45%
+                padding: 10px
+                border-radius: 7px 0 0 7px
+              &:last-child
+                width: 45%
+                padding: 10px
+                border-radius: 0 7px 7px 0
+
+
+
+        .cb-span-wrap
+          width: 30%
+
+
+
+        .cb-form-wrap
+          width: 70%
+          font-size: 0
+          border-radius: 7px
+          border: 2px solid $white
+          transition: 300ms all ease-in-out
+
+          .inputs
+            font-size: 16px
+            margin: 0
+            width: 25%
+            border: 0
+            border-radius: 0
+            text-align: center
+            &:first-child
+              border-radius: 7px 0 0 7px
+            &:last-child
+              border-radius: 0 7px 7px 0
+
+
+
+
+
+        span
+          display: flex
+          align-items: center
+          color: $gray-light
+          width: 30%
+        input
+          color: $gray-light
+          width: 70%
+          padding: 10px
+          border: 0
+          background: $gray-very-white
+          border: 2px solid $white
+          border-radius: 7px
+          box-sizing: border-box
+          transition: 300ms all ease-in-out
+          &:focus
+            border: 2px solid $gray-light
+
+        .dropdown-tel-wrapper
+          display: flex
+          width: 70%
+
+          input
+            color: $gray-light
+            width: 75%
+            border-radius: 0 7px 7px 0
+          .dropdown-tel
+            width: 25%
+            height: 42.6px
+
+            .default-label-tel
+              display: flex
+              width: 100%
+              //z-index: 2
+              background: lighten($gray-light, 35%)
+              border: 2px solid $white
+              padding: 10px
+              box-sizing: border-box
+              position: relative
+              border-radius: 7px 0 0 7px
+
+              p
+                color: $white
+                width: 90%
+                margin: 0
+
+              .country-icon
+                display: block
+                height: 20px
+                width: 20px
+                margin-right: 10px
+
+              .arrow-icon-tel
+                display: block
+                box-sizing: content-box
+                margin: 0
+                width: 19px
+                height: 19px
+                background:
+                  image: url("../img/icons/arrow-right-white.svg")
+                  position: center
+                  repeat: no-repeat
+                transition: 200ms all ease-in-out
+                transform: rotate(90deg)
+              .arrow-icon-rotated
+                transform: rotate(-90deg)
+
+            .ul-tel
+              padding: 0
+              margin: 0
+              position: relative
+              visibility: hidden
+              opacity: 0
+              z-index: 1
+              top: -20px
+              transition: 300ms all ease-in-out
+              margin-top: 10px
+              background: $gray-very-white
+              height: 200px
+              width: 300px
+              overflow-y: scroll
+              overflow-x: hidden
+
+              .label-selected-tel
+                display: flex
+                width: 100%
+                padding: 10px
+                list-style: none
+                border-bottom: 1px solid $gray-white
+                &:hover
+                  background: $green-white
+                &:last-child
+                  border-bottom: 0
+                .country-icon
+                  display: block
+                  height: 20px
+                  width: 20px
+                  margin-right: 10px
+
+            .input-checked
+              visibility: visible
+              opacity: 1
+              top: 0
+
+        .dropdown-pays, .dropdown-fuseau
+          width: 70%
+          height: 42.6px
+
+
+          .default-label-pays, .default-label-fuseau
+            display: flex
+            width: 100%
+            color: $gray-light
+            background: $gray-very-white
+            border: 2px solid $white
+            padding: 10px
+            box-sizing: border-box
+            position: relative
+            border-radius: 7px
+
+            p
+              width: 90%
+              margin: 0
+            .p-pays
+              display: flex
+            .p-fuseau
+              white-space: nowrap
+              overflow: hidden
+              text-overflow: ellipsis
+
+            .country-icon
+              display: block
+              height: 20px
+              width: 20px
+              margin-right: 10px
+
+            .arrow-icon-wrapper
+              display: flex
+              align-items: center
+              justify-content: center
+              position: absolute
+              top: 0
+              right: 0
+              height: 38px
+              width: 38px
+              //background: red
+              border-left: 4px solid $white
+              border-radius: 0 7px 7px 0
+              .arrow-icon-pays, .arrow-icon-fuseau
+                display: block
+                margin: 0
+                width: 60%
+                height: 60%
+                background:
+                  image: url("../img/icons/arrow-right-green.svg")
+                  position: center
+                  repeat: no-repeat
+                transition: 200ms all ease-in-out
+                transform: rotate(90deg)
+              .arrow-icon-rotated
+                transform: rotate(-90deg)
+
+
+          .ul-pays, .ul-fuseau
+            padding: 0
+            margin: 0
+            position: relative
+            visibility: hidden
+            opacity: 0
+            z-index: 1
+            top: -20px
+            transition: 300ms all ease-in-out
+            margin-top: 10px
+            background: $gray-very-white
+            height: 200px
+            overflow-y: scroll
+            overflow-x: hidden
+
+            .label-selected-pays, .label-selected-fuseau
+              color: $gray-light
+              display: flex
+              width: 100%
+              padding: 10px
+              list-style: none
+              border-bottom: 1px solid $gray-white
+              &:hover
+                background: $green-white
+              &:last-child
+                border-bottom: 0
+              .country-icon
+                display: block
+                height: 20px
+                width: 20px
+                margin-right: 10px
+
+          .input-checked
+            visibility: visible
+            opacity: 1
+            top: 0
+
+
+
+
+
+.date-form-wrap-focus
+  border: 2px solid $gray-light !important
