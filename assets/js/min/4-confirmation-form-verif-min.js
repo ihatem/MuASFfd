@@ -1,0 +1,1 @@
+$.getScript("assets/js/clipboard.min.js"),new Clipboard(".btn-copy");
