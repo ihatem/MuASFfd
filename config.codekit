@@ -466,34 +466,34 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/assets\/js\/2-commande-form-verif.js": {
+	"\/assets\/js\/2-cmd-verif.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/assets\/js\/2-commande-form-verif.js",
-		"outputAbbreviatedPath": "\/assets\/js\/min\/2-commande-form-verif-min.js",
+		"inputAbbreviatedPath": "\/assets\/js\/2-cmd-verif.js",
+		"outputAbbreviatedPath": "\/assets\/js\/min\/2-cmd-verif-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/assets\/js\/3-paiement-form-verif.js": {
+	"\/assets\/js\/3-pay-verif.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/assets\/js\/3-paiement-form-verif.js",
-		"outputAbbreviatedPath": "\/assets\/js\/min\/3-paiement-form-verif-min.js",
+		"inputAbbreviatedPath": "\/assets\/js\/3-pay-verif.js",
+		"outputAbbreviatedPath": "\/assets\/js\/min\/3-pay-verif-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/assets\/js\/4-confirmation-form-verif.js": {
+	"\/assets\/js\/4-confirm-verif.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/assets\/js\/4-confirmation-form-verif.js",
-		"outputAbbreviatedPath": "\/assets\/js\/min\/4-confirmation-form-verif-min.js",
+		"inputAbbreviatedPath": "\/assets\/js\/4-confirm-verif.js",
+		"outputAbbreviatedPath": "\/assets\/js\/min\/4-confirm-verif-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -565,34 +565,34 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/assets\/js\/min\/2-commande-form-verif-min.js": {
+	"\/assets\/js\/min\/2-cmd-verif-min.js": {
 		"fileType": 64,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/assets\/js\/min\/2-commande-form-verif-min.js",
-		"outputAbbreviatedPath": "\/assets\/js\/min\/min\/2-commande-form-verif-min-min.js",
+		"inputAbbreviatedPath": "\/assets\/js\/min\/2-cmd-verif-min.js",
+		"outputAbbreviatedPath": "\/assets\/js\/min\/min\/2-cmd-verif-min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/assets\/js\/min\/3-paiement-form-verif-min.js": {
+	"\/assets\/js\/min\/3-pay-verif-min.js": {
 		"fileType": 64,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/assets\/js\/min\/3-paiement-form-verif-min.js",
-		"outputAbbreviatedPath": "\/assets\/js\/min\/min\/3-paiement-form-verif-min-min.js",
+		"inputAbbreviatedPath": "\/assets\/js\/min\/3-pay-verif-min.js",
+		"outputAbbreviatedPath": "\/assets\/js\/min\/min\/3-pay-verif-min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/assets\/js\/min\/4-confirmation-form-verif-min.js": {
+	"\/assets\/js\/min\/4-confirm-verif-min.js": {
 		"fileType": 64,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/assets\/js\/min\/4-confirmation-form-verif-min.js",
-		"outputAbbreviatedPath": "\/assets\/js\/min\/min\/4-confirmation-form-verif-min-min.js",
+		"inputAbbreviatedPath": "\/assets\/js\/min\/4-confirm-verif-min.js",
+		"outputAbbreviatedPath": "\/assets\/js\/min\/min\/4-confirm-verif-min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,

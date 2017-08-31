@@ -18,7 +18,7 @@ $(document).ready(function() {
     properties: "prop_innerHTML",
     watchChildren: false,
     callback: function () {
-        $.getScript("assets/js/min/2-Commande-form-verif-min.js");
+        $.getScript("assets/js/min/2-cmd-verif-min.js");
     }
   });
 
@@ -26,7 +26,7 @@ $(document).ready(function() {
     properties: "prop_innerHTML",
     watchChildren: false,
     callback: function () {
-        $.getScript("assets/js/min/3-paiement-form-verif-min.js");
+        $.getScript("assets/js/min/3-pay-verif.js");
     }
   });
 
@@ -34,7 +34,7 @@ $(document).ready(function() {
     properties: "prop_innerHTML",
     watchChildren: false,
     callback: function () {
-        $.getScript("assets/js/min/4-confirmation-form-verif-min.js");
+        $.getScript("assets/js/min/4-confirm-verif-min.js");
     }
   });
 

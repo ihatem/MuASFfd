@@ -969,33 +969,7 @@
   <script src="assets/js/jquery-watch.min.js"></script>
 
   <!-- functions.js minified DECLARE -->
-  <script>
-    $.getScript('assets/js/min/1-calendar-verif-min.js');
-
-    $("#commande-form").watch({
-      properties: "prop_innerHTML",
-      watchChildren: false,
-      callback: function () {
-          $.getScript("assets/js/min/2-Commande-form-verif-min.js");
-      }
-    });
-
-    $("#paiement-form").watch({
-      properties: "prop_innerHTML",
-      watchChildren: false,
-      callback: function () {
-          $.getScript("assets/js/min/3-paiement-form-verif-min.js");
-      }
-    });
-
-    $("#confirmation-form").watch({
-      properties: "prop_innerHTML",
-      watchChildren: false,
-      callback: function () {
-          $.getScript("assets/js/min/4-confirmation-form-verif-min.js");
-      }
-    });
-  </script>
+  <script src="assets/js/min/functions-min.js"></script>
 
   <!--
   <script>
