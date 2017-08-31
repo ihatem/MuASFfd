@@ -26,7 +26,7 @@ $(document).ready(function() {
     properties: "prop_innerHTML",
     watchChildren: false,
     callback: function () {
-        $.getScript("assets/js/min/3-pay-verif.js");
+        $.getScript("assets/js/min/3-pay-verif-min.js");
     }
   });
 
