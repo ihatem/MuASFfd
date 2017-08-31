@@ -1,6 +1,7 @@
 /*jshint devel:true */
 
 $(document).ready(function() {
+
   /*
   // ENABLE calendar datepicker
   $('#calendar').datepicker({
