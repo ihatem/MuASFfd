@@ -468,7 +468,7 @@ th {
       border-right: 0; }
     .content-wrap-dispo table tr td:hover {
       background: #e0f7f8; }
-    .content-wrap-dispo table tr td span {
+    .content-wrap-dispo table tr td .round-date {
       color: white;
       background: #a984bf;
       border-radius: 100%;
@@ -503,7 +503,7 @@ th {
 * {
   font-family: "graphik"; }
 
-.background-default, .facebook-link, .twitter-link, .wordpress-link, .linkedin-link, .mail-link, .time-icon, .visio-icon, .cabinet-icon, .session-icon, .likes-icon, .comment-icon, .location-icon, .money-icon, .star-icon, .duration-icon, .general-icon, .echange-icon, .webcam-icon, .cart-icon, .phone-icon, .contact-icon, .arrow-left-icon, .arrow-left-icon2, .arrow-right-icon, .link-icon, .choix-rdv-icon, .form-icon, .paiement-icon, .confirm-icon, .copy-icon {
+.background-default, .facebook-link, .twitter-link, .wordpress-link, .linkedin-link, .mail-link, .time-icon, .visio-icon, .cabinet-icon, .session-icon, .likes-icon, .comment-icon, .location-icon, .money-icon, .star-icon, .duration-icon, .general-icon, .echange-icon, .echange-p-icon, .webcam-icon, .cart-icon, .phone-icon, .contact-icon, .arrow-left-icon, .arrow-left-icon2, .arrow-right-icon, .link-icon, .choix-rdv-icon, .form-icon, .paiement-icon, .confirm-icon, .copy-icon {
   background-position: center !important;
   background-repeat: no-repeat !important;
   background-size: contain !important;
@@ -574,6 +574,9 @@ th {
 
 .echange-icon {
   background: url("../img/icons/echange.svg"); }
+
+.echange-p-icon {
+  background: url("../img/icons/echange-p.svg"); }
 
 .webcam-icon {
   background: url("../img/icons/webcam.svg"); }
@@ -864,6 +867,12 @@ header .profile-details {
     align-items: center;
     padding: 40px;
     background: white; }
+
+.presta-box-collective {
+  background: url("../img/icons/echange2.svg"), #f9fafb !important;
+  background-size: 150px !important;
+  background-repeat: no-repeat !important;
+  background-position: -30px -30px !important; }
 
 .presta-box {
   display: flex;
@@ -2002,3 +2011,33 @@ ul {
     background-size: 20px 20px !important;
   box-shadow: none !important;
   border: 2px solid #e74c3c !important; }
+
+.table-clctv {
+  width: 100%; }
+  .table-clctv .schedule-selector {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px; }
+    .table-clctv .schedule-selector p {
+      margin: 0; }
+    .table-clctv .schedule-selector div {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      height: 100%; }
+      .table-clctv .schedule-selector div .separator {
+        display: block;
+        width: 4px;
+        height: 60px;
+        background: white;
+        margin-right: 30px; }
+      .table-clctv .schedule-selector div .time-icon {
+        display: block;
+        width: 20px;
+        height: 20px;
+        margin-right: 10px; }
+      .table-clctv .schedule-selector div p {
+        text-align: left;
+        width: 55px; }
