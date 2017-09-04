@@ -71,13 +71,11 @@ $(".inputs-ccv").keyup(function() {
 
 // VERIFICATIONS on click between different command pages process
 // --- ON CLICK "suivant" :
-$(".btn-green").click(function () {
+function click_pay_suiv () {
 
   // 3- on Paiement-form page
   if
   (
-    // if 3-Paiement-form is showed
-    ($("#paiement-form").css("display") !== "none") &&
     // if "Titulaire carte bancaire" respects REGEX
     (reg_nom.test($("input[name=nom-carte]").val())) &&
     // if "Numéro de la carte" respects REGEX
@@ -95,8 +93,10 @@ $(".btn-green").click(function () {
   )
   {
     // DISABLE 3-Paiement-form and ENABLE 4-Confirmation-form
-    $("#paiement-form").toggleClass("form-disabled");
-    $("#confirmation-form").toggleClass("form-disabled");
+    $("#confirmation-form").attr("display", "true");
+    $("#confirmation-form").css("display", "block");
+    $("#paiement-form").attr("display", "false");
+    $("#paiement-form").css("display", "none");
 
     // INCREASE Progress bar width 100% (4/4)
     $(".progress-bar").css("width", "100%");
@@ -109,18 +109,17 @@ $(".btn-green").click(function () {
     $(".buttons-wrap").hide();
   }
 
-});
+}
 
 // --- ON CLICK "précedent" :
-$(".btn-white").click(function () {
+function click_pay_prec () {
 
-  // from 3-Paiement-form -> 2-Commande-form
-  if ($("#paiement-form").css("display") !== "none")
-
-  {
     // HIDE 3-Paiement-form & SHOW 2-Commande-form
-    $("#paiement-form").toggleClass("form-disabled");
-    $("#commande-form").toggleClass("form-disabled");
+    $("#commande-form").attr("display", "true");
+    $("#commande-form").css("display", "block");
+    $("#paiement-form").attr("display", "false");
+    $("#paiement-form").css("display", "none");
+
 
     // DECREASE Progress bar width to 50% (2/4)
     $(".progress-bar").css("width", "50%");
@@ -128,9 +127,8 @@ $(".btn-white").click(function () {
     // CHANGE Progress bar icon & text COLOR
     $(".form-icon").next().css("color", "#8e8e8e");
     $(".form-icon").css("filter", "grayscale(100%)");
-  }
 
-});
+}
 
 // PASS to next input when input's maxlength is attended
 $(".inputs").keyup(function () {

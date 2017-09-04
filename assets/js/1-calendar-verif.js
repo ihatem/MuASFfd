@@ -28,12 +28,10 @@ $("td").click(function () {
 
 // VERIFICATIONS on click between different command pages process
 // --- ON CLICK "suivant" :
-$(".btn-green").click(function () {
+function click_cal_suiv () {
   // 1- on Calendar page
   if
   (
-    // if 1-calendar is showed
-    ($("#calendar-form").css("display") !== "none") &&
     // if 1 schedule <td> is selected
     ($("td").data('clicked'))
   )
@@ -43,8 +41,10 @@ $(".btn-green").click(function () {
         scrollTop: $("#content-wrap").offset().top
     }, 300);
     // DISABLE 1-Calendar and ENABLE 2-Commande-form
-    $("#calendar-form").toggleClass("form-disabled");
-    $("#commande-form").toggleClass("form-disabled");
+    $("#commande-form").attr("display", "true");
+    $("#commande-form").css("display", "block");
+    $("#calendar-form").attr("display", "false");
+    $("#calendar-form").css("display", "none");
 
     // INCREASE Progress bar width 50% (2/4)
     $(".progress-bar").css("width", "50%");
@@ -66,4 +66,4 @@ $(".btn-green").click(function () {
     //$(".error-calendar").removeClass("animated fadeInLeft");
     $(".error-calendar").css("display","flex");
   }
-});
+}

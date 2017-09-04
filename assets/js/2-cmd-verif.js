@@ -95,13 +95,11 @@ $(".label-selected-tel").click(function () {
 
 // VERIFICATIONS on click between different command pages process
 // --- ON CLICK "suivant" :
-$(".btn-green").click(function () {
+function click_cmd_suiv () {
 
   // 2- on Commande-form page
   if
   (
-    // if 2-Commande-form is showed
-    ($("#commande-form").css("display") !== "none") &&
     // if "nom" respects REGEX
     (reg_nom.test($("input[name=nom]").val())) &&
     // if "prénom" respects REGEX
@@ -122,8 +120,11 @@ $(".btn-green").click(function () {
 
   {
     // DISABLE 2-Commande-form and ENABLE 3-Paiement-form
-    $("#commande-form").toggleClass("form-disabled");
-    $("#paiement-form").toggleClass("form-disabled");
+    $("#commande-form").attr("display", "false");
+    $("#commande-form").css("display", "none");
+    $("#paiement-form").attr("display", "true");
+    $("#paiement-form").css("display", "block");
+
 
     // INCREASE Progress bar width 75% (3/4)
     $(".progress-bar").css("width", "75%");
@@ -136,32 +137,28 @@ $(".btn-green").click(function () {
     $(".btn-white").removeClass("btn-white-disabled");
   }
 
-  // SHOW
-
-});
+}
 
 // --- ON CLICK "précedent" :
-$(".btn-white").click(function () {
+function click_cmd_prec () {
 
-  // from 2-Commande-form -> 1-Calendar
-  if ($("#commande-form").css("display") !== "none")
+  // HIDE 2-Commande-form & SHOW 1-Calendar
+  $("#calendar-form").attr("display", "true");
+  $("#calendar-form").css("display", "block");
+  $("#commande-form").attr("display", "false");
+  $("#commande-form").css("display", "none");
 
-  {
-    // HIDE 2-Commande-form & SHOW 1-Calendar
-    $("#commande-form").toggleClass("form-disabled");
-    $("#calendar-form").toggleClass("form-disabled");
+  // DECREASE Progress bar width to 25% (1/4)
+  $(".progress-bar").css("width", "25%");
 
-    // DECREASE Progress bar width to 25% (1/4)
-    $(".progress-bar").css("width", "25%");
+  // CHANGE Progress bar icon & text COLOR
+  $(".form-icon").next().css("color", "#8e8e8e");
+  $(".form-icon").css("filter", "grayscale(100%)");
 
-    // CHANGE Progress bar icon & text COLOR
-    $(".form-icon").next().css("color", "#8e8e8e");
-    $(".form-icon").css("filter", "grayscale(100%)");
+  // DISABLE "précédent" BUTTON (grayed)
+  $(".btn-white").addClass("btn-white-disabled");
 
-    // DISABLE "précédent" BUTTON (grayed)
-    $(".btn-white").addClass("btn-white-disabled");
-  }
-});
+}
 
 
 // Pays de résidence

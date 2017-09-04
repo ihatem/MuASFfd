@@ -1572,21 +1572,6 @@ ul {
   width: 65% !important;
   padding-bottom: 60px !important;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%) !important; }
-  .contact-wrap-commande .buttons-wrap {
-    width: 70%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    margin: 0 auto; }
-    .contact-wrap-commande .buttons-wrap .btn-white-disabled {
-      border: 1px solid #8e8e8e;
-      color: #8e8e8e;
-      cursor: default; }
-      .contact-wrap-commande .buttons-wrap .btn-white-disabled:hover {
-        border: 1px solid #8e8e8e;
-        background: transparent;
-        color: #8e8e8e; }
   .contact-wrap-commande .progress-bar {
     height: 6px;
     background: #32c5d2;
@@ -1672,6 +1657,22 @@ ul {
       margin: 0; }
   .calendar-commande #calendar-form {
     padding: 0; }
+  .calendar-commande #calendar-form .buttons-wrap, .calendar-commande #commande-form .buttons-wrap, .calendar-commande #paiement-form .buttons-wrap, .calendar-commande #confirmation-form .buttons-wrap {
+    margin-top: 60px !important;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto; }
+    .calendar-commande #calendar-form .buttons-wrap .btn-white-disabled, .calendar-commande #commande-form .buttons-wrap .btn-white-disabled, .calendar-commande #paiement-form .buttons-wrap .btn-white-disabled, .calendar-commande #confirmation-form .buttons-wrap .btn-white-disabled {
+      border: 1px solid #8e8e8e;
+      color: #8e8e8e;
+      cursor: default; }
+      .calendar-commande #calendar-form .buttons-wrap .btn-white-disabled:hover, .calendar-commande #commande-form .buttons-wrap .btn-white-disabled:hover, .calendar-commande #paiement-form .buttons-wrap .btn-white-disabled:hover, .calendar-commande #confirmation-form .buttons-wrap .btn-white-disabled:hover {
+        border: 1px solid #8e8e8e;
+        background: transparent;
+        color: #8e8e8e; }
   .calendar-commande .calendar-form, .calendar-commande .confirmation-form, .calendar-commande .paiement-form, .calendar-commande .commande-form {
     width: 100%;
     background: white;
