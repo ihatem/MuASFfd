@@ -151,8 +151,8 @@ function click_pay_prec () {
     $(".form-icon").next().css("color", "#32c5d2");
     $(".form-icon").css("filter", "grayscale(0)");
 
-    $(".paiement-icon").next().css("color", "#32c5d2");
-    $(".paiement-icon").css("filter", "grayscale(0)");
+    $(".paiement-icon").next().css("color", "#8e8e8e");
+    $(".paiement-icon").css("filter", "grayscale(100%)");
 
 }
 
