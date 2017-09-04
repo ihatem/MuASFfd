@@ -148,8 +148,11 @@ function click_pay_prec () {
     $(".progress-bar").css("width", "50%");
 
     // CHANGE Progress bar icon & text COLOR
-    $(".form-icon").next().css("color", "#8e8e8e");
-    $(".form-icon").css("filter", "grayscale(100%)");
+    $(".form-icon").next().css("color", "#32c5d2");
+    $(".form-icon").css("filter", "grayscale(0)");
+
+    $(".paiement-icon").next().css("color", "#32c5d2");
+    $(".paiement-icon").css("filter", "grayscale(0)");
 
 }
 
