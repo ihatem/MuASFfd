@@ -11,17 +11,6 @@
         dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
   });
   */
-  /*
-  if ($("#calendar-form").attr("display") === "true") {
-    console.log("1 #calendar-form LOADED");
-    $.getScript("assets/js/min/1-calendar-verif-min.js");
-  }
-
-
-  if ($("#commande-form").attr("display") === "true") {
-    console.log("2 #commande-form LOADED");
-    $.getScript("assets/js/min/2-cmd-verif-min.js");
-  }*/
 
   $.getScript("assets/js/min/1-calendar-verif-min.js");
   $.getScript("assets/js/min/2-cmd-verif-min.js");

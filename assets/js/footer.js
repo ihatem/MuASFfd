@@ -1,4 +1,17 @@
-console
+
+//STICKY NAV MENU
+$("nav").sticky({
+	zIndex:9999
+});
+
+$('nav').on('sticky-start', function() {
+	$("nav").toggleClass("sticky");
+});
+
+$('nav').on('sticky-end', function() {
+	$("nav").toggleClass("sticky");
+});
+
 
 //open popup
 $('.cdv').on('click', function(event){

@@ -679,12 +679,16 @@ a {
   color: #8e8e8e;
   margin-top: 24px; }
 
+header .sticky {
+  transition: 300ms all ease-in-out;
+  background: rgba(52, 62, 70, 0.7); }
 header nav {
   height: 70px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #343e46; }
+  background: #343e46;
+  transition: 300ms all ease-in-out; }
   header nav .logo-rdview {
     margin-left: 120px;
     width: 60px;
@@ -1566,7 +1570,42 @@ ul {
   font-size: 18px;
   margin: 24px 0 0 0; }
 
+.error-calendar {
+  background: rgba(231, 76, 60, 0.8);
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 60px;
+  border-radius: 8px;
+  display: none;
+  transition: 300ms all ease-in-out; }
+  .error-calendar .error-calendar-icon {
+    display: block;
+    text-align: center;
+    color: white;
+    border: 2px solid white;
+    border-radius: 100%;
+    background: transparent;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px; }
+  .error-calendar p {
+    color: white;
+    margin: 0; }
+
+.pdp {
+  display: block !important;
+  width: 100px !important;
+  height: 100px !important;
+  border: 0 !important;
+  top: 0 !important;
+  left: 0 !important;
+  margin-left: 120px !important; }
+  .pdp span[flow=right] {
+    width: 20px !important;
+    height: 20px !important; }
+
 .contact-wrap-commande {
+  margin: 100px 0 !important;
   position: relative !important;
   padding: 0 !important;
   width: 65% !important;
@@ -1634,27 +1673,6 @@ ul {
   padding: 60px; }
   .calendar-commande .form-disabled {
     display: none; }
-  .calendar-commande .error-calendar {
-    background: rgba(231, 76, 60, 0.8);
-    align-items: center;
-    padding: 10px;
-    margin-bottom: 60px;
-    border-radius: 8px;
-    display: none;
-    transition: 300ms all ease-in-out; }
-    .calendar-commande .error-calendar .error-calendar-icon {
-      display: block;
-      text-align: center;
-      color: white;
-      border: 2px solid white;
-      border-radius: 100%;
-      background: transparent;
-      width: 20px;
-      height: 20px;
-      margin-right: 10px; }
-    .calendar-commande .error-calendar p {
-      color: white;
-      margin: 0; }
   .calendar-commande #calendar-form {
     padding: 0; }
   .calendar-commande #calendar-form .buttons-wrap, .calendar-commande #commande-form .buttons-wrap, .calendar-commande #paiement-form .buttons-wrap, .calendar-commande #confirmation-form .buttons-wrap {

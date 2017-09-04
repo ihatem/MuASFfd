@@ -38,7 +38,7 @@ function click_cal_suiv () {
   {
     // SCROLL TO TOP
     $('html, body').animate({
-        scrollTop: $("#content-wrap").offset().top
+        scrollTop: $("#contact-main-wrap").offset().top
     }, 300);
     // DISABLE 1-Calendar and ENABLE 2-Commande-form
     $("#commande-form").attr("display", "true");
@@ -59,11 +59,10 @@ function click_cal_suiv () {
   else {
     // SCROLL TO TOP
     $('html, body').animate({
-        scrollTop: $("#content-wrap").offset().top
+        scrollTop: $("#contact-main-wrap").offset().top
     }, 300);
     // DISPLAY Error message
     $(".error-calendar").toggleClass("animated shake");
-    //$(".error-calendar").removeClass("animated fadeInLeft");
     $(".error-calendar").css("display","flex");
   }
 }

@@ -119,6 +119,11 @@ function click_cmd_suiv () {
   )
 
   {
+    // SCROLL TO TOP
+    $('html, body').animate({
+        scrollTop: $("#contact-main-wrap").offset().top
+    }, 300);
+
     // DISABLE 2-Commande-form and ENABLE 3-Paiement-form
     $("#commande-form").attr("display", "false");
     $("#commande-form").css("display", "none");
@@ -135,12 +140,34 @@ function click_cmd_suiv () {
 
     // ENABLE "précédent" BUTTON
     $(".btn-white").removeClass("btn-white-disabled");
+
+    // REMOVE Error message
+    $(".error-calendar").toggleClass("animated shake");
+    $(".error-calendar").css("display","none");
+  }
+  else
+  {
+
+    // SCROLL TO TOP
+    $('html, body').animate({
+        scrollTop: $("#contact-main-wrap").offset().top
+    }, 300);
+
+    // DISPLAY Error message
+    $(".error-calendar").toggleClass("animated shake");
+    $(".error-calendar").css("display","flex");
+
   }
 
 }
 
 // --- ON CLICK "précedent" :
 function click_cmd_prec () {
+
+  // SCROLL TO TOP
+  $('html, body').animate({
+      scrollTop: $("#contact-main-wrap").offset().top
+  }, 300);
 
   // HIDE 2-Commande-form & SHOW 1-Calendar
   $("#calendar-form").attr("display", "true");

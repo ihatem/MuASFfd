@@ -92,6 +92,11 @@ function click_pay_suiv () {
     ($('#input-checkbox').is(':checked'))
   )
   {
+    // SCROLL TO TOP
+    $('html, body').animate({
+        scrollTop: $("#contact-main-wrap").offset().top
+    }, 300);
+
     // DISABLE 3-Paiement-form and ENABLE 4-Confirmation-form
     $("#confirmation-form").attr("display", "true");
     $("#confirmation-form").css("display", "block");
@@ -105,14 +110,32 @@ function click_pay_suiv () {
     $(".confirm-icon").css("filter", "grayscale(0)");
     $(".confirm-icon").next().css("color", "#32c5d2");
 
-    // DISABLE "suivant" & "précedent" BUTTONS
-    $(".buttons-wrap").hide();
+    // REMOVE Error message
+    $(".error-calendar").toggleClass("animated shake");
+    $(".error-calendar").css("display","none");
+
+  }
+  else
+  {
+    // SCROLL TO TOP
+    $('html, body').animate({
+        scrollTop: $("#contact-main-wrap").offset().top
+    }, 300);
+
+    // DISPLAY Error message
+    $(".error-calendar").toggleClass("animated shake");
+    $(".error-calendar").css("display","flex");
   }
 
 }
 
 // --- ON CLICK "précedent" :
 function click_pay_prec () {
+
+    // SCROLL TO TOP
+    $('html, body').animate({
+        scrollTop: $("#contact-main-wrap").offset().top
+    }, 300);
 
     // HIDE 3-Paiement-form & SHOW 2-Commande-form
     $("#commande-form").attr("display", "true");
