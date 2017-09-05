@@ -1592,7 +1592,7 @@ ul {
     color: white;
     margin: 0; }
 
-.pdp {
+.pdp-cmd {
   display: block !important;
   width: 100px !important;
   height: 100px !important;
@@ -1600,7 +1600,7 @@ ul {
   top: 0 !important;
   left: 0 !important;
   margin-left: 120px !important; }
-  .pdp span[flow=right] {
+  .pdp-cmd span[flow=right] {
     width: 20px !important;
     height: 20px !important; }
 
@@ -1659,6 +1659,33 @@ ul {
       font-weight: 100; }
     .contact-wrap-commande .commande-choisie .cmd-choisie-text h2 {
       margin-top: 8px; }
+    .contact-wrap-commande .commande-choisie .presta-details-cmd {
+      display: flex;
+      align-items: center;
+      margin-top: 10px; }
+      .contact-wrap-commande .commande-choisie .presta-details-cmd span {
+        width: 15px;
+        height: 15px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-right: 10px; }
+      .contact-wrap-commande .commande-choisie .presta-details-cmd .visio-icon {
+        background: url("../img/icons/visio-w.svg"); }
+      .contact-wrap-commande .commande-choisie .presta-details-cmd .time-icon {
+        background: url("../img/icons/time-w.svg"); }
+      .contact-wrap-commande .commande-choisie .presta-details-cmd .session-icon {
+        background: url("../img/icons/user-w.svg"); }
+      .contact-wrap-commande .commande-choisie .presta-details-cmd .echange-icon {
+        background: url("../img/icons/echange-w.svg"); }
+      .contact-wrap-commande .commande-choisie .presta-details-cmd hr {
+        width: 1.1px;
+        height: 20px;
+        border: 0;
+        background: white;
+        margin: 0 10px; }
+      .contact-wrap-commande .commande-choisie .presta-details-cmd p {
+        color: white; }
     .contact-wrap-commande .commande-choisie .prix-button {
       color: white;
       font-size: 30px;
@@ -1675,22 +1702,32 @@ ul {
     display: none; }
   .calendar-commande #calendar-form {
     padding: 0; }
-  .calendar-commande #calendar-form .buttons-wrap, .calendar-commande #commande-form .buttons-wrap, .calendar-commande #paiement-form .buttons-wrap, .calendar-commande #confirmation-form .buttons-wrap {
-    margin-top: 60px !important;
-    width: 80%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+  .calendar-commande #confirmation-form .btn-white {
+    width: 50%;
     margin: 0 auto; }
-    .calendar-commande #calendar-form .buttons-wrap .btn-white-disabled, .calendar-commande #commande-form .buttons-wrap .btn-white-disabled, .calendar-commande #paiement-form .buttons-wrap .btn-white-disabled, .calendar-commande #confirmation-form .buttons-wrap .btn-white-disabled {
-      border: 1px solid #8e8e8e;
-      color: #8e8e8e;
-      cursor: default; }
-      .calendar-commande #calendar-form .buttons-wrap .btn-white-disabled:hover, .calendar-commande #commande-form .buttons-wrap .btn-white-disabled:hover, .calendar-commande #paiement-form .buttons-wrap .btn-white-disabled:hover, .calendar-commande #confirmation-form .buttons-wrap .btn-white-disabled:hover {
+  .calendar-commande #confirmation-form .commande-form-wrap {
+    margin-bottom: 70px; }
+  .calendar-commande #confirmation-form .commande-form-title {
+    margin-bottom: 30px; }
+  .calendar-commande #calendar-form, .calendar-commande #commande-form, .calendar-commande #paiement-form, .calendar-commande #confirmation-form {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden; }
+    .calendar-commande #calendar-form .buttons-wrap, .calendar-commande #commande-form .buttons-wrap, .calendar-commande #paiement-form .buttons-wrap, .calendar-commande #confirmation-form .buttons-wrap {
+      margin-top: 60px !important;
+      width: 80%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0 auto; }
+      .calendar-commande #calendar-form .buttons-wrap .btn-white-disabled, .calendar-commande #commande-form .buttons-wrap .btn-white-disabled, .calendar-commande #paiement-form .buttons-wrap .btn-white-disabled, .calendar-commande #confirmation-form .buttons-wrap .btn-white-disabled {
         border: 1px solid #8e8e8e;
-        background: transparent;
-        color: #8e8e8e; }
+        color: #8e8e8e;
+        cursor: default; }
+        .calendar-commande #calendar-form .buttons-wrap .btn-white-disabled:hover, .calendar-commande #commande-form .buttons-wrap .btn-white-disabled:hover, .calendar-commande #paiement-form .buttons-wrap .btn-white-disabled:hover, .calendar-commande #confirmation-form .buttons-wrap .btn-white-disabled:hover {
+          border: 1px solid #8e8e8e;
+          background: transparent;
+          color: #8e8e8e; }
   .calendar-commande .calendar-form, .calendar-commande .confirmation-form, .calendar-commande .paiement-form, .calendar-commande .commande-form {
     width: 100%;
     background: white;
@@ -1725,13 +1762,41 @@ ul {
       .calendar-commande .calendar-form .commande-form-wrap .input-wrap-checkbox, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-checkbox, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-checkbox, .calendar-commande .commande-form .commande-form-wrap .input-wrap-checkbox {
         width: 70%;
         display: flex;
-        align-items: center; }
+        align-items: center;
+        justify-content: center; }
         .calendar-commande .calendar-form .commande-form-wrap .input-wrap-checkbox input, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-checkbox input, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-checkbox input, .calendar-commande .commande-form .commande-form-wrap .input-wrap-checkbox input {
           margin-right: 10px; }
         .calendar-commande .calendar-form .commande-form-wrap .input-wrap-checkbox label, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-checkbox label, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-checkbox label, .calendar-commande .commande-form .commande-form-wrap .input-wrap-checkbox label {
           font-size: 14px;
           font-weight: 100;
           color: #8e8e8e; }
+      .calendar-commande .calendar-form .commande-form-wrap .flash-coppied, .calendar-commande .confirmation-form .commande-form-wrap .flash-coppied, .calendar-commande .paiement-form .commande-form-wrap .flash-coppied, .calendar-commande .commande-form .commande-form-wrap .flash-coppied {
+        width: 80%;
+        height: 40px;
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 8px; }
+        .calendar-commande .calendar-form .commande-form-wrap .flash-coppied p, .calendar-commande .confirmation-form .commande-form-wrap .flash-coppied p, .calendar-commande .paiement-form .commande-form-wrap .flash-coppied p, .calendar-commande .commande-form .commande-form-wrap .flash-coppied p {
+          margin: 0;
+          margin-right: calc(5%/2);
+          width: 20%;
+          background: #343e46;
+          color: white;
+          display: none;
+          justify-content: center;
+          align-items: center;
+          box-shadow: inset 0 0 20px rgba(52, 62, 70, 0);
+          outline: 1px solid;
+          outline-color: rgba(52, 62, 70, 0.5);
+          outline-offset: 0px;
+          text-shadow: none;
+          transition: 300ms all ease-in-out;
+          transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1); }
+        .calendar-commande .calendar-form .commande-form-wrap .flash-coppied .p-animated, .calendar-commande .confirmation-form .commande-form-wrap .flash-coppied .p-animated, .calendar-commande .paiement-form .commande-form-wrap .flash-coppied .p-animated, .calendar-commande .commande-form .commande-form-wrap .flash-coppied .p-animated {
+          transition: 300ms all ease-in-out;
+          box-shadow: inset 0 0 20px rgba(52, 62, 70, 0.5), 0 0 20px rgba(255, 255, 255, 0.2);
+          outline-color: rgba(52, 62, 70, 0);
+          outline-offset: 15px; }
       .calendar-commande .calendar-form .commande-form-wrap .input-wrap-copy input, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-copy input, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-copy input, .calendar-commande .commande-form .commande-form-wrap .input-wrap-copy input {
         width: calc(75% - 10px) !important;
         margin-right: 10px !important;
@@ -1763,8 +1828,10 @@ ul {
       .calendar-commande .calendar-form .commande-form-wrap .input-wrap-copy, .calendar-commande .calendar-form .commande-form-wrap .input-wrap, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-cb, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-copy, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-cb, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-copy, .calendar-commande .paiement-form .commande-form-wrap .input-wrap, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-cb, .calendar-commande .commande-form .commande-form-wrap .input-wrap-copy, .calendar-commande .commande-form .commande-form-wrap .input-wrap, .calendar-commande .commande-form .commande-form-wrap .input-wrap-cb {
         display: flex;
         width: 80%;
-        margin-bottom: 50px;
+        margin-bottom: 30px;
         position: relative; }
+        .calendar-commande .calendar-form .commande-form-wrap .input-wrap-copy:last-child, .calendar-commande .calendar-form .commande-form-wrap .input-wrap:last-child, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-cb:last-child, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-copy:last-child, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap:last-child, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-cb:last-child, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-copy:last-child, .calendar-commande .paiement-form .commande-form-wrap .input-wrap:last-child, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-cb:last-child, .calendar-commande .commande-form .commande-form-wrap .input-wrap-copy:last-child, .calendar-commande .commande-form .commande-form-wrap .input-wrap:last-child, .calendar-commande .commande-form .commande-form-wrap .input-wrap-cb:last-child {
+          margin-bottom: 0; }
         .calendar-commande .calendar-form .commande-form-wrap .input-wrap-copy .expiration-wrap, .calendar-commande .calendar-form .commande-form-wrap .input-wrap .expiration-wrap, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-cb .expiration-wrap, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-copy .expiration-wrap, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap .expiration-wrap, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-cb .expiration-wrap, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-copy .expiration-wrap, .calendar-commande .paiement-form .commande-form-wrap .input-wrap .expiration-wrap, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-cb .expiration-wrap, .calendar-commande .commande-form .commande-form-wrap .input-wrap-copy .expiration-wrap, .calendar-commande .commande-form .commande-form-wrap .input-wrap .expiration-wrap, .calendar-commande .commande-form .commande-form-wrap .input-wrap-cb .expiration-wrap {
           width: 100%;
           display: flex; }

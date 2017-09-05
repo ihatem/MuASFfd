@@ -8,6 +8,7 @@ var reg_mm = new RegExp("0[1-9]|1[012]");
 var reg_aa = new RegExp("^(1[89]|[2-9][0-9])$");
 var reg_ccv = new RegExp("[0-9]{3}");
 
+// INPUT "Titulaire carte bancaire" regex check & add input style (valid or not)
 $("input[name=nom-carte]").keyup(function() {
   if
   (
@@ -24,6 +25,7 @@ $("input[name=nom-carte]").keyup(function() {
   }
 });
 
+// INPUT "Numéro de la carte" regex check & add input style (valid or not)
 $(".inputs").keyup(function() {
   if
   (
@@ -42,6 +44,7 @@ $(".inputs").keyup(function() {
   }
 });
 
+// INPUT "Date d’expiration" regex check & add input style (valid or not)
 $(".inputs-date").keyup(function() {
   if
   (
@@ -58,6 +61,7 @@ $(".inputs-date").keyup(function() {
   }
 });
 
+// INPUT "CCV" regex check & add input style (valid or not)
 $(".inputs-ccv").keyup(function() {
   if (reg_ccv.test($(this).val())) {
     $(this).addClass("input-valid");
@@ -143,7 +147,6 @@ function click_pay_prec () {
     $("#paiement-form").attr("display", "false");
     $("#paiement-form").css("display", "none");
 
-
     // DECREASE Progress bar width to 50% (2/4)
     $(".progress-bar").css("width", "50%");
 
@@ -157,12 +160,14 @@ function click_pay_prec () {
 }
 
 // PASS to next input when input's maxlength is attended
+// > Titulaire carte bancaire
 $(".inputs").keyup(function () {
   if (this.value.length === this.maxLength) {
     $(this).next('.inputs').focus();
   }
 });
 
+// > Date d’expiration
 $(".inputs-date").keyup(function () {
   if (this.value.length === this.maxLength) {
     $(this).next().next('.inputs-date').focus();

@@ -3,7 +3,6 @@ var videoindex = $("iframe").attr("src").indexOf("embed");
 
 var videoid = ("https://www.youtube.com/watch?v="+videourl.substring(videoindex + 6, videourl.length));
 
-console.log(videoid);
 
 var matches = videoid.match(/^https:\/\/www\.youtube\.com\/.*[?&]v=([^&]+)/i) || videoid.match(/^https:\/\/youtu\.be\/([^?]+)/i);
 
@@ -13,7 +12,6 @@ if (matches) {
 
 if (videoid.match(/^[a-z0-9_-]{11}$/i) === null) {
   $(".video-title-text").text("Unable to parse Video ID/URL");
-  //return;
 }
 
 $.getJSON("https://www.googleapis.com/youtube/v3/videos",
@@ -28,16 +26,10 @@ function(data)
   if (data.items.length === 0)
   {
     $(".video-title-text").text("Video not found");
-    //return;
   }
 
   var videodesc = data.items[0].snippet.description.replace(/\n/g, "<br /><br />");;
-
-  console.log(videodesc);
-
   var videoduration = moment.duration(data.items[0].contentDetails.duration,moment.ISO_8601);
-
-  console.log(videoduration._milliseconds);
 
   $(".video-title-text").text(data.items[0].snippet.title);
   $(".video-description-text").html(videodesc);

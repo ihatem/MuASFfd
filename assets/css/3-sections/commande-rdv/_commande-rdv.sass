@@ -21,7 +21,7 @@
     color: $white
     margin: 0
 
-.pdp
+.pdp-cmd
   display: block !important
   width: 100px !important
   height: 100px !important
@@ -92,6 +92,8 @@
     background: -o-linear-gradient(to right, $green-dark, $green-light)
     background: linear-gradient(to right, $green-dark, $green-light)
 
+
+
     .cmd-choisie-text
       h5, h2
         color: $white
@@ -100,6 +102,38 @@
         font-weight: 100
       h2
         margin-top: 8px
+
+    .presta-details-cmd
+      display: flex
+      align-items: center
+      margin-top: 10px
+
+      span
+        width: 15px
+        height: 15px
+        background-position: center
+        background-repeat: no-repeat
+        background-size: cover
+        margin-right: 10px
+      .visio-icon
+        background: url("../img/icons/visio-w.svg")
+      .time-icon
+        background: url("../img/icons/time-w.svg")
+      .session-icon
+        background: url("../img/icons/user-w.svg")
+      .echange-icon
+        background: url("../img/icons/echange-w.svg")
+
+      hr
+        width: 1.1px
+        height: 20px
+        border: 0
+        background: $white
+        margin: 0 10px
+      p
+        color: $white
+
+
     .prix-button
       color: $white
       font-size: 30px
@@ -119,7 +153,18 @@
   #calendar-form
     padding: 0
 
+  #confirmation-form
+    .btn-white
+      width: 50%
+      margin: 0 auto
+    .commande-form-wrap
+      margin-bottom: 70px
+    .commande-form-title
+      margin-bottom: 30px
+
   #calendar-form, #commande-form, #paiement-form, #confirmation-form
+    -webkit-backface-visibility: hidden
+    backface-visibility: hidden
     .buttons-wrap
       margin-top: 60px !important
       width: 80%
@@ -185,6 +230,7 @@
         width: 70%
         display: flex
         align-items: center
+        justify-content: center
         input
           margin-right: 10px
 
@@ -194,8 +240,41 @@
           font-weight: 100
           color: $gray-light
 
+      .flash-coppied
+        //background: red
+        width: 80%
+        height: 40px
+        display: flex
+        justify-content: flex-end
+        margin-bottom: 8px
+
+        p
+          margin: 0
+          margin-right: calc(5%/2)
+          width: 20%
+          background: $blue-dark
+          color: white
+          //border-radius: 5px
+          display: none
+          justify-content: center
+          align-items: center
+
+          box-shadow: inset 0 0 20px rgba(52, 62, 70, 0)
+          outline: 1px solid
+          outline-color: rgba(52, 62, 70, .5)
+          outline-offset: 0px
+          text-shadow: none
+          transition: 300ms all ease-in-out
+          transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1)
+
+        .p-animated
+          transition: 300ms all ease-in-out
+          box-shadow: inset 0 0 20px rgba(52, 62, 70, .5), 0 0 20px rgba(255, 255, 255, .2)
+          outline-color: rgba(52, 62, 70, 0)
+          outline-offset: 15px
 
       .input-wrap-copy
+
         input
           width: calc(75% - 10px) !important
           margin-right: 10px !important
@@ -214,6 +293,8 @@
           transition: 300ms all ease-in-out
           &:hover
             background: $green-dark
+
+
 
           .copy-icon
             display: block
@@ -237,8 +318,10 @@
       .input-wrap-copy, .input-wrap, .input-wrap-cb
         display: flex
         width: 80%
-        margin-bottom: 50px
+        margin-bottom: 30px
         position: relative
+        &:last-child
+          margin-bottom: 0
 
         .expiration-wrap
           width: 100%

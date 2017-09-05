@@ -1,1 +1,1 @@
-$.getScript("assets/js/clipboard.min.js"),new Clipboard(".btn-copy");
+$.getScript("assets/js/clipboard.min.js"),new Clipboard(".btn-copy"),$(".btn-copy").click(function(){$(".flash-coppied > p").css("display","flex"),setTimeout(function(){$(".flash-coppied > p").addClass("p-animated")},100),setTimeout(function(){$(".flash-coppied > p").removeClass("p-animated"),$(".flash-coppied > p").css("display","none")},2e3)});

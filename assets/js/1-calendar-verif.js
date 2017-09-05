@@ -36,6 +36,7 @@ function click_cal_suiv () {
     ($("td").data('clicked'))
   )
   {
+
     // SCROLL TO TOP
     $('html, body').animate({
         scrollTop: $("#contact-main-wrap").offset().top
@@ -55,14 +56,18 @@ function click_cal_suiv () {
 
     // ENABLE "précédent" BUTTON
     $(".btn-white").removeClass("btn-white-disabled");
+
   }
   else {
+
     // SCROLL TO TOP
     $('html, body').animate({
         scrollTop: $("#contact-main-wrap").offset().top
     }, 300);
+
     // DISPLAY Error message
     $(".error-calendar").toggleClass("animated shake");
     $(".error-calendar").css("display","flex");
+
   }
 }

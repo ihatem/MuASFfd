@@ -1,5 +1,5 @@
 
-//STICKY NAV MENU
+// STICKY NAV MENU
 $("nav").sticky({
 	zIndex:9999
 });
@@ -12,14 +12,14 @@ $('nav').on('sticky-end', function() {
 	$("nav").toggleClass("sticky");
 });
 
-
-//open popup
+// "Conditions de vente" POPUP
+// OPEN popup
 $('.cdv').on('click', function(event){
 	event.preventDefault();
 	$('.cd-popup').addClass('is-visible');
 });
 
-//close popup
+// CLOSE popup
 $('.cd-popup').on('click', function(event){
 	if( $(event.target).is('.cd-popup-close') || $(event.target).is('.cd-popup') ) {
 		event.preventDefault();
@@ -27,21 +27,22 @@ $('.cd-popup').on('click', function(event){
 	}
 });
 
-//close popup when clicking the esc keyboard button
+// CLOSE popup when clicking the "esc" keyboard button
 $(document).keyup(function(event){
-  	if(event.which==='27'){
+  	if(event.which === 27){
   		$('.cd-popup').removeClass('is-visible');
     }
   });
 
 
-//open popup
+// "Politique de confidentialité" POPUP
+// OPEN popup
 $('.pdq').on('click', function(event){
 	event.preventDefault();
 	$('#cd-popup-politique').addClass('is-visible');
 });
 
-//close popup
+// CLOSE popup
 $('#cd-popup-politique').on('click', function(event){
 	if( $(event.target).is('.cd-popup-close') || $(event.target).is('#cd-popup-politique') ) {
 		event.preventDefault();
@@ -49,9 +50,9 @@ $('#cd-popup-politique').on('click', function(event){
 	}
 });
 
-//close popup when clicking the esc keyboard button
+// CLOSE popup when clicking the "esc" keyboard button
 $(document).keyup(function(event){
-  	if(event.which==='27'){
+  	if(event.which === 27){
   		$('#cd-popup-politique').removeClass('is-visible');
     }
 });

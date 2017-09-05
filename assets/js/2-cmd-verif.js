@@ -6,6 +6,7 @@ var reg_mail = new RegExp("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$");
 var reg_bd = new RegExp("^(?:(?:31(\\/|-|\\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\\/|-|\\.)(?:0?[1,3-9]|1[0-2])\\2))(?:(?:1[6-9]|[2-9]\\d)?\\d{2})$|^(?:29(\\/|-|\\.)0?2\\3(?:(?:(?:1[6-9]|[2-9]\\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\\d|2[0-8])(\\/|-|\\.)(?:(?:0?[1-9])|(?:1[0-2]))\\4(?:(?:1[6-9]|[2-9]\\d)?\\d{2})$");
 var reg_tel = new RegExp ("^[0-9]*$");
 
+// INPUT "Adresse e-mail" regex check & add input style (valid or not)
 $("input[name=mail]").keyup(function() {
   if (reg_mail.test($(this).val().toLowerCase())) {
     $(this).addClass("input-valid");
@@ -17,6 +18,7 @@ $("input[name=mail]").keyup(function() {
   }
 });
 
+// INPUT "Nom" regex check & add input style (valid or not)
 $("input[name=nom]").keyup(function() {
   if
   (
@@ -33,6 +35,7 @@ $("input[name=nom]").keyup(function() {
   }
 });
 
+// INPUT "Prénom" regex check & add input style (valid or not)
 $("input[name=prenom]").keyup(function() {
   if
   (
@@ -49,6 +52,7 @@ $("input[name=prenom]").keyup(function() {
   }
 });
 
+// INPUT "Date de naissance" regex check & add input style (valid or not)
 $("input[name=birth]").keyup(function() {
   if (reg_bd.test($(this).val())) {
     $(this).addClass("input-valid");
@@ -60,6 +64,7 @@ $("input[name=birth]").keyup(function() {
   }
 });
 
+// INPUT "Téléphone" regex check & add input style (valid or not)
 $("input[name=tel]").keyup(function() {
   if
   (
@@ -76,15 +81,17 @@ $("input[name=tel]").keyup(function() {
   }
 });
 
-//
+// ADD STYLE to "Pays de résidence" input when clicked
 $(".label-selected-pays").click(function () {
   $(".default-label-pays").css("border","2px solid #32c5d2");
 });
 
+// ADD STYLE to "Fuseau horaire" input when clicked
 $(".label-selected-fuseau").click(function () {
   $(".default-label-fuseau").css("border","2px solid #32c5d2");
 });
 
+// ADD STYLE to "Prefix" input when clicked
 $(".label-selected-tel").click(function () {
   $(".default-label-tel").css(
     {
@@ -213,6 +220,12 @@ $(".default-label-pays").click(function() {
 $(".label-selected-pays").each(function() {
   $(this).find(".country-icon").addClass("flag-icon flag-icon-" + $(this).attr("value").toLowerCase());
 });
+
+// ADD country PREFIX (af, ax, al...) to span class to SHOW icon from flag-icon.min.css
+$(".label-selected-tel").each(function() {
+  $(this).find(".country-icon").addClass("flag-icon flag-icon-" + $(this).attr("data-countrycode").toLowerCase());
+});
+
 
 // Fuseau horaire
 // CHANGE LABEL TEXT WHEN SELECT
