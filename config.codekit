@@ -463,6 +463,39 @@
 		"shouldRunBless": 0,
 		"useLibsass": false
 		},
+	"\/assets\/img\/couverture.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 810892,
+		"inputAbbreviatedPath": "\/assets\/img\/couverture.jpg",
+		"outputAbbreviatedPath": "\/assets\/img\/couverture.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/img\/logo-naturopathe.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 15167,
+		"inputAbbreviatedPath": "\/assets\/img\/logo-naturopathe.png",
+		"outputAbbreviatedPath": "\/assets\/img\/logo-naturopathe.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/img\/portrait.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 321938,
+		"inputAbbreviatedPath": "\/assets\/img\/portrait.jpg",
+		"outputAbbreviatedPath": "\/assets\/img\/portrait.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/assets\/js\/1-calendar-verif.js": {
 		"fileType": 64,
 		"ignore": 0,
