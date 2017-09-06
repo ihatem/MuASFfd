@@ -503,11 +503,11 @@ th {
 * {
   font-family: "graphik"; }
 
-.background-default, .facebook-link, .twitter-link, .wordpress-link, .linkedin-link, .mail-link, .time-icon, .visio-icon, .cabinet-icon, .session-icon, .likes-icon, .comment-icon, .location-icon, .money-icon, .star-icon, .duration-icon, .general-icon, .echange-icon, .echange-p-icon, .webcam-icon, .cart-icon, .phone-icon, .contact-icon, .arrow-left-icon, .arrow-left-icon2, .arrow-right-icon, .link-icon, .choix-rdv-icon, .form-icon, .paiement-icon, .confirm-icon, .copy-icon {
+.facebook-link, .twitter-link, .wordpress-link, .linkedin-link, .mail-link, .time-icon, .visio-icon, .cabinet-icon, .session-icon, .likes-icon, .comment-icon, .location-icon, .money-icon, .star-icon, .duration-icon, .general-icon, .echange-icon, .echange-p-icon, .webcam-icon, .cart-icon, .phone-icon, .contact-icon, .arrow-left-icon, .arrow-left-icon2, .arrow-right-icon, .link-icon, .choix-rdv-icon, .form-icon, .paiement-icon, .confirm-icon, .copy-icon {
   background-position: center !important;
   background-repeat: no-repeat !important;
   background-size: contain !important;
-  transition: 0.3s all ease-in-out; }
+  transition: 0.3s all ease-in-out !important; }
 
 .facebook-link {
   background: url("../img/icons/fb-g.svg");
