@@ -1,12 +1,12 @@
 /*jshint devel:true */
 
-// VERIFY if calendar schedule (<td>) is selected
-$("td").click(function(){
-  $("td").data('clicked', true);
+// VERIFY if calendar schedule (<.td-week>) is selected
+$(".td-week").click(function(){
+  $(".td-week").data('clicked', true);
 });
 
 // SELECT schedule (<tr>) apart days name (.days-row) and inactive days (.dispo-disable)
-$("td").click(function () {
+$(".td-week").click(function () {
 
   if
   (
@@ -16,9 +16,9 @@ $("td").click(function () {
     ($(this).attr("class") !== "dispo-disable")
   )
   {
-    // REMOVE all the other <td> activated
-    $("td").removeClass("dispo-active");
-    // ACTIVATE (highlight) <td> clicked
+    // REMOVE all the other <.td-week> activated
+    $(".td-week").removeClass("dispo-active");
+    // ACTIVATE (highlight) <.td-week> clicked
     $(this).toggleClass("dispo-active");
     // HIDE Error message
     $(".error-calendar").css("display","none");
@@ -32,8 +32,8 @@ function click_cal_suiv () {
   // 1- on Calendar page
   if
   (
-    // if 1 schedule <td> is selected
-    ($("td").data('clicked'))
+    // if 1 schedule <.td-week> is selected
+    ($(".td-week").data('clicked'))
   )
   {
 

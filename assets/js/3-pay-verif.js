@@ -73,6 +73,11 @@ $(".inputs-ccv").keyup(function() {
   }
 });
 
+// DISABLE selction on slash "MM / AA"
+$(".inputs-date-slash").mousedown( function () {
+    return false;
+});
+
 // VERIFICATIONS on click between different command pages process
 // --- ON CLICK "suivant" :
 function click_pay_suiv () {

@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="assets/img/favicons/favicon.ico">
-  <link rel="stylesheet" href="assets/css/main.min.css" />
+  <link rel="stylesheet" href="assets/css/main.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 </head>
 
@@ -90,6 +90,10 @@
             <span class="session-icon"></span>
             <p class="p-met">session individuelle</p>
           </div>
+          <div class="presta-details-cmd">
+            <span class="choix-rdv-icon"></span>
+            <p class="p-met p-date-rdv"></p>
+          </div>
         </div>
         <span class="prix-button">60<sup>€</sup></span>
       </div>
@@ -103,159 +107,247 @@
           </div>
           <div class="semaine-mois-selection">
             <div class="semaine-mois-button">
-              <span>semaine</span>
-              <span>mois</span>
+              <span class="semaine-select semaine-mois-selected">semaine</span>
+              <span class="mois-select">mois</span>
             </div>
           </div>
-          <div class="semaine-mois-actuel">
-            <p>juillet 2017</p>
-            <div class="aujourd-selection">
-              <a href="#" target="_blank"><span class="arrow-left-icon"></span></a>
-              <a href="#" target="_blank">aujoud'hui</a>
-              <a href="#" target="_blank"><span class="arrow-right-icon"></span></a>
+
+          <div class="semaine-wrap">
+
+            <div class="semaine-mois-actuel">
+              <div class="mois-annee-wrap">
+                <p class="mois-p-sem"></p>
+                <p class="annee-p-sem"></p>
+              </div>
+              <div class="aujourd-selection">
+                <a class="sem-prec-sem"><span class="arrow-left-icon"></span></a>
+                <a class="sem-ajd-sem">aujoud'hui</a>
+                <a class="sem-suiv-sem"><span class="arrow-right-icon"></span></a>
+              </div>
             </div>
+
+            <table id="table-week">
+              <tr class="days-row">
+                <td class="lundi"><p class="DDDD">LUN.&nbsp;</p><p class="dd"></p></td>
+                <td class="mardi"><p class="DDDD">MAR.&nbsp;</p> <p class="dd"></p></td>
+                <td class="mercredi"><p class="DDDD">MER.&nbsp;</p> <p class="dd"></p></td>
+                <td class="jeudi"><p class="DDDD">JEU.&nbsp;</p> <p class="dd"></p></td>
+                <td class="vendredi"><p class="DDDD">VEN.&nbsp;</p><p class="dd"></p></td>
+                <td class="samedi dispo-disable"><p class="DDDD">SAM.&nbsp;</p><p class="dd"></p></td>
+                <td class="dimanche dispo-disable"><p class="DDDD">DIM.&nbsp;</p><p class="dd"></p></td>
+              </tr>
+              <tr>
+                <td class="td-week">10:00</td>
+                <td class="td-week">10:00</td>
+                <td class="td-week">10:00</td>
+                <td class="td-week">10:00</td>
+                <td class="td-week">10:00</td>
+                <td class="td-week dispo-disable">10:00</td>
+                <td class="td-week dispo-disable">10:00</td>
+              </tr>
+
+              <tr>
+                <td class="td-week">10:30</td>
+                <td class="td-week">10:30</td>
+                <td class="td-week">10:30</td>
+                <td class="td-week">10:30</td>
+                <td class="td-week">10:30</td>
+                <td class="td-week dispo-disable">10:30</td>
+                <td class="td-week dispo-disable">10:30</td>
+              </tr>
+              <tr>
+                <td class="td-week">11:00</td>
+                <td class="td-week">11:00</td>
+                <td class="td-week">11:00</td>
+                <td class="td-week">11:00</td>
+                <td class="td-week">11:00</td>
+                <td class="td-week dispo-disable">11:00</td>
+                <td class="td-week dispo-disable">11:00</td>
+              </tr>
+              <tr>
+                <td class="td-week">11:30</td>
+                <td class="td-week">11:30</td>
+                <td class="td-week">11:30</td>
+                <td class="td-week">11:30</td>
+                <td class="td-week">11:30</td>
+                <td class="td-week dispo-disable">11:30</td>
+                <td class="td-week dispo-disable">11:30</td>
+              </tr>
+              <tr>
+                <td class="td-week">12:00</td>
+                <td class="td-week">12:00</td>
+                <td class="td-week">12:00</td>
+                <td class="td-week">12:00</td>
+                <td class="td-week">12:00</td>
+                <td class="td-week dispo-disable">12:00</td>
+                <td class="td-week dispo-disable">12:00</td>
+              </tr>
+              <tr>
+                <td class="td-week">13:30</td>
+                <td class="td-week">13:30</td>
+                <td class="td-week">13:30</td>
+                <td class="td-week">13:30</td>
+                <td class="td-week">13:30</td>
+                <td class="td-week dispo-disable">13:30</td>
+                <td class="td-week dispo-disable">13:30</td>
+              </tr>
+              <tr>
+                <td class="td-week">14:00</td>
+                <td class="td-week">14:00</td>
+                <td class="td-week">14:00</td>
+                <td class="td-week">14:00</td>
+                <td class="td-week">14:00</td>
+                <td class="td-week dispo-disable">14:00</td>
+                <td class="td-week dispo-disable">14:00</td>
+              </tr>
+              <tr>
+                <td class="td-week">14:30</td>
+                <td class="td-week">14:30</td>
+                <td class="td-week">14:30</td>
+                <td class="td-week">14:30</td>
+                <td class="td-week">14:30</td>
+                <td class="td-week dispo-disable">14:30</td>
+                <td class="td-week dispo-disable">14:30</td>
+              </tr>
+              <tr>
+                <td class="td-week">15:00</td>
+                <td class="td-week">15:00</td>
+                <td class="td-week">15:00</td>
+                <td class="td-week">15:00</td>
+                <td class="td-week">15:00</td>
+                <td class="td-week dispo-disable">15:00</td>
+                <td class="td-week dispo-disable">15:00</td>
+              </tr>
+              <tr>
+                <td class="td-week">15:30</td>
+                <td class="td-week">15:30</td>
+                <td class="td-week">15:30</td>
+                <td class="td-week">15:30</td>
+                <td class="td-week">15:30</td>
+                <td class="td-week dispo-disable">15:30</td>
+                <td class="td-week dispo-disable">15:30</td>
+              </tr>
+              <tr>
+                <td class="td-week">15:30</td>
+                <td class="td-week">15:30</td>
+                <td class="td-week">15:30</td>
+                <td class="td-week">15:30</td>
+                <td class="td-week">15:30</td>
+                <td class="td-week dispo-disable">15:30</td>
+                <td class="td-week dispo-disable">15:30</td>
+              </tr>
+              <tr>
+                <td class="td-week">16:00</td>
+                <td class="td-week">16:00</td>
+                <td class="td-week">16:00</td>
+                <td class="td-week">16:00</td>
+                <td class="td-week">16:00</td>
+                <td class="td-week dispo-disable">16:00</td>
+                <td class="td-week dispo-disable">16:00</td>
+              </tr>
+              <tr>
+                <td class="td-week">16:30</td>
+                <td class="td-week">16:30</td>
+                <td class="td-week">16:30</td>
+                <td class="td-week">16:30</td>
+                <td class="td-week">16:30</td>
+                <td class="td-week dispo-disable">16:30</td>
+                <td class="td-week dispo-disable">16:30</td>
+              </tr>
+              <tr>
+                <td class="td-week">17:00</td>
+                <td class="td-week">17:00</td>
+                <td class="td-week">17:00</td>
+                <td class="td-week">17:00</td>
+                <td class="td-week">17:00</td>
+                <td class="td-week dispo-disable">17:00</td>
+                <td class="td-week dispo-disable">17:00</td>
+              </tr>
+
+            </table>
+
           </div>
-          <table>
-            <tr class="days-row">
-              <td>LUN. <span class="round-date">17</span></td>
-              <td>MAR. 18</td>
-              <td>MER. 19</td>
-              <td>JEU. 20</td>
-              <td>VEN. 21</td>
-              <td class="dispo-disable">SAM. 22</td>
-              <td class="dispo-disable">DIM. 23</td>
-            </tr>
-            <tr>
-              <td>10:00</td>
-              <td>10:00</td>
-              <td>10:00</td>
-              <td>10:00</td>
-              <td>10:00</td>
-              <td class="dispo-disable">10:00</td>
-              <td class="dispo-disable">10:00</td>
-            </tr>
 
-            <tr>
-              <td>10:30</td>
-              <td>10:30</td>
-              <td>10:30</td>
-              <td>10:30</td>
-              <td>10:30</td>
-              <td class="dispo-disable">10:30</td>
-              <td class="dispo-disable">10:30</td>
-            </tr>
-            <tr>
-              <td>11:00</td>
-              <td>11:00</td>
-              <td>11:00</td>
-              <td>11:00</td>
-              <td>11:00</td>
-              <td class="dispo-disable">11:00</td>
-              <td class="dispo-disable">11:00</td>
-            </tr>
-            <tr>
-              <td>11:30</td>
-              <td>11:30</td>
-              <td>11:30</td>
-              <td>11:30</td>
-              <td>11:30</td>
-              <td class="dispo-disable">11:30</td>
-              <td class="dispo-disable">11:30</td>
-            </tr>
-            <tr>
-              <td>12:00</td>
-              <td>12:00</td>
-              <td>12:00</td>
-              <td>12:00</td>
-              <td>12:00</td>
-              <td class="dispo-disable">12:00</td>
-              <td class="dispo-disable">12:00</td>
-            </tr>
-            <tr>
-              <td>13:30</td>
-              <td>13:30</td>
-              <td>13:30</td>
-              <td>13:30</td>
-              <td>13:30</td>
-              <td class="dispo-disable">13:30</td>
-              <td class="dispo-disable">13:30</td>
-            </tr>
-            <tr>
-              <td>14:00</td>
-              <td>14:00</td>
-              <td>14:00</td>
-              <td>14:00</td>
-              <td>14:00</td>
-              <td class="dispo-disable">14:00</td>
-              <td class="dispo-disable">14:00</td>
-            </tr>
-            <tr>
-              <td>14:30</td>
-              <td>14:30</td>
-              <td>14:30</td>
-              <td>14:30</td>
-              <td>14:30</td>
-              <td class="dispo-disable">14:30</td>
-              <td class="dispo-disable">14:30</td>
-            </tr>
-            <tr>
-              <td>15:00</td>
-              <td>15:00</td>
-              <td>15:00</td>
-              <td>15:00</td>
-              <td>15:00</td>
-              <td class="dispo-disable">15:00</td>
-              <td class="dispo-disable">15:00</td>
-            </tr>
-            <tr>
-              <td>15:30</td>
-              <td>15:30</td>
-              <td>15:30</td>
-              <td>15:30</td>
-              <td>15:30</td>
-              <td class="dispo-disable">15:30</td>
-              <td class="dispo-disable">15:30</td>
-            </tr>
-            <tr>
-              <td>15:30</td>
-              <td>15:30</td>
-              <td>15:30</td>
-              <td>15:30</td>
-              <td>15:30</td>
-              <td class="dispo-disable">15:30</td>
-              <td class="dispo-disable">15:30</td>
-            </tr>
-            <tr>
-              <td>16:00</td>
-              <td>16:00</td>
-              <td>16:00</td>
-              <td>16:00</td>
-              <td>16:00</td>
-              <td class="dispo-disable">16:00</td>
-              <td class="dispo-disable">16:00</td>
-            </tr>
-            <tr>
-              <td>16:30</td>
-              <td>16:30</td>
-              <td>16:30</td>
-              <td>16:30</td>
-              <td>16:30</td>
-              <td class="dispo-disable">16:30</td>
-              <td class="dispo-disable">16:30</td>
-            </tr>
-            <tr>
-              <td>17:00</td>
-              <td>17:00</td>
-              <td>17:00</td>
-              <td>17:00</td>
-              <td>17:00</td>
-              <td class="dispo-disable">17:00</td>
-              <td class="dispo-disable">17:00</td>
+          <div class="mois-wrap">
 
+            <div class="semaine-mois-actuel">
+              <div class="mois-annee-wrap">
+                <p class="mois-p-mon"></p>
+                <p class="annee-p-mon"></p>
+              </div>
+              <div class="aujourd-selection">
+                <a class="sem-prec-mon"><span class="arrow-left-icon"></span></a>
+                <a class="sem-ajd-mon">aujoud'hui</a>
+                <a class="sem-suiv-mon"><span class="arrow-right-icon"></span></a>
+              </div>
+            </div>
 
-            </tr>
-
-          </table>
+            <table id="table-mon">
+              <tr class="days-row">
+                <td>LUN.</td>
+                <td>MAR.</td>
+                <td>MER.</td>
+                <td>JEU.</td>
+                <td>VEN.</td>
+                <td>SAM.</td>
+                <td>DIM.</td>
+              </tr>
+              <tr>
+                <td class="td-mon" date-value=""><span></span></td>
+                <td class="td-mon" date-value=""><span></span></td>
+                <td class="td-mon" date-value=""><span></span></td>
+                <td class="td-mon" date-value=""><span></span></td>
+                <td class="td-mon" date-value=""><span></span></td>
+                <td class="td-mon" date-value=""><span></span></td>
+                <td class="td-mon" date-value=""><span></span></td>
+              </tr>
+              <tr>
+                <td class="td-mon" date-value=""><span></span></td>
+                <td class="td-mon" date-value=""><span></span></td>
+                <td class="td-mon" date-value=""><span></span></td>
+                <td class="td-mon" date-value=""><span></span></td>
+                <td class="td-mon" date-value=""><span></span></td>
+                <td class="td-mon" date-value=""><span></span></td>
+                <td class="td-mon" date-value=""><span></span></td>
+              </tr>
+              <tr>
+                <td class="td-mon" date-value=""><span></span></td>
+                <td class="td-mon" date-value=""><span></span></td>
+                <td class="td-mon" date-value=""><span></span></td>
+                <td class="td-mon" date-value=""><span></span></td>
+                <td class="td-mon" date-value=""><span></span></td>
+                <td class="td-mon" date-value=""><span></span></td>
+                <td class="td-mon" date-value=""><span></span></td>
+              </tr>
+              <tr>
+                <td class="td-mon" date-value=""><span></span></td>
+                <td class="td-mon" date-value=""><span></span></td>
+                <td class="td-mon" date-value=""><span></span></td>
+                <td class="td-mon" date-value=""><span></span></td>
+                <td class="td-mon" date-value=""><span></span></td>
+                <td class="td-mon" date-value=""><span></span></td>
+                <td class="td-mon" date-value=""><span></span></td>
+              </tr>
+              <tr>
+                <td class="td-mon" date-value=""><span></span></td>
+                <td class="td-mon" date-value=""><span></span></td>
+                <td class="td-mon" date-value=""><span></span></td>
+                <td class="td-mon" date-value=""><span></span></td>
+                <td class="td-mon" date-value=""><span></span></td>
+                <td class="td-mon" date-value=""><span></span></td>
+                <td class="td-mon" date-value=""><span></span></td>
+              </tr>
+              <tr>
+                <td class="td-mon" date-value=""><span></span></td>
+                <td class="td-mon" date-value=""><span></span></td>
+                <td class="td-mon" date-value=""><span></span></td>
+                <td class="td-mon" date-value=""><span></span></td>
+                <td class="td-mon" date-value=""><span></span></td>
+                <td class="td-mon" date-value=""><span></span></td>
+                <td class="td-mon" date-value=""><span></span></td>
+              </tr>
+            </table>
+          </div>
 
           <div class="buttons-wrap">
             <button class="btn-white btn-white-disabled btn">précédent</button>
@@ -921,7 +1013,7 @@
                 <span>Date d’expiration</span>
                 <div class="date-form-wrap">
                   <input name="mm" class="inputs-date" type="text" maxlength="2" placeholder="MM">
-                  <input type="texte" class="inputs-date" value="/" readonly/>
+                  <input type="texte" class="inputs-date inputs-date-slash" value="/" readonly/>
                   <input name="aa" class="inputs-date" type="text" placeholder="AA" maxlength="2">
                 </div>
                 <span class="span-ccv">CCV
@@ -1060,10 +1152,14 @@
 <!-- footer.js minified DECLARE -->
 <script src="assets/js/min/footer-min.js"></script>
 
-<script>
-  console.log("version : 4 sept 12:06");
-</script>
+<!-- XDate.js minified DECLARE -->
+<script src="assets/js/xdate.js"></script>
 
-</body>
+<!-- calendar.js minified DECLARE -->
+<script src="assets/js/jquery-watch.min.js"></script>
+
+<!-- calendar.js minified DECLARE -->
+<script src="assets/js/calendar.js"></script>
+
 
 </html>

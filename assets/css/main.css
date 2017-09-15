@@ -89,7 +89,6 @@ figure {
   margin: 1em 40px; }
 
 hr {
-  -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0; }
 
@@ -149,8 +148,6 @@ input[type="number"]::-webkit-outer-spin-button {
 
 input[type="search"] {
   -webkit-appearance: textfield;
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
   box-sizing: content-box; }
 
 input[type="search"]::-webkit-search-cancel-button,
@@ -190,7 +187,10 @@ th {
     font-size: 0.9em;
     /* opinion 3 */
     line-height: 1;
-    user-select: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
     pointer-events: none;
     position: absolute;
     display: none;
@@ -229,7 +229,10 @@ th {
     font-size: 1.2em;
     /* opinion 3 */
     line-height: 1;
-    user-select: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
     pointer-events: none;
     position: absolute;
     display: none;
@@ -273,10 +276,12 @@ th {
   bottom: calc(100% + 5px); }
 [tooltip]:not([flow])::before, [tooltip]:not([flow])::after {
   left: 50%;
-  transform: translate(-50%, -0.5em); }
+  -webkit-transform: translate(-50%, -0.5em);
+          transform: translate(-50%, -0.5em); }
 [tooltip][flow^="up"]::before, [tooltip][flow^="up"]::after {
   left: 50%;
-  transform: translate(-50%, -0.5em); }
+  -webkit-transform: translate(-50%, -0.5em);
+          transform: translate(-50%, -0.5em); }
 [tooltip][flow^="down"]::before {
   top: 100%;
   border-top-width: 0;
@@ -285,60 +290,87 @@ th {
   top: calc(100% + 5px); }
 [tooltip][flow^="down"]::before, [tooltip][flow^="down"]::after {
   left: 50%;
-  transform: translate(-50%, 0.5em); }
+  -webkit-transform: translate(-50%, 0.5em);
+          transform: translate(-50%, 0.5em); }
 [tooltip][flow^="left"]::before {
   top: 50%;
   border-right-width: 0;
   border-left-color: #333;
   left: calc(0em - 5px);
-  transform: translate(-0.5em, -50%); }
+  -webkit-transform: translate(-0.5em, -50%);
+          transform: translate(-0.5em, -50%); }
 [tooltip][flow^="left"]::after {
   top: 50%;
   right: calc(100% + 5px);
-  transform: translate(-0.5em, -50%); }
+  -webkit-transform: translate(-0.5em, -50%);
+          transform: translate(-0.5em, -50%); }
 [tooltip][flow^="right"]::before {
   top: 50%;
   border-left-width: 0;
   border-right-color: #333;
   right: calc(0em - 5px);
-  transform: translate(0.5em, -50%); }
+  -webkit-transform: translate(0.5em, -50%);
+          transform: translate(0.5em, -50%); }
 [tooltip][flow^="right"]::after {
   top: 50%;
   left: calc(100% + 5px);
-  transform: translate(0.5em, -50%); }
+  -webkit-transform: translate(0.5em, -50%);
+          transform: translate(0.5em, -50%); }
 [tooltip]:not([flow]):hover::before, [tooltip]:not([flow]):hover::after {
-  animation: tooltips-vert 300ms ease-out forwards; }
+  -webkit-animation: tooltips-vert 300ms ease-out forwards;
+          animation: tooltips-vert 300ms ease-out forwards; }
 [tooltip][flow^="up"]:hover::before, [tooltip][flow^="up"]:hover::after {
-  animation: tooltips-vert 300ms ease-out forwards; }
+  -webkit-animation: tooltips-vert 300ms ease-out forwards;
+          animation: tooltips-vert 300ms ease-out forwards; }
 [tooltip][flow^="down"]:hover::before, [tooltip][flow^="down"]:hover::after {
-  animation: tooltips-vert 300ms ease-out forwards; }
+  -webkit-animation: tooltips-vert 300ms ease-out forwards;
+          animation: tooltips-vert 300ms ease-out forwards; }
 [tooltip][flow^="left"]:hover::before, [tooltip][flow^="left"]:hover::after {
-  animation: tooltips-horz 300ms ease-out forwards; }
+  -webkit-animation: tooltips-horz 300ms ease-out forwards;
+          animation: tooltips-horz 300ms ease-out forwards; }
 [tooltip][flow^="right"]:hover::before, [tooltip][flow^="right"]:hover::after {
-  animation: tooltips-horz 300ms ease-out forwards; }
+  -webkit-animation: tooltips-horz 300ms ease-out forwards;
+          animation: tooltips-horz 300ms ease-out forwards; }
 
 /* FLOW: DOWN */
 /* FLOW: LEFT */
 /* FLOW: RIGHT */
 /* KEYFRAMES */
+@-webkit-keyframes tooltips-vert {
+  to {
+    opacity: 0.9;
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0); } }
 @keyframes tooltips-vert {
   to {
     opacity: 0.9;
-    transform: translate(-50%, 0); } }
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0); } }
+@-webkit-keyframes tooltips-horz {
+  to {
+    opacity: 0.9;
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%); } }
 @keyframes tooltips-horz {
   to {
     opacity: 0.9;
-    transform: translate(0, -50%); } }
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%); } }
 .btn {
   font-size: 11px;
   padding: 14px 0px;
   text-transform: uppercase;
   font-weight: 500;
+  -webkit-transition: 0.2s all ease-in-out;
   transition: 0.2s all ease-in-out; }
 
 .btn-white {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   cursor: pointer;
   background: rgba(255, 255, 255, 0);
   border: 2px solid #32c5d2;
@@ -351,8 +383,12 @@ th {
     border: 2px solid #27a8b4; }
 
 .btn-green {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   cursor: pointer;
   background: #32c5d2;
   border: 2px solid #32c5d2;
@@ -367,122 +403,182 @@ th {
   padding: 11px 13px;
   background: #32c5d2;
   background: -webkit-linear-gradient(to right, #27a8b4, #32c5d2);
-  background: -moz-linear-gradient(to right, #27a8b4, #32c5d2);
-  background: -o-linear-gradient(to right, #27a8b4, #32c5d2);
+  background: -webkit-linear-gradient(left, #27a8b4, #32c5d2);
   background: linear-gradient(to right, #27a8b4, #32c5d2);
   margin-top: 20px;
   text-transform: uppercase;
   border: 0;
   color: white;
   font-weight: 500;
+  -webkit-transition: 0.2s all ease-in-out;
   transition: 0.2s all ease-in-out; }
   .btn-green-gradient:hover {
-    transform: scale(1.04);
+    -webkit-transform: scale(1.04);
+            transform: scale(1.04);
     box-shadow: 0 7px 14px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.1); }
 
-.content-wrap-dispo {
+.semaine-mois-selection {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  flex-direction: column; }
-  .content-wrap-dispo .semaine-mois-selection {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 50px; }
+  .semaine-mois-selection .semaine-mois-button .mois-select, .semaine-mois-selection .semaine-mois-button .semaine-select {
+    padding: 15px;
+    text-transform: uppercase;
+    font-weight: 100;
+    -webkit-transition: 300ms all ease-in-out;
+    transition: 300ms all ease-in-out;
+    cursor: pointer;
+    color: #707070;
+    background: #e0f7f8; }
+    .semaine-mois-selection .semaine-mois-button .mois-select:hover, .semaine-mois-selection .semaine-mois-button .semaine-select:hover {
+      color: white;
+      background: #32c5d2; }
+  .semaine-mois-selection .semaine-mois-button .semaine-select {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px; }
+  .semaine-mois-selection .semaine-mois-button .mois-select {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px; }
+  .semaine-mois-selection .semaine-mois-button .semaine-mois-selected {
+    color: white;
+    background: #32c5d2; }
+
+.mois-wrap {
+  display: none; }
+
+.semaine-mois-actuel {
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  margin: 30px; }
+  .semaine-mois-actuel .mois-annee-wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    height: 50px; }
-    .content-wrap-dispo .semaine-mois-selection .semaine-mois-button span {
+    text-transform: uppercase;
+    color: #8e8e8e;
+    font-size: 26px;
+    font-weight: 100; }
+    .semaine-mois-actuel .mois-annee-wrap p {
+      margin: 0; }
+  .semaine-mois-actuel .aujourd-selection {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+    .semaine-mois-actuel .aujourd-selection span {
+      display: block;
+      height: 20px;
+      width: 20px; }
+    .semaine-mois-actuel .aujourd-selection a {
+      color: #707070;
+      padding: 10px;
+      background: #e0f7f8;
       text-transform: uppercase;
       font-weight: 100;
-      color: white;
-      width: 100px;
-      padding: 15px;
-      background: #32c5d2;
-      border-top-left-radius: 8px;
-      border-bottom-left-radius: 8px;
       cursor: pointer;
-      transition: 300ms all ease-in-out; }
-      .content-wrap-dispo .semaine-mois-selection .semaine-mois-button span:last-child {
-        color: #707070;
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
+      -webkit-transition: 200ms all ease-in-out;
+      transition: 200ms all ease-in-out; }
+      .semaine-mois-actuel .aujourd-selection a:hover {
+        color: white;
+        background: #32c5d2; }
+      .semaine-mois-actuel .aujourd-selection a:hover .arrow-right-icon {
+        background: url("../img/icons/arrow-right-white.svg"); }
+      .semaine-mois-actuel .aujourd-selection a:hover .arrow-left-icon {
+        background: url("../img/icons/arrow-left-white.svg"); }
+      .semaine-mois-actuel .aujourd-selection a:first-child {
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+        border-right: 4px solid white; }
+      .semaine-mois-actuel .aujourd-selection a:last-child {
         border-top-right-radius: 8px;
         border-bottom-right-radius: 8px;
-        background: #e0f7f8; }
-        .content-wrap-dispo .semaine-mois-selection .semaine-mois-button span:last-child:hover {
-          color: white;
-          background: #32c5d2; }
-  .content-wrap-dispo .semaine-mois-actuel {
-    width: 100%;
-    height: 50px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    position: relative;
-    margin: 30px; }
-    .content-wrap-dispo .semaine-mois-actuel p {
-      text-transform: uppercase;
-      color: #8e8e8e;
-      font-size: 26px;
-      font-weight: 100;
-      margin: 0; }
-    .content-wrap-dispo .semaine-mois-actuel .aujourd-selection {
-      display: flex;
-      position: absolute;
-      right: 0; }
-      .content-wrap-dispo .semaine-mois-actuel .aujourd-selection span {
-        display: block;
-        height: 20px;
-        width: 20px; }
-      .content-wrap-dispo .semaine-mois-actuel .aujourd-selection a {
-        color: #707070;
-        padding: 10px;
-        background: #e0f7f8;
-        text-transform: uppercase;
-        font-weight: 100;
-        transition: 200ms all ease-in-out; }
-        .content-wrap-dispo .semaine-mois-actuel .aujourd-selection a:hover {
-          color: white;
-          background: #32c5d2; }
-        .content-wrap-dispo .semaine-mois-actuel .aujourd-selection a:hover .arrow-right-icon {
-          background: url("../img/icons/arrow-right-white.svg"); }
-        .content-wrap-dispo .semaine-mois-actuel .aujourd-selection a:hover .arrow-left-icon {
-          background: url("../img/icons/arrow-left-white.svg"); }
-        .content-wrap-dispo .semaine-mois-actuel .aujourd-selection a:first-child {
-          border-top-left-radius: 8px;
-          border-bottom-left-radius: 8px;
-          border-right: 4px solid white; }
-        .content-wrap-dispo .semaine-mois-actuel .aujourd-selection a:last-child {
-          border-top-right-radius: 8px;
-          border-bottom-right-radius: 8px;
-          border-left: 4px solid white; }
-  .content-wrap-dispo table .days-row td:hover {
+        border-left: 4px solid white; }
+
+table {
+  width: 100%; }
+  table .days-row td:hover {
     background: transparent; }
-  .content-wrap-dispo table tr td {
-    color: #343e46;
-    text-align: center;
-    font-weight: 100;
-    font-size: 18px;
-    padding: 20px 30px;
-    border-right: 1px solid #8e8e8e;
-    cursor: pointer;
-    transition: 150ms all ease-in-out; }
-    .content-wrap-dispo table tr td:last-child {
-      border-right: 0; }
-    .content-wrap-dispo table tr td:hover {
-      background: #e0f7f8; }
-    .content-wrap-dispo table tr td .round-date {
-      color: white;
-      background: #a984bf;
-      border-radius: 100%;
-      padding: 5px; }
-  .content-wrap-dispo table tr .dispo-active {
-    color: white;
-    background: #32c5d2;
-    cursor: pointer;
-    border-bottom: 2px solid white;
-    transition: 300ms all ease-in-out; }
-    .content-wrap-dispo table tr .dispo-active:hover {
-      background: #27a8b4; }
-  .content-wrap-dispo table tr .dispo-disable {
-    color: #c1c1c1; }
+  table .dispo-disable:hover {
+    background: transparent; }
+  table tr {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%; }
+    table tr td {
+      width: calc(100%/7);
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      color: #343e46;
+      text-align: center;
+      font-weight: 100;
+      font-size: 18px;
+      padding: 20px 0;
+      border-right: 1px solid #8e8e8e;
+      cursor: pointer;
+      -webkit-transition: 150ms all ease-in-out;
+      transition: 150ms all ease-in-out; }
+      table tr td:last-child {
+        border-right: 0; }
+      table tr td:hover {
+        background: #e0f7f8; }
+      table tr td p {
+        margin: 0; }
+      table tr td .round-date {
+        color: white;
+        width: 20px;
+        padding: 5px;
+        background: #a984bf;
+        border-radius: 100%; }
+      table tr td .dd {
+        padding: 5px; }
+      table tr td span {
+        width: 100px;
+        padding: 5px; }
+
+.dispo-active {
+  color: white;
+  background: #32c5d2;
+  cursor: pointer;
+  -webkit-transition: 300ms all ease-in-out;
+  transition: 300ms all ease-in-out; }
+  .dispo-active:hover {
+    background: #27a8b4; }
+
+.dispo-disable {
+  color: #c1c1c1; }
+
+.reded {
+  color: red !important; }
+
+.grayed {
+  color: #c1c1c1; }
 
 @font-face {
   font-family: "Graphik";
@@ -507,37 +603,48 @@ th {
   background-position: center !important;
   background-repeat: no-repeat !important;
   background-size: contain !important;
+  -webkit-transition: 0.3s all ease-in-out !important;
   transition: 0.3s all ease-in-out !important; }
 
 .facebook-link {
   background: url("../img/icons/fb-g.svg");
-  filter: grayscale(100%); }
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%); }
   .facebook-link:hover {
-    filter: grayscale(0%); }
+    -webkit-filter: grayscale(0%);
+            filter: grayscale(0%); }
 
 .twitter-link {
   background: url("../img/icons/tw-g.svg");
-  filter: grayscale(100%); }
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%); }
   .twitter-link:hover {
-    filter: grayscale(0%); }
+    -webkit-filter: grayscale(0%);
+            filter: grayscale(0%); }
 
 .wordpress-link {
   background: url("../img/icons/wp-g.svg");
-  filter: grayscale(100%); }
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%); }
   .wordpress-link:hover {
-    filter: grayscale(0%); }
+    -webkit-filter: grayscale(0%);
+            filter: grayscale(0%); }
 
 .linkedin-link {
   background: url("../img/icons/in-g.svg");
-  filter: grayscale(100%); }
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%); }
   .linkedin-link:hover {
-    filter: grayscale(0%); }
+    -webkit-filter: grayscale(0%);
+            filter: grayscale(0%); }
 
 .mail-link {
   background: url("../img/icons/mail-g.svg");
-  filter: grayscale(100%); }
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%); }
   .mail-link:hover {
-    filter: grayscale(0%); }
+    -webkit-filter: grayscale(0%);
+            filter: grayscale(0%); }
 
 .time-icon {
   background: url("../img/icons/time.svg"); }
@@ -634,8 +741,6 @@ a {
     height: 3px;
     background-color: #32c5d2;
     -webkit-transition: opacity 0.3s ease, width 0.3s ease;
-    -moz-transition: opacity 0.3s ease, width 0.3s ease;
-    -o-transition: opacity 0.3s ease, width 0.3s ease;
     transition: opacity 0.3s ease, width 0.3s ease;
     -ms-transition: opacity 0.3s ease, width 0.3s ease; }
   .nav-link:hover {
@@ -646,6 +751,7 @@ a {
 .read-more {
   color: #32c5d2;
   text-decoration: none;
+  -webkit-transition: 0.3s all ease-in-out;
   transition: 0.3s all ease-in-out; }
   .read-more:hover {
     color: #27a8b4; }
@@ -680,14 +786,22 @@ a {
   margin-top: 24px; }
 
 header .sticky {
+  -webkit-transition: 300ms all ease-in-out;
   transition: 300ms all ease-in-out;
   background: rgba(52, 62, 70, 0.7); }
 header nav {
   height: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background: #343e46;
+  -webkit-transition: 300ms all ease-in-out;
   transition: 300ms all ease-in-out; }
   header nav .logo-rdview {
     margin-left: 120px;
@@ -696,6 +810,8 @@ header nav {
     background: url("../img/logo-rdview.svg"); }
   header nav ul {
     list-style: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     margin-right: 120px; }
     header nav ul a {
@@ -708,12 +824,20 @@ header .profile-cover {
   background-repeat: no-repeat;
   background-size: cover; }
 header .profile-details {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background: white;
   height: 120px; }
   header .profile-details .profile-buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     margin-right: 120px; }
   header .profile-details .pdp {
@@ -747,6 +871,8 @@ header .profile-details {
     color: #707070;
     margin: 0; }
   header .profile-details .profile-location {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     color: #707070; }
     header .profile-details .profile-location span {
@@ -757,9 +883,13 @@ header .profile-details {
     header .profile-details .profile-location p {
       margin: 0; }
   header .profile-details .profile-dispo {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     margin-right: 120px;
-    align-items: center; }
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
     header .profile-details .profile-dispo span {
       width: 10px;
       height: 10px;
@@ -773,6 +903,8 @@ header .profile-details {
 
 #main-wrap {
   background: #f9fafb;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex; }
 
 #left-side {
@@ -783,9 +915,16 @@ header .profile-details {
     #left-side .about h4 {
       color: #c6c6c6; }
   #left-side .about-logo {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     padding: 10px;
     margin-top: 24px; }
     #left-side .about-logo .about-logo-img {
@@ -804,6 +943,8 @@ header .profile-details {
       background: #8e8e8e;
       margin: 11px 0; }
     #left-side .about-logo .about-logo-link {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex; }
       #left-side .about-logo .about-logo-link span {
         width: 15px;
@@ -813,13 +954,18 @@ header .profile-details {
       #left-side .about-logo .about-logo-link a {
         font-size: 13px;
         color: #8e8e8e;
+        -webkit-transition: 300ms all ease-in-out;
         transition: 300ms all ease-in-out; }
         #left-side .about-logo .about-logo-link a:hover {
           color: #32c5d2; }
   #left-side .social-links ul {
     list-style: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     padding: 0;
     margin: 40px 0; }
     #left-side .social-links ul a {
@@ -830,8 +976,12 @@ header .profile-details {
         width: 25px;
         height: 25px; }
   #left-side .tags .tags-line {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     margin-top: 40px; }
     #left-side .tags .tags-line:last-child {
       margin-top: 20px; }
@@ -841,15 +991,22 @@ header .profile-details {
       border-left: solid 4px #32c5d2;
       margin: 0 20px 0 0;
       cursor: pointer;
+      -webkit-transition: all 0.3s ease-in-out;
       transition: all 0.3s ease-in-out; }
       #left-side .tags .tags-line p:last-child {
         margin-right: 0; }
       #left-side .tags .tags-line p:hover {
         background: #f4f4f4; }
   #left-side .left-buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     margin: 40px 0; }
   #left-side .experience-box {
     background: white;
@@ -867,8 +1024,12 @@ header .profile-details {
   #right-side .right-intro p {
     margin: 0; }
   #right-side .content-wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     padding: 40px;
     background: white; }
 
@@ -879,9 +1040,16 @@ header .profile-details {
   background-position: -30px -30px !important; }
 
 .presta-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   border-bottom: 4px solid white;
   text-align: center;
   padding: 50px 30px;
@@ -891,6 +1059,7 @@ header .profile-details {
   background-position: -30px -30px;
   width: calc(100%/3);
   margin-right: 30px;
+  -webkit-transition: 0.3s all ease-in-out;
   transition: 0.3s all ease-in-out;
   position: relative; }
   .presta-box:hover {
@@ -899,6 +1068,7 @@ header .profile-details {
     margin-right: 0; }
   .presta-box .presta-box-title {
     margin-bottom: 16px;
+    -webkit-transition: 300ms all ease-in-out;
     transition: 300ms all ease-in-out; }
     .presta-box .presta-box-title:hover {
       color: #9262ae; }
@@ -912,8 +1082,12 @@ header .profile-details {
     .presta-box .price sup {
       font-size: 1.3rem; }
   .presta-box .presta-details {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     margin-bottom: 10px; }
     .presta-box .presta-details span {
       width: 15px;
@@ -938,6 +1112,7 @@ header .profile-details {
   background: #f9fafb;
   width: calc(100%/3);
   margin-right: 30px;
+  -webkit-transition: 0.3s all ease-in-out;
   transition: 0.3s all ease-in-out; }
   .article-box:hover {
     border-bottom: 4px solid #32c5d2; }
@@ -945,6 +1120,7 @@ header .profile-details {
     margin-right: 0; }
   .article-box .article-link {
     margin: 0;
+    -webkit-transition: 300ms all ease-in-out;
     transition: 300ms all ease-in-out; }
     .article-box .article-link:hover {
       color: #9262ae; }
@@ -955,6 +1131,7 @@ header .profile-details {
     width: 100%;
     position: relative;
     overflow: hidden;
+    -webkit-transition: 0.3s all ease-in-out;
     transition: 0.3s all ease-in-out; }
     .article-box .article-couv .article-couv-pic {
       display: block;
@@ -964,6 +1141,7 @@ header .profile-details {
       background-size: 140%;
       background-position: center;
       background-repeat: no-repeat;
+      -webkit-transition: 300ms all ease-in-out;
       transition: 300ms all ease-in-out; }
       .article-box .article-couv .article-couv-pic::after {
         content: "";
@@ -987,10 +1165,19 @@ header .profile-details {
       background: #32c5d2;
       border-radius: 50px;
       z-index: 2;
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
       text-align: center;
       color: white;
       font-size: 12px; }
@@ -1007,9 +1194,13 @@ header .profile-details {
   .article-box h4, .article-box p, .article-box a {
     padding: 0 30px; }
   .article-box .article-met {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     padding: 20px 30px; }
     .article-box .article-met .article-comment, .article-box .article-met .article-likes {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
       color: #27a8b4; }
       .article-box .article-met .article-comment .comment-icon, .article-box .article-met .article-comment .likes-icon, .article-box .article-met .article-likes .comment-icon, .article-box .article-met .article-likes .likes-icon {
@@ -1026,11 +1217,19 @@ header .profile-details {
 
 footer {
   padding: 50px 120px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between; }
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
   footer .footer-copyright .footer-links {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center; }
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
     footer .footer-copyright .footer-links .dot-separator {
       display: block;
       width: 5px;
@@ -1043,8 +1242,12 @@ footer {
     color: #8e8e8e;
     font-size: 14px; }
   footer .footer-img-wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: flex-end; }
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end; }
     footer .footer-img-wrap .master-card-img {
       cursor: pointer;
       display: block;
@@ -1055,12 +1258,15 @@ footer {
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
-      filter: grayscale(100%);
+      -webkit-filter: grayscale(100%);
+              filter: grayscale(100%);
       opacity: 0.4;
+      -webkit-transition: 300ms all ease-in-out;
       transition: 300ms all ease-in-out; }
       footer .footer-img-wrap .master-card-img:hover {
         opacity: 1;
-        filter: grayscale(0%); }
+        -webkit-filter: grayscale(0%);
+                filter: grayscale(0%); }
     footer .footer-img-wrap .visa-img {
       cursor: pointer;
       display: block;
@@ -1071,12 +1277,15 @@ footer {
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
-      filter: grayscale(100%);
+      -webkit-filter: grayscale(100%);
+              filter: grayscale(100%);
       opacity: 0.4;
+      -webkit-transition: 300ms all ease-in-out;
       transition: 300ms all ease-in-out; }
       footer .footer-img-wrap .visa-img:hover {
         opacity: 1;
-        filter: grayscale(0%); }
+        -webkit-filter: grayscale(0%);
+                filter: grayscale(0%); }
     footer .footer-img-wrap .mangopay-img {
       cursor: pointer;
       display: block;
@@ -1086,22 +1295,37 @@ footer {
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
-      filter: grayscale(100%);
+      -webkit-filter: grayscale(100%);
+              filter: grayscale(100%);
       opacity: 0.4;
+      -webkit-transition: 300ms all ease-in-out;
       transition: 300ms all ease-in-out; }
       footer .footer-img-wrap .mangopay-img:hover {
         opacity: 1;
-        filter: grayscale(0%); }
+        -webkit-filter: grayscale(0%);
+                filter: grayscale(0%); }
 
 .content-wrap-detail {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   background: white;
   padding: 40px; }
   .content-wrap-detail .presta-box-detail {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     border-bottom: 4px solid white;
     text-align: center;
     padding: 50px 30px;
@@ -1111,11 +1335,19 @@ footer {
     background-position: -30px -30px;
     position: relative; }
     .content-wrap-detail .presta-box-detail .title-buttons-wrap {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
       width: 100%; }
       .content-wrap-detail .presta-box-detail .title-buttons-wrap .retour-presta {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex; }
         .content-wrap-detail .presta-box-detail .title-buttons-wrap .retour-presta a {
           color: #8e8e8e; }
@@ -1132,8 +1364,12 @@ footer {
         width: 200px;
         margin: 0; }
     .content-wrap-detail .presta-box-detail .title-buttons-wrap-bottom {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      justify-content: center; }
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center; }
       .content-wrap-detail .presta-box-detail .title-buttons-wrap-bottom button {
         margin-top: 20px;
         width: 250px; }
@@ -1150,11 +1386,19 @@ footer {
     .content-wrap-detail .presta-box-detail .comment-separate-light {
       height: 0.8px; }
     .content-wrap-detail .presta-box-detail .review-wrap {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      flex-direction: column; }
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column; }
       .content-wrap-detail .presta-box-detail .review-wrap .review-box {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        align-content: space-between;
+        -ms-flex-line-pack: justify;
+            align-content: space-between;
         margin: 24px 0; }
         .content-wrap-detail .presta-box-detail .review-wrap .review-box .reviewer-name {
           text-align: left;
@@ -1168,6 +1412,8 @@ footer {
             font-size: 9px;
             margin: 0; }
         .content-wrap-detail .presta-box-detail .review-wrap .review-box .reviewer-stars {
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
           margin-right: 60px; }
           .content-wrap-detail .presta-box-detail .review-wrap .review-box .reviewer-stars .star-icon {
@@ -1190,18 +1436,27 @@ footer {
             font-size: 14px;
             margin: 0; }
     .content-wrap-detail .presta-box-detail .buttons-wrap {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      justify-content: space-between;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
       margin-top: 40px; }
       .content-wrap-detail .presta-box-detail .buttons-wrap .btn-green {
         width: 200px; }
       .content-wrap-detail .presta-box-detail .buttons-wrap .btn-white {
         width: 200px; }
   .content-wrap-detail .presta-details-big {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     margin: 40px 0;
-    transform: scale(1.1); }
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1); }
     .content-wrap-detail .presta-details-big span {
       width: 15px;
       height: 15px;
@@ -1218,8 +1473,12 @@ footer {
   .content-wrap-detail .title1-detail {
     margin: 0; }
   .content-wrap-detail .tags-detail .tags-line {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     margin: 40px 0; }
     .content-wrap-detail .tags-detail .tags-line p {
       background: white;
@@ -1227,6 +1486,7 @@ footer {
       border-left: solid 4px #32c5d2;
       margin: 0 20px 0 0;
       cursor: pointer;
+      -webkit-transition: all 0.3s ease-in-out;
       transition: all 0.3s ease-in-out; }
       .content-wrap-detail .tags-detail .tags-line p:last-child {
         margin-right: 0; }
@@ -1236,8 +1496,13 @@ footer {
 .content-wrap-detail {
   margin-top: 40px; }
   .content-wrap-detail .profile-detail-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     background: white; }
     .content-wrap-detail .profile-detail-box h3 {
       margin: 20px 0;
@@ -1255,8 +1520,12 @@ footer {
       margin: 0;
       color: #707070; }
     .content-wrap-detail .profile-detail-box .video-tags {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      align-items: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
       margin-top: 20px; }
       .content-wrap-detail .profile-detail-box .video-tags span {
         display: block;
@@ -1277,8 +1546,13 @@ footer {
   text-align: center; }
 
 #main-wrap-faq {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   background: #f9fafb; }
   #main-wrap-faq .faq-title {
     margin: 0 auto;
@@ -1293,17 +1567,25 @@ footer {
       text-transform: capitalize;
       margin: 0; }
   #main-wrap-faq #left-right-faq-wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row; }
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row; }
     #main-wrap-faq #left-right-faq-wrap #left-side {
       width: 30%;
       padding: 50px 100px; }
       #main-wrap-faq #left-right-faq-wrap #left-side .faq-sections-wrap .faq-section-box {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         background: white;
         padding: 20px;
         margin-bottom: 20px;
         border-left: 4px solid white;
+        -webkit-transition: 0.3s all ease-in-out;
         transition: 0.3s all ease-in-out; }
         #main-wrap-faq #left-right-faq-wrap #left-side .faq-sections-wrap .faq-section-box:hover {
           border-left: 4px solid #32c5d2; }
@@ -1333,16 +1615,27 @@ footer {
           color: #707070;
           margin: 0 0 20px 0; }
         #main-wrap-faq #left-right-faq-wrap #right-side .faq-content-box .list-line {
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
           margin-top: 20px; }
           #main-wrap-faq #left-right-faq-wrap #right-side .faq-content-box .list-line p {
             color: #8e8e8e; }
           #main-wrap-faq #left-right-faq-wrap #right-side .faq-content-box .list-line .list-num {
             color: white;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: row;
+                    flex-direction: row;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
             width: 23px;
             height: 23px;
             background: #32c5d2;
@@ -1351,19 +1644,34 @@ footer {
           #main-wrap-faq #left-right-faq-wrap #right-side .faq-content-box .list-line p {
             margin: 3px 0 0 0; }
         #main-wrap-faq #left-right-faq-wrap #right-side .faq-content-box .title-line {
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
-          justify-content: space-between;
-          align-items: center;
+          -webkit-box-pack: justify;
+              -ms-flex-pack: justify;
+                  justify-content: space-between;
+          -webkit-box-align: center;
+              -ms-flex-align: center;
+                  align-items: center;
           margin-bottom: 20px; }
           #main-wrap-faq #left-right-faq-wrap #right-side .faq-content-box .title-line h4 {
             margin: 0; }
           #main-wrap-faq #left-right-faq-wrap #right-side .faq-content-box .title-line .plus-button {
             color: #707070;
             cursor: pointer;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: row;
+                    flex-direction: row;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
             width: 18px;
             height: 18px;
             border: 2px solid #707070;
@@ -1381,9 +1689,15 @@ ul {
 
 #contact-main-wrap {
   background: #f9fafb;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center; }
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
   #contact-main-wrap .contact-wrap {
     width: 50%;
     height: auto;
@@ -1403,16 +1717,27 @@ ul {
         margin: 0;
         color: #8e8e8e; }
     #contact-main-wrap .contact-wrap .contact-left-right-wrap {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex; }
       #contact-main-wrap .contact-wrap .contact-left-right-wrap .contact-left {
         padding-right: 10%;
         width: 50%;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
-        justify-content: flex-end; }
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-pack: end;
+            -ms-flex-pack: end;
+                justify-content: flex-end; }
         #contact-main-wrap .contact-wrap .contact-left-right-wrap .contact-left .contact-icon {
           height: 350px; }
         #contact-main-wrap .contact-wrap .contact-left-right-wrap .contact-left .contact-adress {
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
           margin-bottom: 15px; }
           #contact-main-wrap .contact-wrap .contact-left-right-wrap .contact-left .contact-adress span {
@@ -1420,12 +1745,18 @@ ul {
             width: 20px;
             margin-right: 10px; }
           #contact-main-wrap .contact-wrap .contact-left-right-wrap .contact-left .contact-adress p {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            align-items: center;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
             color: #8e8e8e;
             font-size: 16px;
             margin: 0; }
         #contact-main-wrap .contact-wrap .contact-left-right-wrap .contact-left .contact-social-icons {
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
           margin-top: 10px; }
           #contact-main-wrap .contact-wrap .contact-left-right-wrap .contact-left .contact-social-icons a {
@@ -1434,18 +1765,31 @@ ul {
             margin-right: 30px; }
       #contact-main-wrap .contact-wrap .contact-left-right-wrap .contact-right {
         width: 50%;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
-        justify-content: flex-end; }
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-pack: end;
+            -ms-flex-pack: end;
+                justify-content: flex-end; }
         #contact-main-wrap .contact-wrap .contact-left-right-wrap .contact-right form {
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
-          flex-direction: column; }
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+              -ms-flex-direction: column;
+                  flex-direction: column; }
           #contact-main-wrap .contact-wrap .contact-left-right-wrap .contact-right form input {
             color: #8e8e8e;
             border: 2px solid white;
             padding: 10px;
             margin-bottom: 20px;
             background: #f9fafb;
+            -webkit-transition: 0.3s all ease-in-out;
             transition: 0.3s all ease-in-out; }
             #contact-main-wrap .contact-wrap .contact-left-right-wrap .contact-right form input:last-child {
               color: white;
@@ -1462,6 +1806,7 @@ ul {
             padding: 10px;
             margin-bottom: 20px;
             background: #f9fafb;
+            -webkit-transition: 0.3s all ease-in-out;
             transition: 0.3s all ease-in-out; }
             #contact-main-wrap .contact-wrap .contact-left-right-wrap .contact-right form textarea:focus {
               border: 2px solid #8e8e8e; }
@@ -1488,13 +1833,11 @@ ul {
   opacity: 0;
   visibility: hidden;
   -webkit-transition: opacity 0.3s 0s, visibility 0s 0.3s;
-  -moz-transition: opacity 0.3s 0s, visibility 0s 0.3s;
   transition: opacity 0.3s 0s, visibility 0s 0.3s; }
   #cd-popup-politique.is-visible, .cd-popup.is-visible {
     opacity: 1;
     visibility: visible;
     -webkit-transition: opacity 0.3s 0s, visibility 0s 0s;
-    -moz-transition: opacity 0.3s 0s, visibility 0s 0s;
     transition: opacity 0.3s 0s, visibility 0s 0s; }
 
 .cd-popup-container {
@@ -1508,17 +1851,14 @@ ul {
   text-align: center;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   -webkit-transform: translateY(-40px);
-  -moz-transform: translateY(-40px);
-  -ms-transform: translateY(-40px);
-  -o-transform: translateY(-40px);
   transform: translateY(-40px);
   /* Force Hardware Acceleration in WebKit */
   -webkit-backface-visibility: hidden;
   -webkit-transition-property: -webkit-transform;
-  -moz-transition-property: -moz-transform;
+  transition-property: -webkit-transform;
   transition-property: transform;
+  transition-property: transform, -webkit-transform;
   -webkit-transition-duration: 0.3s;
-  -moz-transition-duration: 0.3s;
   transition-duration: 0.3s;
   padding: 3em 4em; }
 
@@ -1541,24 +1881,15 @@ ul {
     background: #32c5d2; }
   .cd-popup-container .cd-popup-close::before {
     -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
     transform: rotate(45deg);
     left: 8px; }
   .cd-popup-container .cd-popup-close::after {
     -webkit-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
-    -o-transform: rotate(-45deg);
     transform: rotate(-45deg);
     right: 8px; }
 
 .is-visible .cd-popup-container {
   -webkit-transform: translateY(0);
-  -moz-transform: translateY(0);
-  -ms-transform: translateY(0);
-  -o-transform: translateY(0);
   transform: translateY(0); }
 
 @media only screen and (min-width: 1170px) {
@@ -1572,11 +1903,15 @@ ul {
 
 .error-calendar {
   background: rgba(231, 76, 60, 0.8);
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+              -ms-grid-row-align: center;
+          align-items: center;
   padding: 10px;
   margin-bottom: 60px;
   border-radius: 8px;
   display: none;
+  -webkit-transition: 300ms all ease-in-out;
   transition: 300ms all ease-in-out; }
   .error-calendar .error-calendar-icon {
     display: block;
@@ -1610,47 +1945,68 @@ ul {
   padding: 0 !important;
   width: 65% !important;
   padding-bottom: 60px !important;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%) !important; }
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%) !important;
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%) !important; }
   .contact-wrap-commande .progress-bar {
     height: 6px;
     background: #32c5d2;
     background: -webkit-linear-gradient(to right, #27a8b4, #32c5d2);
-    background: -moz-linear-gradient(to right, #27a8b4, #32c5d2);
-    background: -o-linear-gradient(to right, #27a8b4, #32c5d2);
+    background: -webkit-linear-gradient(left, #27a8b4, #32c5d2);
     background: linear-gradient(to right, #27a8b4, #32c5d2);
+    -webkit-transition: 3000ms all ease-in-out;
     transition: 3000ms all ease-in-out;
     width: 25%; }
   .contact-wrap-commande .commande-progress {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     margin: 20px 0;
     padding: 0 60px; }
     .contact-wrap-commande .commande-progress div {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      flex-direction: column;
-      align-items: center; }
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; }
       .contact-wrap-commande .commande-progress div span {
         display: block;
         width: 40px;
         height: 40px;
-        filter: grayscale(100%);
+        -webkit-filter: grayscale(100%);
+                filter: grayscale(100%);
+        -webkit-transition: 3000ms all ease-in-out;
         transition: 3000ms all ease-in-out; }
       .contact-wrap-commande .commande-progress div p {
         color: #8e8e8e;
         text-transform: uppercase;
+        -webkit-transition: 3000ms all ease-in-out;
         transition: 3000ms all ease-in-out; }
       .contact-wrap-commande .commande-progress div .cmd-prg-selected {
         color: #32c5d2;
-        filter: grayscale(0); }
+        -webkit-filter: grayscale(0);
+                filter: grayscale(0); }
   .contact-wrap-commande .commande-choisie {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     padding: 40px 60px;
     background: #32c5d2;
     background: -webkit-linear-gradient(to right, #27a8b4, #32c5d2);
-    background: -moz-linear-gradient(to right, #27a8b4, #32c5d2);
-    background: -o-linear-gradient(to right, #27a8b4, #32c5d2);
+    background: -webkit-linear-gradient(left, #27a8b4, #32c5d2);
     background: linear-gradient(to right, #27a8b4, #32c5d2); }
     .contact-wrap-commande .commande-choisie .cmd-choisie-text h5, .contact-wrap-commande .commande-choisie .cmd-choisie-text h2 {
       color: white;
@@ -1660,8 +2016,12 @@ ul {
     .contact-wrap-commande .commande-choisie .cmd-choisie-text h2 {
       margin-top: 8px; }
     .contact-wrap-commande .commande-choisie .presta-details-cmd {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      align-items: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
       margin-top: 10px; }
       .contact-wrap-commande .commande-choisie .presta-details-cmd span {
         width: 15px;
@@ -1715,10 +2075,19 @@ ul {
     .calendar-commande #calendar-form .buttons-wrap, .calendar-commande #commande-form .buttons-wrap, .calendar-commande #paiement-form .buttons-wrap, .calendar-commande #confirmation-form .buttons-wrap {
       margin-top: 60px !important;
       width: 80%;
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
       margin: 0 auto; }
       .calendar-commande #calendar-form .buttons-wrap .btn-white-disabled, .calendar-commande #commande-form .buttons-wrap .btn-white-disabled, .calendar-commande #paiement-form .buttons-wrap .btn-white-disabled, .calendar-commande #confirmation-form .buttons-wrap .btn-white-disabled {
         border: 1px solid #8e8e8e;
@@ -1733,18 +2102,35 @@ ul {
     background: white;
     padding: 60px 0 0 0; }
     .calendar-commande .calendar-form .semaine-mois-selection, .calendar-commande .confirmation-form .semaine-mois-selection, .calendar-commande .paiement-form .semaine-mois-selection, .calendar-commande .commande-form .semaine-mois-selection {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      justify-content: center; }
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center; }
     .calendar-commande .calendar-form .semaine-mois-actuel, .calendar-commande .confirmation-form .semaine-mois-actuel, .calendar-commande .paiement-form .semaine-mois-actuel, .calendar-commande .commande-form .semaine-mois-actuel {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      justify-content: space-between;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
       margin: 30px 0; }
     .calendar-commande .calendar-form .commande-form-title, .calendar-commande .confirmation-form .commande-form-title, .calendar-commande .paiement-form .commande-form-title, .calendar-commande .commande-form .commande-form-title {
       margin-bottom: 60px;
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center; }
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center; }
       .calendar-commande .calendar-form .commande-form-title h4, .calendar-commande .calendar-form .commande-form-title p, .calendar-commande .confirmation-form .commande-form-title h4, .calendar-commande .confirmation-form .commande-form-title p, .calendar-commande .paiement-form .commande-form-title h4, .calendar-commande .paiement-form .commande-form-title p, .calendar-commande .commande-form .commande-form-title h4, .calendar-commande .commande-form .commande-form-title p {
         text-align: center;
         margin: 0;
@@ -1756,14 +2142,27 @@ ul {
         text-transform: uppercase;
         font-size: 36px; }
     .calendar-commande .calendar-form .commande-form-wrap, .calendar-commande .confirmation-form .commande-form-wrap, .calendar-commande .paiement-form .commande-form-wrap, .calendar-commande .commande-form .commande-form-wrap {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      flex-direction: column;
-      align-items: center; }
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; }
       .calendar-commande .calendar-form .commande-form-wrap .input-wrap-checkbox, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-checkbox, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-checkbox, .calendar-commande .commande-form .commande-form-wrap .input-wrap-checkbox {
         width: 70%;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        align-items: center;
-        justify-content: center; }
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center; }
         .calendar-commande .calendar-form .commande-form-wrap .input-wrap-checkbox input, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-checkbox input, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-checkbox input, .calendar-commande .commande-form .commande-form-wrap .input-wrap-checkbox input {
           margin-right: 10px; }
         .calendar-commande .calendar-form .commande-form-wrap .input-wrap-checkbox label, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-checkbox label, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-checkbox label, .calendar-commande .commande-form .commande-form-wrap .input-wrap-checkbox label {
@@ -1773,26 +2172,38 @@ ul {
       .calendar-commande .calendar-form .commande-form-wrap .flash-coppied, .calendar-commande .confirmation-form .commande-form-wrap .flash-coppied, .calendar-commande .paiement-form .commande-form-wrap .flash-coppied, .calendar-commande .commande-form .commande-form-wrap .flash-coppied {
         width: 80%;
         height: 40px;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: flex-end;
+        -webkit-box-pack: end;
+            -ms-flex-pack: end;
+                justify-content: flex-end;
         margin-bottom: 8px; }
         .calendar-commande .calendar-form .commande-form-wrap .flash-coppied p, .calendar-commande .confirmation-form .commande-form-wrap .flash-coppied p, .calendar-commande .paiement-form .commande-form-wrap .flash-coppied p, .calendar-commande .commande-form .commande-form-wrap .flash-coppied p {
           margin: 0;
           margin-right: calc(5%/2);
           width: 20%;
-          background: #343e46;
+          background: rgba(52, 62, 70, 0.9);
           color: white;
           display: none;
-          justify-content: center;
-          align-items: center;
+          -webkit-box-pack: center;
+              -ms-flex-pack: center;
+                  justify-content: center;
+          -webkit-box-align: center;
+              -ms-flex-align: center;
+                      -ms-grid-row-align: center;
+                  align-items: center;
           box-shadow: inset 0 0 20px rgba(52, 62, 70, 0);
           outline: 1px solid;
           outline-color: rgba(52, 62, 70, 0.5);
           outline-offset: 0px;
           text-shadow: none;
+          -webkit-transition: 300ms all ease-in-out;
           transition: 300ms all ease-in-out;
+          -webkit-transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
           transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1); }
         .calendar-commande .calendar-form .commande-form-wrap .flash-coppied .p-animated, .calendar-commande .confirmation-form .commande-form-wrap .flash-coppied .p-animated, .calendar-commande .paiement-form .commande-form-wrap .flash-coppied .p-animated, .calendar-commande .commande-form .commande-form-wrap .flash-coppied .p-animated {
+          -webkit-transition: 300ms all ease-in-out;
           transition: 300ms all ease-in-out;
           box-shadow: inset 0 0 20px rgba(52, 62, 70, 0.5), 0 0 20px rgba(255, 255, 255, 0.2);
           outline-color: rgba(52, 62, 70, 0);
@@ -1803,14 +2214,21 @@ ul {
         border-radius: 0 !important; }
       .calendar-commande .calendar-form .commande-form-wrap .input-wrap-copy .btn-copy, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-copy .btn-copy, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-copy .btn-copy, .calendar-commande .commande-form .commande-form-wrap .input-wrap-copy .btn-copy {
         width: 25% !important;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        align-items: center;
-        justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
         background: #32c5d2;
         color: white;
         text-transform: uppercase;
         font-size: 15px;
         border: 2px solid white;
+        -webkit-transition: 300ms all ease-in-out;
         transition: 300ms all ease-in-out; }
         .calendar-commande .calendar-form .commande-form-wrap .input-wrap-copy .btn-copy:hover, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-copy .btn-copy:hover, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-copy .btn-copy:hover, .calendar-commande .commande-form .commande-form-wrap .input-wrap-copy .btn-copy:hover {
           background: #27a8b4; }
@@ -1826,6 +2244,8 @@ ul {
         border: 2px solid white;
         box-shadow: 0; }
       .calendar-commande .calendar-form .commande-form-wrap .input-wrap-copy, .calendar-commande .calendar-form .commande-form-wrap .input-wrap, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-cb, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-copy, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-cb, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-copy, .calendar-commande .paiement-form .commande-form-wrap .input-wrap, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-cb, .calendar-commande .commande-form .commande-form-wrap .input-wrap-copy, .calendar-commande .commande-form .commande-form-wrap .input-wrap, .calendar-commande .commande-form .commande-form-wrap .input-wrap-cb {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         width: 80%;
         margin-bottom: 30px;
@@ -1834,13 +2254,21 @@ ul {
           margin-bottom: 0; }
         .calendar-commande .calendar-form .commande-form-wrap .input-wrap-copy .expiration-wrap, .calendar-commande .calendar-form .commande-form-wrap .input-wrap .expiration-wrap, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-cb .expiration-wrap, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-copy .expiration-wrap, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap .expiration-wrap, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-cb .expiration-wrap, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-copy .expiration-wrap, .calendar-commande .paiement-form .commande-form-wrap .input-wrap .expiration-wrap, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-cb .expiration-wrap, .calendar-commande .commande-form .commande-form-wrap .input-wrap-copy .expiration-wrap, .calendar-commande .commande-form .commande-form-wrap .input-wrap .expiration-wrap, .calendar-commande .commande-form .commande-form-wrap .input-wrap-cb .expiration-wrap {
           width: 100%;
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex; }
           .calendar-commande .calendar-form .commande-form-wrap .input-wrap-copy .expiration-wrap span, .calendar-commande .calendar-form .commande-form-wrap .input-wrap .expiration-wrap span, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-cb .expiration-wrap span, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-copy .expiration-wrap span, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap .expiration-wrap span, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-cb .expiration-wrap span, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-copy .expiration-wrap span, .calendar-commande .paiement-form .commande-form-wrap .input-wrap .expiration-wrap span, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-cb .expiration-wrap span, .calendar-commande .commande-form .commande-form-wrap .input-wrap-copy .expiration-wrap span, .calendar-commande .commande-form .commande-form-wrap .input-wrap .expiration-wrap span, .calendar-commande .commande-form .commande-form-wrap .input-wrap-cb .expiration-wrap span {
             width: 30%; }
           .calendar-commande .calendar-form .commande-form-wrap .input-wrap-copy .expiration-wrap .span-ccv, .calendar-commande .calendar-form .commande-form-wrap .input-wrap .expiration-wrap .span-ccv, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-cb .expiration-wrap .span-ccv, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-copy .expiration-wrap .span-ccv, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap .expiration-wrap .span-ccv, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-cb .expiration-wrap .span-ccv, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-copy .expiration-wrap .span-ccv, .calendar-commande .paiement-form .commande-form-wrap .input-wrap .expiration-wrap .span-ccv, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-cb .expiration-wrap .span-ccv, .calendar-commande .commande-form .commande-form-wrap .input-wrap-copy .expiration-wrap .span-ccv, .calendar-commande .commande-form .commande-form-wrap .input-wrap .expiration-wrap .span-ccv, .calendar-commande .commande-form .commande-form-wrap .input-wrap-cb .expiration-wrap .span-ccv {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            align-items: center;
-            justify-content: center;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
             text-align: center; }
             .calendar-commande .calendar-form .commande-form-wrap .input-wrap-copy .expiration-wrap .span-ccv .ccv-info, .calendar-commande .calendar-form .commande-form-wrap .input-wrap .expiration-wrap .span-ccv .ccv-info, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-cb .expiration-wrap .span-ccv .ccv-info, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-copy .expiration-wrap .span-ccv .ccv-info, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap .expiration-wrap .span-ccv .ccv-info, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-cb .expiration-wrap .span-ccv .ccv-info, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-copy .expiration-wrap .span-ccv .ccv-info, .calendar-commande .paiement-form .commande-form-wrap .input-wrap .expiration-wrap .span-ccv .ccv-info, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-cb .expiration-wrap .span-ccv .ccv-info, .calendar-commande .commande-form .commande-form-wrap .input-wrap-copy .expiration-wrap .span-ccv .ccv-info, .calendar-commande .commande-form .commande-form-wrap .input-wrap .expiration-wrap .span-ccv .ccv-info, .calendar-commande .commande-form .commande-form-wrap .input-wrap-cb .expiration-wrap .span-ccv .ccv-info {
               margin-left: 5px;
@@ -1849,16 +2277,25 @@ ul {
               height: 15px;
               background: #8e8e8e;
               border-radius: 100%;
+              display: -webkit-box;
+              display: -ms-flexbox;
               display: flex;
-              align-items: center;
-              justify-content: center;
+              -webkit-box-align: center;
+                  -ms-flex-align: center;
+                      align-items: center;
+              -webkit-box-pack: center;
+                  -ms-flex-pack: center;
+                      justify-content: center;
               color: white; }
           .calendar-commande .calendar-form .commande-form-wrap .input-wrap-copy .expiration-wrap .ccv-form-wrap, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-copy .expiration-wrap .date-form-wrap, .calendar-commande .calendar-form .commande-form-wrap .input-wrap .expiration-wrap .ccv-form-wrap, .calendar-commande .calendar-form .commande-form-wrap .input-wrap .expiration-wrap .date-form-wrap, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-cb .expiration-wrap .ccv-form-wrap, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-cb .expiration-wrap .date-form-wrap, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-copy .expiration-wrap .ccv-form-wrap, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-copy .expiration-wrap .date-form-wrap, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap .expiration-wrap .ccv-form-wrap, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap .expiration-wrap .date-form-wrap, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-cb .expiration-wrap .ccv-form-wrap, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-cb .expiration-wrap .date-form-wrap, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-copy .expiration-wrap .ccv-form-wrap, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-copy .expiration-wrap .date-form-wrap, .calendar-commande .paiement-form .commande-form-wrap .input-wrap .expiration-wrap .ccv-form-wrap, .calendar-commande .paiement-form .commande-form-wrap .input-wrap .expiration-wrap .date-form-wrap, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-cb .expiration-wrap .ccv-form-wrap, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-cb .expiration-wrap .date-form-wrap, .calendar-commande .commande-form .commande-form-wrap .input-wrap-copy .expiration-wrap .ccv-form-wrap, .calendar-commande .commande-form .commande-form-wrap .input-wrap-copy .expiration-wrap .date-form-wrap, .calendar-commande .commande-form .commande-form-wrap .input-wrap .expiration-wrap .ccv-form-wrap, .calendar-commande .commande-form .commande-form-wrap .input-wrap .expiration-wrap .date-form-wrap, .calendar-commande .commande-form .commande-form-wrap .input-wrap-cb .expiration-wrap .ccv-form-wrap, .calendar-commande .commande-form .commande-form-wrap .input-wrap-cb .expiration-wrap .date-form-wrap {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
             width: 20%;
             font-size: 0;
             border: 2px solid white;
             border-radius: 7px;
+            -webkit-transition: 300ms all ease-in-out;
             transition: 300ms all ease-in-out; }
             .calendar-commande .calendar-form .commande-form-wrap .input-wrap-copy .expiration-wrap .ccv-form-wrap .inputs-ccv, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-copy .expiration-wrap .date-form-wrap .inputs-ccv, .calendar-commande .calendar-form .commande-form-wrap .input-wrap .expiration-wrap .ccv-form-wrap .inputs-ccv, .calendar-commande .calendar-form .commande-form-wrap .input-wrap .expiration-wrap .date-form-wrap .inputs-ccv, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-cb .expiration-wrap .ccv-form-wrap .inputs-ccv, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-cb .expiration-wrap .date-form-wrap .inputs-ccv, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-copy .expiration-wrap .ccv-form-wrap .inputs-ccv, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-copy .expiration-wrap .date-form-wrap .inputs-ccv, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap .expiration-wrap .ccv-form-wrap .inputs-ccv, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap .expiration-wrap .date-form-wrap .inputs-ccv, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-cb .expiration-wrap .ccv-form-wrap .inputs-ccv, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-cb .expiration-wrap .date-form-wrap .inputs-ccv, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-copy .expiration-wrap .ccv-form-wrap .inputs-ccv, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-copy .expiration-wrap .date-form-wrap .inputs-ccv, .calendar-commande .paiement-form .commande-form-wrap .input-wrap .expiration-wrap .ccv-form-wrap .inputs-ccv, .calendar-commande .paiement-form .commande-form-wrap .input-wrap .expiration-wrap .date-form-wrap .inputs-ccv, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-cb .expiration-wrap .ccv-form-wrap .inputs-ccv, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-cb .expiration-wrap .date-form-wrap .inputs-ccv, .calendar-commande .commande-form .commande-form-wrap .input-wrap-copy .expiration-wrap .ccv-form-wrap .inputs-ccv, .calendar-commande .commande-form .commande-form-wrap .input-wrap-copy .expiration-wrap .date-form-wrap .inputs-ccv, .calendar-commande .commande-form .commande-form-wrap .input-wrap .expiration-wrap .ccv-form-wrap .inputs-ccv, .calendar-commande .commande-form .commande-form-wrap .input-wrap .expiration-wrap .date-form-wrap .inputs-ccv, .calendar-commande .commande-form .commande-form-wrap .input-wrap-cb .expiration-wrap .ccv-form-wrap .inputs-ccv, .calendar-commande .commande-form .commande-form-wrap .input-wrap-cb .expiration-wrap .date-form-wrap .inputs-ccv {
               text-align: center;
@@ -1886,6 +2323,7 @@ ul {
           font-size: 0;
           border-radius: 7px;
           border: 2px solid white;
+          -webkit-transition: 300ms all ease-in-out;
           transition: 300ms all ease-in-out; }
           .calendar-commande .calendar-form .commande-form-wrap .input-wrap-copy .cb-form-wrap .inputs, .calendar-commande .calendar-form .commande-form-wrap .input-wrap .cb-form-wrap .inputs, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-cb .cb-form-wrap .inputs, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-copy .cb-form-wrap .inputs, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap .cb-form-wrap .inputs, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-cb .cb-form-wrap .inputs, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-copy .cb-form-wrap .inputs, .calendar-commande .paiement-form .commande-form-wrap .input-wrap .cb-form-wrap .inputs, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-cb .cb-form-wrap .inputs, .calendar-commande .commande-form .commande-form-wrap .input-wrap-copy .cb-form-wrap .inputs, .calendar-commande .commande-form .commande-form-wrap .input-wrap .cb-form-wrap .inputs, .calendar-commande .commande-form .commande-form-wrap .input-wrap-cb .cb-form-wrap .inputs {
             font-size: 16px;
@@ -1899,8 +2337,12 @@ ul {
             .calendar-commande .calendar-form .commande-form-wrap .input-wrap-copy .cb-form-wrap .inputs:last-child, .calendar-commande .calendar-form .commande-form-wrap .input-wrap .cb-form-wrap .inputs:last-child, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-cb .cb-form-wrap .inputs:last-child, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-copy .cb-form-wrap .inputs:last-child, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap .cb-form-wrap .inputs:last-child, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-cb .cb-form-wrap .inputs:last-child, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-copy .cb-form-wrap .inputs:last-child, .calendar-commande .paiement-form .commande-form-wrap .input-wrap .cb-form-wrap .inputs:last-child, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-cb .cb-form-wrap .inputs:last-child, .calendar-commande .commande-form .commande-form-wrap .input-wrap-copy .cb-form-wrap .inputs:last-child, .calendar-commande .commande-form .commande-form-wrap .input-wrap .cb-form-wrap .inputs:last-child, .calendar-commande .commande-form .commande-form-wrap .input-wrap-cb .cb-form-wrap .inputs:last-child {
               border-radius: 0 7px 7px 0; }
         .calendar-commande .calendar-form .commande-form-wrap .input-wrap-copy span, .calendar-commande .calendar-form .commande-form-wrap .input-wrap span, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-cb span, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-copy span, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap span, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-cb span, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-copy span, .calendar-commande .paiement-form .commande-form-wrap .input-wrap span, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-cb span, .calendar-commande .commande-form .commande-form-wrap .input-wrap-copy span, .calendar-commande .commande-form .commande-form-wrap .input-wrap span, .calendar-commande .commande-form .commande-form-wrap .input-wrap-cb span {
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
-          align-items: center;
+          -webkit-box-align: center;
+              -ms-flex-align: center;
+                  align-items: center;
           color: #8e8e8e;
           width: 30%; }
         .calendar-commande .calendar-form .commande-form-wrap .input-wrap-copy input, .calendar-commande .calendar-form .commande-form-wrap .input-wrap input, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-cb input, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-copy input, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap input, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-cb input, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-copy input, .calendar-commande .paiement-form .commande-form-wrap .input-wrap input, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-cb input, .calendar-commande .commande-form .commande-form-wrap .input-wrap-copy input, .calendar-commande .commande-form .commande-form-wrap .input-wrap input, .calendar-commande .commande-form .commande-form-wrap .input-wrap-cb input {
@@ -1912,10 +2354,13 @@ ul {
           border: 2px solid white;
           border-radius: 7px;
           box-sizing: border-box;
+          -webkit-transition: 300ms all ease-in-out;
           transition: 300ms all ease-in-out; }
           .calendar-commande .calendar-form .commande-form-wrap .input-wrap-copy input:focus, .calendar-commande .calendar-form .commande-form-wrap .input-wrap input:focus, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-cb input:focus, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-copy input:focus, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap input:focus, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-cb input:focus, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-copy input:focus, .calendar-commande .paiement-form .commande-form-wrap .input-wrap input:focus, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-cb input:focus, .calendar-commande .commande-form .commande-form-wrap .input-wrap-copy input:focus, .calendar-commande .commande-form .commande-form-wrap .input-wrap input:focus, .calendar-commande .commande-form .commande-form-wrap .input-wrap-cb input:focus {
             border: 2px solid #8e8e8e; }
         .calendar-commande .calendar-form .commande-form-wrap .input-wrap-copy .dropdown-tel-wrapper, .calendar-commande .calendar-form .commande-form-wrap .input-wrap .dropdown-tel-wrapper, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-cb .dropdown-tel-wrapper, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-copy .dropdown-tel-wrapper, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap .dropdown-tel-wrapper, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-cb .dropdown-tel-wrapper, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-copy .dropdown-tel-wrapper, .calendar-commande .paiement-form .commande-form-wrap .input-wrap .dropdown-tel-wrapper, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-cb .dropdown-tel-wrapper, .calendar-commande .commande-form .commande-form-wrap .input-wrap-copy .dropdown-tel-wrapper, .calendar-commande .commande-form .commande-form-wrap .input-wrap .dropdown-tel-wrapper, .calendar-commande .commande-form .commande-form-wrap .input-wrap-cb .dropdown-tel-wrapper {
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
           width: 70%; }
           .calendar-commande .calendar-form .commande-form-wrap .input-wrap-copy .dropdown-tel-wrapper input, .calendar-commande .calendar-form .commande-form-wrap .input-wrap .dropdown-tel-wrapper input, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-cb .dropdown-tel-wrapper input, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-copy .dropdown-tel-wrapper input, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap .dropdown-tel-wrapper input, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-cb .dropdown-tel-wrapper input, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-copy .dropdown-tel-wrapper input, .calendar-commande .paiement-form .commande-form-wrap .input-wrap .dropdown-tel-wrapper input, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-cb .dropdown-tel-wrapper input, .calendar-commande .commande-form .commande-form-wrap .input-wrap-copy .dropdown-tel-wrapper input, .calendar-commande .commande-form .commande-form-wrap .input-wrap .dropdown-tel-wrapper input, .calendar-commande .commande-form .commande-form-wrap .input-wrap-cb .dropdown-tel-wrapper input {
@@ -1926,6 +2371,8 @@ ul {
             width: 25%;
             height: 42.6px; }
             .calendar-commande .calendar-form .commande-form-wrap .input-wrap-copy .dropdown-tel-wrapper .dropdown-tel .default-label-tel, .calendar-commande .calendar-form .commande-form-wrap .input-wrap .dropdown-tel-wrapper .dropdown-tel .default-label-tel, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-cb .dropdown-tel-wrapper .dropdown-tel .default-label-tel, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-copy .dropdown-tel-wrapper .dropdown-tel .default-label-tel, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap .dropdown-tel-wrapper .dropdown-tel .default-label-tel, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-cb .dropdown-tel-wrapper .dropdown-tel .default-label-tel, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-copy .dropdown-tel-wrapper .dropdown-tel .default-label-tel, .calendar-commande .paiement-form .commande-form-wrap .input-wrap .dropdown-tel-wrapper .dropdown-tel .default-label-tel, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-cb .dropdown-tel-wrapper .dropdown-tel .default-label-tel, .calendar-commande .commande-form .commande-form-wrap .input-wrap-copy .dropdown-tel-wrapper .dropdown-tel .default-label-tel, .calendar-commande .commande-form .commande-form-wrap .input-wrap .dropdown-tel-wrapper .dropdown-tel .default-label-tel, .calendar-commande .commande-form .commande-form-wrap .input-wrap-cb .dropdown-tel-wrapper .dropdown-tel .default-label-tel {
+              display: -webkit-box;
+              display: -ms-flexbox;
               display: flex;
               width: 100%;
               background: #e7e7e7;
@@ -1952,10 +2399,13 @@ ul {
                 background-image: url("../img/icons/arrow-right-white.svg");
                 background-position: center;
                 background-repeat: no-repeat;
+                -webkit-transition: 200ms all ease-in-out;
                 transition: 200ms all ease-in-out;
-                transform: rotate(90deg); }
+                -webkit-transform: rotate(90deg);
+                        transform: rotate(90deg); }
               .calendar-commande .calendar-form .commande-form-wrap .input-wrap-copy .dropdown-tel-wrapper .dropdown-tel .default-label-tel .arrow-icon-rotated, .calendar-commande .calendar-form .commande-form-wrap .input-wrap .dropdown-tel-wrapper .dropdown-tel .default-label-tel .arrow-icon-rotated, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-cb .dropdown-tel-wrapper .dropdown-tel .default-label-tel .arrow-icon-rotated, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-copy .dropdown-tel-wrapper .dropdown-tel .default-label-tel .arrow-icon-rotated, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap .dropdown-tel-wrapper .dropdown-tel .default-label-tel .arrow-icon-rotated, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-cb .dropdown-tel-wrapper .dropdown-tel .default-label-tel .arrow-icon-rotated, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-copy .dropdown-tel-wrapper .dropdown-tel .default-label-tel .arrow-icon-rotated, .calendar-commande .paiement-form .commande-form-wrap .input-wrap .dropdown-tel-wrapper .dropdown-tel .default-label-tel .arrow-icon-rotated, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-cb .dropdown-tel-wrapper .dropdown-tel .default-label-tel .arrow-icon-rotated, .calendar-commande .commande-form .commande-form-wrap .input-wrap-copy .dropdown-tel-wrapper .dropdown-tel .default-label-tel .arrow-icon-rotated, .calendar-commande .commande-form .commande-form-wrap .input-wrap .dropdown-tel-wrapper .dropdown-tel .default-label-tel .arrow-icon-rotated, .calendar-commande .commande-form .commande-form-wrap .input-wrap-cb .dropdown-tel-wrapper .dropdown-tel .default-label-tel .arrow-icon-rotated {
-                transform: rotate(-90deg); }
+                -webkit-transform: rotate(-90deg);
+                        transform: rotate(-90deg); }
             .calendar-commande .calendar-form .commande-form-wrap .input-wrap-copy .dropdown-tel-wrapper .dropdown-tel .ul-tel, .calendar-commande .calendar-form .commande-form-wrap .input-wrap .dropdown-tel-wrapper .dropdown-tel .ul-tel, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-cb .dropdown-tel-wrapper .dropdown-tel .ul-tel, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-copy .dropdown-tel-wrapper .dropdown-tel .ul-tel, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap .dropdown-tel-wrapper .dropdown-tel .ul-tel, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-cb .dropdown-tel-wrapper .dropdown-tel .ul-tel, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-copy .dropdown-tel-wrapper .dropdown-tel .ul-tel, .calendar-commande .paiement-form .commande-form-wrap .input-wrap .dropdown-tel-wrapper .dropdown-tel .ul-tel, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-cb .dropdown-tel-wrapper .dropdown-tel .ul-tel, .calendar-commande .commande-form .commande-form-wrap .input-wrap-copy .dropdown-tel-wrapper .dropdown-tel .ul-tel, .calendar-commande .commande-form .commande-form-wrap .input-wrap .dropdown-tel-wrapper .dropdown-tel .ul-tel, .calendar-commande .commande-form .commande-form-wrap .input-wrap-cb .dropdown-tel-wrapper .dropdown-tel .ul-tel {
               padding: 0;
               margin: 0;
@@ -1964,6 +2414,7 @@ ul {
               opacity: 0;
               z-index: 1;
               top: -20px;
+              -webkit-transition: 300ms all ease-in-out;
               transition: 300ms all ease-in-out;
               margin-top: 10px;
               background: #f9fafb;
@@ -1972,6 +2423,8 @@ ul {
               overflow-y: scroll;
               overflow-x: hidden; }
               .calendar-commande .calendar-form .commande-form-wrap .input-wrap-copy .dropdown-tel-wrapper .dropdown-tel .ul-tel .label-selected-tel, .calendar-commande .calendar-form .commande-form-wrap .input-wrap .dropdown-tel-wrapper .dropdown-tel .ul-tel .label-selected-tel, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-cb .dropdown-tel-wrapper .dropdown-tel .ul-tel .label-selected-tel, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-copy .dropdown-tel-wrapper .dropdown-tel .ul-tel .label-selected-tel, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap .dropdown-tel-wrapper .dropdown-tel .ul-tel .label-selected-tel, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-cb .dropdown-tel-wrapper .dropdown-tel .ul-tel .label-selected-tel, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-copy .dropdown-tel-wrapper .dropdown-tel .ul-tel .label-selected-tel, .calendar-commande .paiement-form .commande-form-wrap .input-wrap .dropdown-tel-wrapper .dropdown-tel .ul-tel .label-selected-tel, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-cb .dropdown-tel-wrapper .dropdown-tel .ul-tel .label-selected-tel, .calendar-commande .commande-form .commande-form-wrap .input-wrap-copy .dropdown-tel-wrapper .dropdown-tel .ul-tel .label-selected-tel, .calendar-commande .commande-form .commande-form-wrap .input-wrap .dropdown-tel-wrapper .dropdown-tel .ul-tel .label-selected-tel, .calendar-commande .commande-form .commande-form-wrap .input-wrap-cb .dropdown-tel-wrapper .dropdown-tel .ul-tel .label-selected-tel {
+                display: -webkit-box;
+                display: -ms-flexbox;
                 display: flex;
                 width: 100%;
                 padding: 10px;
@@ -1994,7 +2447,10 @@ ul {
           width: 70%;
           height: 42.6px; }
           .calendar-commande .calendar-form .commande-form-wrap .input-wrap-copy .dropdown-pays .default-label-pays, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-copy .dropdown-pays .default-label-fuseau, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-copy .dropdown-fuseau .default-label-pays, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-copy .dropdown-fuseau .default-label-fuseau, .calendar-commande .calendar-form .commande-form-wrap .input-wrap .dropdown-pays .default-label-pays, .calendar-commande .calendar-form .commande-form-wrap .input-wrap .dropdown-pays .default-label-fuseau, .calendar-commande .calendar-form .commande-form-wrap .input-wrap .dropdown-fuseau .default-label-pays, .calendar-commande .calendar-form .commande-form-wrap .input-wrap .dropdown-fuseau .default-label-fuseau, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-cb .dropdown-pays .default-label-pays, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-cb .dropdown-pays .default-label-fuseau, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-cb .dropdown-fuseau .default-label-pays, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-cb .dropdown-fuseau .default-label-fuseau, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-copy .dropdown-pays .default-label-pays, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-copy .dropdown-pays .default-label-fuseau, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-copy .dropdown-fuseau .default-label-pays, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-copy .dropdown-fuseau .default-label-fuseau, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap .dropdown-pays .default-label-pays, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap .dropdown-pays .default-label-fuseau, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap .dropdown-fuseau .default-label-pays, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap .dropdown-fuseau .default-label-fuseau, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-cb .dropdown-pays .default-label-pays, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-cb .dropdown-pays .default-label-fuseau, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-cb .dropdown-fuseau .default-label-pays, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-cb .dropdown-fuseau .default-label-fuseau, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-copy .dropdown-pays .default-label-pays, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-copy .dropdown-pays .default-label-fuseau, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-copy .dropdown-fuseau .default-label-pays, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-copy .dropdown-fuseau .default-label-fuseau, .calendar-commande .paiement-form .commande-form-wrap .input-wrap .dropdown-pays .default-label-pays, .calendar-commande .paiement-form .commande-form-wrap .input-wrap .dropdown-pays .default-label-fuseau, .calendar-commande .paiement-form .commande-form-wrap .input-wrap .dropdown-fuseau .default-label-pays, .calendar-commande .paiement-form .commande-form-wrap .input-wrap .dropdown-fuseau .default-label-fuseau, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-cb .dropdown-pays .default-label-pays, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-cb .dropdown-pays .default-label-fuseau, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-cb .dropdown-fuseau .default-label-pays, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-cb .dropdown-fuseau .default-label-fuseau, .calendar-commande .commande-form .commande-form-wrap .input-wrap-copy .dropdown-pays .default-label-pays, .calendar-commande .commande-form .commande-form-wrap .input-wrap-copy .dropdown-pays .default-label-fuseau, .calendar-commande .commande-form .commande-form-wrap .input-wrap-copy .dropdown-fuseau .default-label-pays, .calendar-commande .commande-form .commande-form-wrap .input-wrap-copy .dropdown-fuseau .default-label-fuseau, .calendar-commande .commande-form .commande-form-wrap .input-wrap .dropdown-pays .default-label-pays, .calendar-commande .commande-form .commande-form-wrap .input-wrap .dropdown-pays .default-label-fuseau, .calendar-commande .commande-form .commande-form-wrap .input-wrap .dropdown-fuseau .default-label-pays, .calendar-commande .commande-form .commande-form-wrap .input-wrap .dropdown-fuseau .default-label-fuseau, .calendar-commande .commande-form .commande-form-wrap .input-wrap-cb .dropdown-pays .default-label-pays, .calendar-commande .commande-form .commande-form-wrap .input-wrap-cb .dropdown-pays .default-label-fuseau, .calendar-commande .commande-form .commande-form-wrap .input-wrap-cb .dropdown-fuseau .default-label-pays, .calendar-commande .commande-form .commande-form-wrap .input-wrap-cb .dropdown-fuseau .default-label-fuseau {
+            -webkit-transition: 300ms all ease-in-out;
             transition: 300ms all ease-in-out;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
             width: 100%;
             color: #8e8e8e;
@@ -2008,6 +2464,8 @@ ul {
               width: 90%;
               margin: 0; }
             .calendar-commande .calendar-form .commande-form-wrap .input-wrap-copy .dropdown-pays .default-label-pays .p-pays, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-copy .dropdown-pays .default-label-fuseau .p-pays, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-copy .dropdown-fuseau .default-label-pays .p-pays, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-copy .dropdown-fuseau .default-label-fuseau .p-pays, .calendar-commande .calendar-form .commande-form-wrap .input-wrap .dropdown-pays .default-label-pays .p-pays, .calendar-commande .calendar-form .commande-form-wrap .input-wrap .dropdown-pays .default-label-fuseau .p-pays, .calendar-commande .calendar-form .commande-form-wrap .input-wrap .dropdown-fuseau .default-label-pays .p-pays, .calendar-commande .calendar-form .commande-form-wrap .input-wrap .dropdown-fuseau .default-label-fuseau .p-pays, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-cb .dropdown-pays .default-label-pays .p-pays, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-cb .dropdown-pays .default-label-fuseau .p-pays, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-cb .dropdown-fuseau .default-label-pays .p-pays, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-cb .dropdown-fuseau .default-label-fuseau .p-pays, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-copy .dropdown-pays .default-label-pays .p-pays, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-copy .dropdown-pays .default-label-fuseau .p-pays, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-copy .dropdown-fuseau .default-label-pays .p-pays, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-copy .dropdown-fuseau .default-label-fuseau .p-pays, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap .dropdown-pays .default-label-pays .p-pays, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap .dropdown-pays .default-label-fuseau .p-pays, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap .dropdown-fuseau .default-label-pays .p-pays, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap .dropdown-fuseau .default-label-fuseau .p-pays, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-cb .dropdown-pays .default-label-pays .p-pays, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-cb .dropdown-pays .default-label-fuseau .p-pays, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-cb .dropdown-fuseau .default-label-pays .p-pays, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-cb .dropdown-fuseau .default-label-fuseau .p-pays, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-copy .dropdown-pays .default-label-pays .p-pays, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-copy .dropdown-pays .default-label-fuseau .p-pays, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-copy .dropdown-fuseau .default-label-pays .p-pays, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-copy .dropdown-fuseau .default-label-fuseau .p-pays, .calendar-commande .paiement-form .commande-form-wrap .input-wrap .dropdown-pays .default-label-pays .p-pays, .calendar-commande .paiement-form .commande-form-wrap .input-wrap .dropdown-pays .default-label-fuseau .p-pays, .calendar-commande .paiement-form .commande-form-wrap .input-wrap .dropdown-fuseau .default-label-pays .p-pays, .calendar-commande .paiement-form .commande-form-wrap .input-wrap .dropdown-fuseau .default-label-fuseau .p-pays, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-cb .dropdown-pays .default-label-pays .p-pays, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-cb .dropdown-pays .default-label-fuseau .p-pays, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-cb .dropdown-fuseau .default-label-pays .p-pays, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-cb .dropdown-fuseau .default-label-fuseau .p-pays, .calendar-commande .commande-form .commande-form-wrap .input-wrap-copy .dropdown-pays .default-label-pays .p-pays, .calendar-commande .commande-form .commande-form-wrap .input-wrap-copy .dropdown-pays .default-label-fuseau .p-pays, .calendar-commande .commande-form .commande-form-wrap .input-wrap-copy .dropdown-fuseau .default-label-pays .p-pays, .calendar-commande .commande-form .commande-form-wrap .input-wrap-copy .dropdown-fuseau .default-label-fuseau .p-pays, .calendar-commande .commande-form .commande-form-wrap .input-wrap .dropdown-pays .default-label-pays .p-pays, .calendar-commande .commande-form .commande-form-wrap .input-wrap .dropdown-pays .default-label-fuseau .p-pays, .calendar-commande .commande-form .commande-form-wrap .input-wrap .dropdown-fuseau .default-label-pays .p-pays, .calendar-commande .commande-form .commande-form-wrap .input-wrap .dropdown-fuseau .default-label-fuseau .p-pays, .calendar-commande .commande-form .commande-form-wrap .input-wrap-cb .dropdown-pays .default-label-pays .p-pays, .calendar-commande .commande-form .commande-form-wrap .input-wrap-cb .dropdown-pays .default-label-fuseau .p-pays, .calendar-commande .commande-form .commande-form-wrap .input-wrap-cb .dropdown-fuseau .default-label-pays .p-pays, .calendar-commande .commande-form .commande-form-wrap .input-wrap-cb .dropdown-fuseau .default-label-fuseau .p-pays {
+              display: -webkit-box;
+              display: -ms-flexbox;
               display: flex; }
             .calendar-commande .calendar-form .commande-form-wrap .input-wrap-copy .dropdown-pays .default-label-pays .p-fuseau, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-copy .dropdown-pays .default-label-fuseau .p-fuseau, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-copy .dropdown-fuseau .default-label-pays .p-fuseau, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-copy .dropdown-fuseau .default-label-fuseau .p-fuseau, .calendar-commande .calendar-form .commande-form-wrap .input-wrap .dropdown-pays .default-label-pays .p-fuseau, .calendar-commande .calendar-form .commande-form-wrap .input-wrap .dropdown-pays .default-label-fuseau .p-fuseau, .calendar-commande .calendar-form .commande-form-wrap .input-wrap .dropdown-fuseau .default-label-pays .p-fuseau, .calendar-commande .calendar-form .commande-form-wrap .input-wrap .dropdown-fuseau .default-label-fuseau .p-fuseau, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-cb .dropdown-pays .default-label-pays .p-fuseau, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-cb .dropdown-pays .default-label-fuseau .p-fuseau, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-cb .dropdown-fuseau .default-label-pays .p-fuseau, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-cb .dropdown-fuseau .default-label-fuseau .p-fuseau, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-copy .dropdown-pays .default-label-pays .p-fuseau, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-copy .dropdown-pays .default-label-fuseau .p-fuseau, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-copy .dropdown-fuseau .default-label-pays .p-fuseau, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-copy .dropdown-fuseau .default-label-fuseau .p-fuseau, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap .dropdown-pays .default-label-pays .p-fuseau, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap .dropdown-pays .default-label-fuseau .p-fuseau, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap .dropdown-fuseau .default-label-pays .p-fuseau, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap .dropdown-fuseau .default-label-fuseau .p-fuseau, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-cb .dropdown-pays .default-label-pays .p-fuseau, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-cb .dropdown-pays .default-label-fuseau .p-fuseau, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-cb .dropdown-fuseau .default-label-pays .p-fuseau, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-cb .dropdown-fuseau .default-label-fuseau .p-fuseau, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-copy .dropdown-pays .default-label-pays .p-fuseau, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-copy .dropdown-pays .default-label-fuseau .p-fuseau, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-copy .dropdown-fuseau .default-label-pays .p-fuseau, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-copy .dropdown-fuseau .default-label-fuseau .p-fuseau, .calendar-commande .paiement-form .commande-form-wrap .input-wrap .dropdown-pays .default-label-pays .p-fuseau, .calendar-commande .paiement-form .commande-form-wrap .input-wrap .dropdown-pays .default-label-fuseau .p-fuseau, .calendar-commande .paiement-form .commande-form-wrap .input-wrap .dropdown-fuseau .default-label-pays .p-fuseau, .calendar-commande .paiement-form .commande-form-wrap .input-wrap .dropdown-fuseau .default-label-fuseau .p-fuseau, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-cb .dropdown-pays .default-label-pays .p-fuseau, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-cb .dropdown-pays .default-label-fuseau .p-fuseau, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-cb .dropdown-fuseau .default-label-pays .p-fuseau, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-cb .dropdown-fuseau .default-label-fuseau .p-fuseau, .calendar-commande .commande-form .commande-form-wrap .input-wrap-copy .dropdown-pays .default-label-pays .p-fuseau, .calendar-commande .commande-form .commande-form-wrap .input-wrap-copy .dropdown-pays .default-label-fuseau .p-fuseau, .calendar-commande .commande-form .commande-form-wrap .input-wrap-copy .dropdown-fuseau .default-label-pays .p-fuseau, .calendar-commande .commande-form .commande-form-wrap .input-wrap-copy .dropdown-fuseau .default-label-fuseau .p-fuseau, .calendar-commande .commande-form .commande-form-wrap .input-wrap .dropdown-pays .default-label-pays .p-fuseau, .calendar-commande .commande-form .commande-form-wrap .input-wrap .dropdown-pays .default-label-fuseau .p-fuseau, .calendar-commande .commande-form .commande-form-wrap .input-wrap .dropdown-fuseau .default-label-pays .p-fuseau, .calendar-commande .commande-form .commande-form-wrap .input-wrap .dropdown-fuseau .default-label-fuseau .p-fuseau, .calendar-commande .commande-form .commande-form-wrap .input-wrap-cb .dropdown-pays .default-label-pays .p-fuseau, .calendar-commande .commande-form .commande-form-wrap .input-wrap-cb .dropdown-pays .default-label-fuseau .p-fuseau, .calendar-commande .commande-form .commande-form-wrap .input-wrap-cb .dropdown-fuseau .default-label-pays .p-fuseau, .calendar-commande .commande-form .commande-form-wrap .input-wrap-cb .dropdown-fuseau .default-label-fuseau .p-fuseau {
               white-space: nowrap;
@@ -2019,9 +2477,15 @@ ul {
               width: 20px;
               margin-right: 10px; }
             .calendar-commande .calendar-form .commande-form-wrap .input-wrap-copy .dropdown-pays .default-label-pays .arrow-icon-wrapper, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-copy .dropdown-pays .default-label-fuseau .arrow-icon-wrapper, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-copy .dropdown-fuseau .default-label-pays .arrow-icon-wrapper, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-copy .dropdown-fuseau .default-label-fuseau .arrow-icon-wrapper, .calendar-commande .calendar-form .commande-form-wrap .input-wrap .dropdown-pays .default-label-pays .arrow-icon-wrapper, .calendar-commande .calendar-form .commande-form-wrap .input-wrap .dropdown-pays .default-label-fuseau .arrow-icon-wrapper, .calendar-commande .calendar-form .commande-form-wrap .input-wrap .dropdown-fuseau .default-label-pays .arrow-icon-wrapper, .calendar-commande .calendar-form .commande-form-wrap .input-wrap .dropdown-fuseau .default-label-fuseau .arrow-icon-wrapper, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-cb .dropdown-pays .default-label-pays .arrow-icon-wrapper, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-cb .dropdown-pays .default-label-fuseau .arrow-icon-wrapper, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-cb .dropdown-fuseau .default-label-pays .arrow-icon-wrapper, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-cb .dropdown-fuseau .default-label-fuseau .arrow-icon-wrapper, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-copy .dropdown-pays .default-label-pays .arrow-icon-wrapper, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-copy .dropdown-pays .default-label-fuseau .arrow-icon-wrapper, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-copy .dropdown-fuseau .default-label-pays .arrow-icon-wrapper, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-copy .dropdown-fuseau .default-label-fuseau .arrow-icon-wrapper, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap .dropdown-pays .default-label-pays .arrow-icon-wrapper, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap .dropdown-pays .default-label-fuseau .arrow-icon-wrapper, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap .dropdown-fuseau .default-label-pays .arrow-icon-wrapper, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap .dropdown-fuseau .default-label-fuseau .arrow-icon-wrapper, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-cb .dropdown-pays .default-label-pays .arrow-icon-wrapper, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-cb .dropdown-pays .default-label-fuseau .arrow-icon-wrapper, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-cb .dropdown-fuseau .default-label-pays .arrow-icon-wrapper, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-cb .dropdown-fuseau .default-label-fuseau .arrow-icon-wrapper, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-copy .dropdown-pays .default-label-pays .arrow-icon-wrapper, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-copy .dropdown-pays .default-label-fuseau .arrow-icon-wrapper, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-copy .dropdown-fuseau .default-label-pays .arrow-icon-wrapper, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-copy .dropdown-fuseau .default-label-fuseau .arrow-icon-wrapper, .calendar-commande .paiement-form .commande-form-wrap .input-wrap .dropdown-pays .default-label-pays .arrow-icon-wrapper, .calendar-commande .paiement-form .commande-form-wrap .input-wrap .dropdown-pays .default-label-fuseau .arrow-icon-wrapper, .calendar-commande .paiement-form .commande-form-wrap .input-wrap .dropdown-fuseau .default-label-pays .arrow-icon-wrapper, .calendar-commande .paiement-form .commande-form-wrap .input-wrap .dropdown-fuseau .default-label-fuseau .arrow-icon-wrapper, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-cb .dropdown-pays .default-label-pays .arrow-icon-wrapper, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-cb .dropdown-pays .default-label-fuseau .arrow-icon-wrapper, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-cb .dropdown-fuseau .default-label-pays .arrow-icon-wrapper, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-cb .dropdown-fuseau .default-label-fuseau .arrow-icon-wrapper, .calendar-commande .commande-form .commande-form-wrap .input-wrap-copy .dropdown-pays .default-label-pays .arrow-icon-wrapper, .calendar-commande .commande-form .commande-form-wrap .input-wrap-copy .dropdown-pays .default-label-fuseau .arrow-icon-wrapper, .calendar-commande .commande-form .commande-form-wrap .input-wrap-copy .dropdown-fuseau .default-label-pays .arrow-icon-wrapper, .calendar-commande .commande-form .commande-form-wrap .input-wrap-copy .dropdown-fuseau .default-label-fuseau .arrow-icon-wrapper, .calendar-commande .commande-form .commande-form-wrap .input-wrap .dropdown-pays .default-label-pays .arrow-icon-wrapper, .calendar-commande .commande-form .commande-form-wrap .input-wrap .dropdown-pays .default-label-fuseau .arrow-icon-wrapper, .calendar-commande .commande-form .commande-form-wrap .input-wrap .dropdown-fuseau .default-label-pays .arrow-icon-wrapper, .calendar-commande .commande-form .commande-form-wrap .input-wrap .dropdown-fuseau .default-label-fuseau .arrow-icon-wrapper, .calendar-commande .commande-form .commande-form-wrap .input-wrap-cb .dropdown-pays .default-label-pays .arrow-icon-wrapper, .calendar-commande .commande-form .commande-form-wrap .input-wrap-cb .dropdown-pays .default-label-fuseau .arrow-icon-wrapper, .calendar-commande .commande-form .commande-form-wrap .input-wrap-cb .dropdown-fuseau .default-label-pays .arrow-icon-wrapper, .calendar-commande .commande-form .commande-form-wrap .input-wrap-cb .dropdown-fuseau .default-label-fuseau .arrow-icon-wrapper {
+              display: -webkit-box;
+              display: -ms-flexbox;
               display: flex;
-              align-items: center;
-              justify-content: center;
+              -webkit-box-align: center;
+                  -ms-flex-align: center;
+                      align-items: center;
+              -webkit-box-pack: center;
+                  -ms-flex-pack: center;
+                      justify-content: center;
               position: absolute;
               top: 0;
               right: 0;
@@ -2037,10 +2501,13 @@ ul {
                 background-image: url("../img/icons/arrow-right-green.svg");
                 background-position: center;
                 background-repeat: no-repeat;
+                -webkit-transition: 200ms all ease-in-out;
                 transition: 200ms all ease-in-out;
-                transform: rotate(90deg); }
+                -webkit-transform: rotate(90deg);
+                        transform: rotate(90deg); }
               .calendar-commande .calendar-form .commande-form-wrap .input-wrap-copy .dropdown-pays .default-label-pays .arrow-icon-wrapper .arrow-icon-rotated, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-copy .dropdown-pays .default-label-fuseau .arrow-icon-wrapper .arrow-icon-rotated, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-copy .dropdown-fuseau .default-label-pays .arrow-icon-wrapper .arrow-icon-rotated, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-copy .dropdown-fuseau .default-label-fuseau .arrow-icon-wrapper .arrow-icon-rotated, .calendar-commande .calendar-form .commande-form-wrap .input-wrap .dropdown-pays .default-label-pays .arrow-icon-wrapper .arrow-icon-rotated, .calendar-commande .calendar-form .commande-form-wrap .input-wrap .dropdown-pays .default-label-fuseau .arrow-icon-wrapper .arrow-icon-rotated, .calendar-commande .calendar-form .commande-form-wrap .input-wrap .dropdown-fuseau .default-label-pays .arrow-icon-wrapper .arrow-icon-rotated, .calendar-commande .calendar-form .commande-form-wrap .input-wrap .dropdown-fuseau .default-label-fuseau .arrow-icon-wrapper .arrow-icon-rotated, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-cb .dropdown-pays .default-label-pays .arrow-icon-wrapper .arrow-icon-rotated, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-cb .dropdown-pays .default-label-fuseau .arrow-icon-wrapper .arrow-icon-rotated, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-cb .dropdown-fuseau .default-label-pays .arrow-icon-wrapper .arrow-icon-rotated, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-cb .dropdown-fuseau .default-label-fuseau .arrow-icon-wrapper .arrow-icon-rotated, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-copy .dropdown-pays .default-label-pays .arrow-icon-wrapper .arrow-icon-rotated, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-copy .dropdown-pays .default-label-fuseau .arrow-icon-wrapper .arrow-icon-rotated, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-copy .dropdown-fuseau .default-label-pays .arrow-icon-wrapper .arrow-icon-rotated, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-copy .dropdown-fuseau .default-label-fuseau .arrow-icon-wrapper .arrow-icon-rotated, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap .dropdown-pays .default-label-pays .arrow-icon-wrapper .arrow-icon-rotated, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap .dropdown-pays .default-label-fuseau .arrow-icon-wrapper .arrow-icon-rotated, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap .dropdown-fuseau .default-label-pays .arrow-icon-wrapper .arrow-icon-rotated, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap .dropdown-fuseau .default-label-fuseau .arrow-icon-wrapper .arrow-icon-rotated, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-cb .dropdown-pays .default-label-pays .arrow-icon-wrapper .arrow-icon-rotated, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-cb .dropdown-pays .default-label-fuseau .arrow-icon-wrapper .arrow-icon-rotated, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-cb .dropdown-fuseau .default-label-pays .arrow-icon-wrapper .arrow-icon-rotated, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-cb .dropdown-fuseau .default-label-fuseau .arrow-icon-wrapper .arrow-icon-rotated, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-copy .dropdown-pays .default-label-pays .arrow-icon-wrapper .arrow-icon-rotated, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-copy .dropdown-pays .default-label-fuseau .arrow-icon-wrapper .arrow-icon-rotated, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-copy .dropdown-fuseau .default-label-pays .arrow-icon-wrapper .arrow-icon-rotated, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-copy .dropdown-fuseau .default-label-fuseau .arrow-icon-wrapper .arrow-icon-rotated, .calendar-commande .paiement-form .commande-form-wrap .input-wrap .dropdown-pays .default-label-pays .arrow-icon-wrapper .arrow-icon-rotated, .calendar-commande .paiement-form .commande-form-wrap .input-wrap .dropdown-pays .default-label-fuseau .arrow-icon-wrapper .arrow-icon-rotated, .calendar-commande .paiement-form .commande-form-wrap .input-wrap .dropdown-fuseau .default-label-pays .arrow-icon-wrapper .arrow-icon-rotated, .calendar-commande .paiement-form .commande-form-wrap .input-wrap .dropdown-fuseau .default-label-fuseau .arrow-icon-wrapper .arrow-icon-rotated, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-cb .dropdown-pays .default-label-pays .arrow-icon-wrapper .arrow-icon-rotated, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-cb .dropdown-pays .default-label-fuseau .arrow-icon-wrapper .arrow-icon-rotated, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-cb .dropdown-fuseau .default-label-pays .arrow-icon-wrapper .arrow-icon-rotated, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-cb .dropdown-fuseau .default-label-fuseau .arrow-icon-wrapper .arrow-icon-rotated, .calendar-commande .commande-form .commande-form-wrap .input-wrap-copy .dropdown-pays .default-label-pays .arrow-icon-wrapper .arrow-icon-rotated, .calendar-commande .commande-form .commande-form-wrap .input-wrap-copy .dropdown-pays .default-label-fuseau .arrow-icon-wrapper .arrow-icon-rotated, .calendar-commande .commande-form .commande-form-wrap .input-wrap-copy .dropdown-fuseau .default-label-pays .arrow-icon-wrapper .arrow-icon-rotated, .calendar-commande .commande-form .commande-form-wrap .input-wrap-copy .dropdown-fuseau .default-label-fuseau .arrow-icon-wrapper .arrow-icon-rotated, .calendar-commande .commande-form .commande-form-wrap .input-wrap .dropdown-pays .default-label-pays .arrow-icon-wrapper .arrow-icon-rotated, .calendar-commande .commande-form .commande-form-wrap .input-wrap .dropdown-pays .default-label-fuseau .arrow-icon-wrapper .arrow-icon-rotated, .calendar-commande .commande-form .commande-form-wrap .input-wrap .dropdown-fuseau .default-label-pays .arrow-icon-wrapper .arrow-icon-rotated, .calendar-commande .commande-form .commande-form-wrap .input-wrap .dropdown-fuseau .default-label-fuseau .arrow-icon-wrapper .arrow-icon-rotated, .calendar-commande .commande-form .commande-form-wrap .input-wrap-cb .dropdown-pays .default-label-pays .arrow-icon-wrapper .arrow-icon-rotated, .calendar-commande .commande-form .commande-form-wrap .input-wrap-cb .dropdown-pays .default-label-fuseau .arrow-icon-wrapper .arrow-icon-rotated, .calendar-commande .commande-form .commande-form-wrap .input-wrap-cb .dropdown-fuseau .default-label-pays .arrow-icon-wrapper .arrow-icon-rotated, .calendar-commande .commande-form .commande-form-wrap .input-wrap-cb .dropdown-fuseau .default-label-fuseau .arrow-icon-wrapper .arrow-icon-rotated {
-                transform: rotate(-90deg); }
+                -webkit-transform: rotate(-90deg);
+                        transform: rotate(-90deg); }
           .calendar-commande .calendar-form .commande-form-wrap .input-wrap-copy .dropdown-pays .ul-pays, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-copy .dropdown-pays .ul-fuseau, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-copy .dropdown-fuseau .ul-pays, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-copy .dropdown-fuseau .ul-fuseau, .calendar-commande .calendar-form .commande-form-wrap .input-wrap .dropdown-pays .ul-pays, .calendar-commande .calendar-form .commande-form-wrap .input-wrap .dropdown-pays .ul-fuseau, .calendar-commande .calendar-form .commande-form-wrap .input-wrap .dropdown-fuseau .ul-pays, .calendar-commande .calendar-form .commande-form-wrap .input-wrap .dropdown-fuseau .ul-fuseau, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-cb .dropdown-pays .ul-pays, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-cb .dropdown-pays .ul-fuseau, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-cb .dropdown-fuseau .ul-pays, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-cb .dropdown-fuseau .ul-fuseau, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-copy .dropdown-pays .ul-pays, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-copy .dropdown-pays .ul-fuseau, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-copy .dropdown-fuseau .ul-pays, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-copy .dropdown-fuseau .ul-fuseau, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap .dropdown-pays .ul-pays, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap .dropdown-pays .ul-fuseau, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap .dropdown-fuseau .ul-pays, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap .dropdown-fuseau .ul-fuseau, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-cb .dropdown-pays .ul-pays, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-cb .dropdown-pays .ul-fuseau, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-cb .dropdown-fuseau .ul-pays, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-cb .dropdown-fuseau .ul-fuseau, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-copy .dropdown-pays .ul-pays, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-copy .dropdown-pays .ul-fuseau, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-copy .dropdown-fuseau .ul-pays, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-copy .dropdown-fuseau .ul-fuseau, .calendar-commande .paiement-form .commande-form-wrap .input-wrap .dropdown-pays .ul-pays, .calendar-commande .paiement-form .commande-form-wrap .input-wrap .dropdown-pays .ul-fuseau, .calendar-commande .paiement-form .commande-form-wrap .input-wrap .dropdown-fuseau .ul-pays, .calendar-commande .paiement-form .commande-form-wrap .input-wrap .dropdown-fuseau .ul-fuseau, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-cb .dropdown-pays .ul-pays, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-cb .dropdown-pays .ul-fuseau, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-cb .dropdown-fuseau .ul-pays, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-cb .dropdown-fuseau .ul-fuseau, .calendar-commande .commande-form .commande-form-wrap .input-wrap-copy .dropdown-pays .ul-pays, .calendar-commande .commande-form .commande-form-wrap .input-wrap-copy .dropdown-pays .ul-fuseau, .calendar-commande .commande-form .commande-form-wrap .input-wrap-copy .dropdown-fuseau .ul-pays, .calendar-commande .commande-form .commande-form-wrap .input-wrap-copy .dropdown-fuseau .ul-fuseau, .calendar-commande .commande-form .commande-form-wrap .input-wrap .dropdown-pays .ul-pays, .calendar-commande .commande-form .commande-form-wrap .input-wrap .dropdown-pays .ul-fuseau, .calendar-commande .commande-form .commande-form-wrap .input-wrap .dropdown-fuseau .ul-pays, .calendar-commande .commande-form .commande-form-wrap .input-wrap .dropdown-fuseau .ul-fuseau, .calendar-commande .commande-form .commande-form-wrap .input-wrap-cb .dropdown-pays .ul-pays, .calendar-commande .commande-form .commande-form-wrap .input-wrap-cb .dropdown-pays .ul-fuseau, .calendar-commande .commande-form .commande-form-wrap .input-wrap-cb .dropdown-fuseau .ul-pays, .calendar-commande .commande-form .commande-form-wrap .input-wrap-cb .dropdown-fuseau .ul-fuseau {
             padding: 0;
             margin: 0;
@@ -2049,6 +2516,7 @@ ul {
             opacity: 0;
             z-index: 1;
             top: -20px;
+            -webkit-transition: 300ms all ease-in-out;
             transition: 300ms all ease-in-out;
             margin-top: 10px;
             background: #f9fafb;
@@ -2057,6 +2525,8 @@ ul {
             overflow-x: hidden; }
             .calendar-commande .calendar-form .commande-form-wrap .input-wrap-copy .dropdown-pays .ul-pays .label-selected-pays, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-copy .dropdown-pays .ul-pays .label-selected-fuseau, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-copy .dropdown-pays .ul-fuseau .label-selected-pays, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-copy .dropdown-pays .ul-fuseau .label-selected-fuseau, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-copy .dropdown-fuseau .ul-pays .label-selected-pays, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-copy .dropdown-fuseau .ul-pays .label-selected-fuseau, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-copy .dropdown-fuseau .ul-fuseau .label-selected-pays, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-copy .dropdown-fuseau .ul-fuseau .label-selected-fuseau, .calendar-commande .calendar-form .commande-form-wrap .input-wrap .dropdown-pays .ul-pays .label-selected-pays, .calendar-commande .calendar-form .commande-form-wrap .input-wrap .dropdown-pays .ul-pays .label-selected-fuseau, .calendar-commande .calendar-form .commande-form-wrap .input-wrap .dropdown-pays .ul-fuseau .label-selected-pays, .calendar-commande .calendar-form .commande-form-wrap .input-wrap .dropdown-pays .ul-fuseau .label-selected-fuseau, .calendar-commande .calendar-form .commande-form-wrap .input-wrap .dropdown-fuseau .ul-pays .label-selected-pays, .calendar-commande .calendar-form .commande-form-wrap .input-wrap .dropdown-fuseau .ul-pays .label-selected-fuseau, .calendar-commande .calendar-form .commande-form-wrap .input-wrap .dropdown-fuseau .ul-fuseau .label-selected-pays, .calendar-commande .calendar-form .commande-form-wrap .input-wrap .dropdown-fuseau .ul-fuseau .label-selected-fuseau, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-cb .dropdown-pays .ul-pays .label-selected-pays, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-cb .dropdown-pays .ul-pays .label-selected-fuseau, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-cb .dropdown-pays .ul-fuseau .label-selected-pays, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-cb .dropdown-pays .ul-fuseau .label-selected-fuseau, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-cb .dropdown-fuseau .ul-pays .label-selected-pays, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-cb .dropdown-fuseau .ul-pays .label-selected-fuseau, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-cb .dropdown-fuseau .ul-fuseau .label-selected-pays, .calendar-commande .calendar-form .commande-form-wrap .input-wrap-cb .dropdown-fuseau .ul-fuseau .label-selected-fuseau, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-copy .dropdown-pays .ul-pays .label-selected-pays, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-copy .dropdown-pays .ul-pays .label-selected-fuseau, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-copy .dropdown-pays .ul-fuseau .label-selected-pays, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-copy .dropdown-pays .ul-fuseau .label-selected-fuseau, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-copy .dropdown-fuseau .ul-pays .label-selected-pays, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-copy .dropdown-fuseau .ul-pays .label-selected-fuseau, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-copy .dropdown-fuseau .ul-fuseau .label-selected-pays, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-copy .dropdown-fuseau .ul-fuseau .label-selected-fuseau, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap .dropdown-pays .ul-pays .label-selected-pays, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap .dropdown-pays .ul-pays .label-selected-fuseau, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap .dropdown-pays .ul-fuseau .label-selected-pays, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap .dropdown-pays .ul-fuseau .label-selected-fuseau, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap .dropdown-fuseau .ul-pays .label-selected-pays, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap .dropdown-fuseau .ul-pays .label-selected-fuseau, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap .dropdown-fuseau .ul-fuseau .label-selected-pays, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap .dropdown-fuseau .ul-fuseau .label-selected-fuseau, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-cb .dropdown-pays .ul-pays .label-selected-pays, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-cb .dropdown-pays .ul-pays .label-selected-fuseau, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-cb .dropdown-pays .ul-fuseau .label-selected-pays, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-cb .dropdown-pays .ul-fuseau .label-selected-fuseau, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-cb .dropdown-fuseau .ul-pays .label-selected-pays, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-cb .dropdown-fuseau .ul-pays .label-selected-fuseau, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-cb .dropdown-fuseau .ul-fuseau .label-selected-pays, .calendar-commande .confirmation-form .commande-form-wrap .input-wrap-cb .dropdown-fuseau .ul-fuseau .label-selected-fuseau, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-copy .dropdown-pays .ul-pays .label-selected-pays, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-copy .dropdown-pays .ul-pays .label-selected-fuseau, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-copy .dropdown-pays .ul-fuseau .label-selected-pays, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-copy .dropdown-pays .ul-fuseau .label-selected-fuseau, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-copy .dropdown-fuseau .ul-pays .label-selected-pays, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-copy .dropdown-fuseau .ul-pays .label-selected-fuseau, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-copy .dropdown-fuseau .ul-fuseau .label-selected-pays, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-copy .dropdown-fuseau .ul-fuseau .label-selected-fuseau, .calendar-commande .paiement-form .commande-form-wrap .input-wrap .dropdown-pays .ul-pays .label-selected-pays, .calendar-commande .paiement-form .commande-form-wrap .input-wrap .dropdown-pays .ul-pays .label-selected-fuseau, .calendar-commande .paiement-form .commande-form-wrap .input-wrap .dropdown-pays .ul-fuseau .label-selected-pays, .calendar-commande .paiement-form .commande-form-wrap .input-wrap .dropdown-pays .ul-fuseau .label-selected-fuseau, .calendar-commande .paiement-form .commande-form-wrap .input-wrap .dropdown-fuseau .ul-pays .label-selected-pays, .calendar-commande .paiement-form .commande-form-wrap .input-wrap .dropdown-fuseau .ul-pays .label-selected-fuseau, .calendar-commande .paiement-form .commande-form-wrap .input-wrap .dropdown-fuseau .ul-fuseau .label-selected-pays, .calendar-commande .paiement-form .commande-form-wrap .input-wrap .dropdown-fuseau .ul-fuseau .label-selected-fuseau, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-cb .dropdown-pays .ul-pays .label-selected-pays, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-cb .dropdown-pays .ul-pays .label-selected-fuseau, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-cb .dropdown-pays .ul-fuseau .label-selected-pays, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-cb .dropdown-pays .ul-fuseau .label-selected-fuseau, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-cb .dropdown-fuseau .ul-pays .label-selected-pays, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-cb .dropdown-fuseau .ul-pays .label-selected-fuseau, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-cb .dropdown-fuseau .ul-fuseau .label-selected-pays, .calendar-commande .paiement-form .commande-form-wrap .input-wrap-cb .dropdown-fuseau .ul-fuseau .label-selected-fuseau, .calendar-commande .commande-form .commande-form-wrap .input-wrap-copy .dropdown-pays .ul-pays .label-selected-pays, .calendar-commande .commande-form .commande-form-wrap .input-wrap-copy .dropdown-pays .ul-pays .label-selected-fuseau, .calendar-commande .commande-form .commande-form-wrap .input-wrap-copy .dropdown-pays .ul-fuseau .label-selected-pays, .calendar-commande .commande-form .commande-form-wrap .input-wrap-copy .dropdown-pays .ul-fuseau .label-selected-fuseau, .calendar-commande .commande-form .commande-form-wrap .input-wrap-copy .dropdown-fuseau .ul-pays .label-selected-pays, .calendar-commande .commande-form .commande-form-wrap .input-wrap-copy .dropdown-fuseau .ul-pays .label-selected-fuseau, .calendar-commande .commande-form .commande-form-wrap .input-wrap-copy .dropdown-fuseau .ul-fuseau .label-selected-pays, .calendar-commande .commande-form .commande-form-wrap .input-wrap-copy .dropdown-fuseau .ul-fuseau .label-selected-fuseau, .calendar-commande .commande-form .commande-form-wrap .input-wrap .dropdown-pays .ul-pays .label-selected-pays, .calendar-commande .commande-form .commande-form-wrap .input-wrap .dropdown-pays .ul-pays .label-selected-fuseau, .calendar-commande .commande-form .commande-form-wrap .input-wrap .dropdown-pays .ul-fuseau .label-selected-pays, .calendar-commande .commande-form .commande-form-wrap .input-wrap .dropdown-pays .ul-fuseau .label-selected-fuseau, .calendar-commande .commande-form .commande-form-wrap .input-wrap .dropdown-fuseau .ul-pays .label-selected-pays, .calendar-commande .commande-form .commande-form-wrap .input-wrap .dropdown-fuseau .ul-pays .label-selected-fuseau, .calendar-commande .commande-form .commande-form-wrap .input-wrap .dropdown-fuseau .ul-fuseau .label-selected-pays, .calendar-commande .commande-form .commande-form-wrap .input-wrap .dropdown-fuseau .ul-fuseau .label-selected-fuseau, .calendar-commande .commande-form .commande-form-wrap .input-wrap-cb .dropdown-pays .ul-pays .label-selected-pays, .calendar-commande .commande-form .commande-form-wrap .input-wrap-cb .dropdown-pays .ul-pays .label-selected-fuseau, .calendar-commande .commande-form .commande-form-wrap .input-wrap-cb .dropdown-pays .ul-fuseau .label-selected-pays, .calendar-commande .commande-form .commande-form-wrap .input-wrap-cb .dropdown-pays .ul-fuseau .label-selected-fuseau, .calendar-commande .commande-form .commande-form-wrap .input-wrap-cb .dropdown-fuseau .ul-pays .label-selected-pays, .calendar-commande .commande-form .commande-form-wrap .input-wrap-cb .dropdown-fuseau .ul-pays .label-selected-fuseau, .calendar-commande .commande-form .commande-form-wrap .input-wrap-cb .dropdown-fuseau .ul-fuseau .label-selected-pays, .calendar-commande .commande-form .commande-form-wrap .input-wrap-cb .dropdown-fuseau .ul-fuseau .label-selected-fuseau {
               color: #8e8e8e;
+              display: -webkit-box;
+              display: -ms-flexbox;
               display: flex;
               width: 100%;
               padding: 10px;
@@ -2080,6 +2550,7 @@ ul {
   border: 2px solid #8e8e8e !important; }
 
 .input-valid {
+  -webkit-transition: 300ms all ease-in-out !important;
   transition: 300ms all ease-in-out !important;
   border: 2px solid #32c5d2 !important;
   background: !important;
@@ -2089,6 +2560,7 @@ ul {
     background-size: 20px 20px !important; }
 
 .input-invalid {
+  -webkit-transition: 300ms all ease-in-out !important;
   transition: 300ms all ease-in-out !important;
   background: !important;
     background-image: url("../img/icons/confirm-red.svg") !important;
@@ -2097,33 +2569,3 @@ ul {
     background-size: 20px 20px !important;
   box-shadow: none !important;
   border: 2px solid #e74c3c !important; }
-
-.table-clctv {
-  width: 100%; }
-  .table-clctv .schedule-selector {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 30px; }
-    .table-clctv .schedule-selector p {
-      margin: 0; }
-    .table-clctv .schedule-selector div {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      height: 100%; }
-      .table-clctv .schedule-selector div .separator {
-        display: block;
-        width: 4px;
-        height: 60px;
-        background: white;
-        margin-right: 30px; }
-      .table-clctv .schedule-selector div .time-icon {
-        display: block;
-        width: 20px;
-        height: 20px;
-        margin-right: 10px; }
-      .table-clctv .schedule-selector div p {
-        text-align: left;
-        width: 55px; }

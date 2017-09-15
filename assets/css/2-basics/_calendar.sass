@@ -1,115 +1,157 @@
-.content-wrap-dispo
+.semaine-mois-selection
   display: flex
   align-items: center
-  flex-direction: column
-  .semaine-mois-selection
-    display: flex
-    align-items: center
-    height: 50px
-    .semaine-mois-button
-      span
-        text-transform: uppercase
-        font-weight: 100
-        color: $white
-        width: 100px
-        padding: 15px
+  height: 50px
+
+  .semaine-mois-button
+    .mois-select, .semaine-select
+      padding: 15px
+      text-transform: uppercase
+      font-weight: 100
+      transition: 300ms all ease-in-out
+      cursor: pointer
+      color: $gray-dark
+      background: $green-white
+      &:hover
+        color: white
         background: $green-light
+
+    .semaine-select
+      border-top-left-radius: 8px
+      border-bottom-left-radius: 8px
+
+    .mois-select
+      border-top-left-radius: 0
+      border-bottom-left-radius: 0
+      border-top-right-radius: 8px
+      border-bottom-right-radius: 8px
+
+    .semaine-mois-selected
+      color: $white
+      background: $green-light
+
+.semaine-wrap
+.mois-wrap
+  display: none
+
+
+.semaine-mois-actuel
+  height: 50px
+  display: flex
+  flex-direction: row
+  align-items: center
+  position: relative
+  margin: 30px
+  .mois-annee-wrap
+    display: flex
+    text-transform: uppercase
+    color: $gray-light
+    font-size: 26px
+    font-weight: 100
+    p
+      margin: 0
+  .aujourd-selection
+    display: flex
+    //position: absolute
+    //right: 0
+    span
+      display: block
+      height: 20px
+      width: 20px
+    a
+      color: $gray-dark
+      padding: 10px
+      background: $green-white
+      text-transform: uppercase
+      font-weight: 100
+      cursor: pointer
+      transition: 200ms all ease-in-out
+      &:hover
+        color: $white
+        background: $green-light
+      &:hover .arrow-right-icon
+        background: url("../img/icons/arrow-right-white.svg")
+      &:hover .arrow-left-icon
+        background: url("../img/icons/arrow-left-white.svg")
+      &:first-child
         border-top-left-radius: 8px
         border-bottom-left-radius: 8px
-        cursor: pointer
-        transition: 300ms all ease-in-out
-        &:last-child
-          color: $gray-dark
-          border-top-left-radius: 0
-          border-bottom-left-radius: 0
-          border-top-right-radius: 8px
-          border-bottom-right-radius: 8px
-          background: $green-white
-          &:hover
-            color: white
-            background: $green-light
+        border-right: 4px solid $white
+      &:last-child
+        border-top-right-radius: 8px
+        border-bottom-right-radius: 8px
+        border-left: 4px solid $white
 
-
-
-  .semaine-mois-actuel
-    width: 100%
-    height: 50px
+table
+  width: 100%
+  .days-row td:hover
+    background: transparent
+  .dispo-disable:hover
+    background: transparent
+  tr
     display: flex
-    flex-direction: row
-    align-items: center
-    position: relative
-    margin: 30px
-
-    p
-      text-transform: uppercase
-      color: $gray-light
-      font-size: 26px
-      font-weight: 100
-      margin: 0
-    .aujourd-selection
+    width: 100%
+    td
+      width: calc(100%/7)
       display: flex
-      position: absolute
-      right: 0
-      span
-        display: block
-        height: 20px
-        width: 20px
-      a
-        color: $gray-dark
-        padding: 10px
+      flex-direction: row
+      align-items: center
+      justify-content: center
+
+      color: $blue-dark
+      text-align: center
+      font-weight: 100
+      font-size: 18px
+
+      //box-sizing: border-box
+      //border-width: 20px 30px
+      //border: 20px solid transparent
+
+      padding: 20px 0
+
+      border-right: 1px solid $gray-light
+      cursor: pointer
+      transition: 150ms all ease-in-out
+
+      &:last-child
+        border-right: 0
+      &:hover
         background: $green-white
-        text-transform: uppercase
-        font-weight: 100
-        transition: 200ms all ease-in-out
-        &:hover
-          color: $white
-          background: $green-light
-        &:hover .arrow-right-icon
-          background: url("../img/icons/arrow-right-white.svg")
-        &:hover .arrow-left-icon
-          background: url("../img/icons/arrow-left-white.svg")
-        &:first-child
-          border-top-left-radius: 8px
-          border-bottom-left-radius: 8px
-          border-right: 4px solid $white
-        &:last-child
-          border-top-right-radius: 8px
-          border-bottom-right-radius: 8px
-          border-left: 4px solid $white
 
-  table
-    .days-row
-      td
-        &:hover
-          background: transparent
+      p
+        margin: 0
 
-    tr
-      td
-        color: $blue-dark
-        text-align: center
-        font-weight: 100
-        font-size: 18px
-        padding: 20px 30px
-        border-right: 1px solid $gray-light
-        cursor: pointer
-        transition: 150ms all ease-in-out
-        &:last-child
-          border-right: 0
-        &:hover
-          background: $green-white
-        .round-date
-          color: $white
-          background: $purple
-          border-radius: 100%
-          padding: 5px
-      .dispo-active
+      .round-date
         color: $white
-        background: $green-light
-        cursor: pointer
-        border-bottom: 2px solid white
-        transition: 300ms all ease-in-out
-        &:hover
-          background: $green-dark
+        width: 20px
+        padding: 5px
+        background: $purple
+        border-radius: 100%
 
-      .dispo-disable
-        color: lighten($gray-light, 20%)
+      .dd
+        padding: 5px
+
+      span
+        width: 100px
+        padding: 5px
+        //border-radius: 100%
+
+
+
+
+.dispo-active
+  color: $white
+  background: $green-light
+  cursor: pointer
+  transition: 300ms all ease-in-out
+  &:hover
+    background: $green-dark
+
+.dispo-disable
+  color: lighten($gray-light, 20%)
+
+.reded
+  color: red !important
+
+.grayed
+  color: lighten($gray-light, 20%)
