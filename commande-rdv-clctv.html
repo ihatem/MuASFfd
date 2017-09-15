@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="assets/img/favicons/favicon.ico">
-  <link rel="stylesheet" href="assets/css/main.min.css" />
+  <link rel="stylesheet" href="assets/css/main.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 
 </head>
@@ -91,8 +91,12 @@
             <span class="echange-icon"></span>
             <p class="p-met">session collective</p>
           </div>
+          <div class="presta-details-cmd">
+            <span class="rdv-time"></span>
+            <p class="p-met p-date-rdv"></p>
+          </div>
         </div>
-        <span class="prix-button">30<sup>€</sup></span>
+        <span class="prix-button">60<sup>€</sup></span>
       </div>
 
       <div id="content-wrap" class="content-wrap content-wrap-dispo calendar-commande">
@@ -113,7 +117,7 @@
                 <div>
                   <span class="separator"></span>
                   <span class="time-icon"></span>
-                  <p>10:00</p>
+                  <p class="time-sched">10:00 - 10:30</p>
                 </div>
               </td>
             </tr>
@@ -124,7 +128,7 @@
                 <div>
                   <span class="separator"></span>
                   <span class="time-icon"></span>
-                  <p>11:00</p>
+                  <p class="time-sched">11:00 - 11:30</p>
                 </div>
               </td>
             </tr>
@@ -135,7 +139,7 @@
                 <div>
                   <span class="separator"></span>
                   <span class="time-icon"></span>
-                  <p>14:00</p>
+                  <p class="time-sched">14:00 - 14:30</p>
                 </div>
               </td>
             </tr>
@@ -146,7 +150,7 @@
                 <div>
                   <span class="separator"></span>
                   <span class="time-icon"></span>
-                  <p>09:00</p>
+                  <p class="time-sched">09:00 - 09:30 </p>
                 </div>
               </td>
             </tr>
@@ -157,7 +161,7 @@
                 <div>
                   <span class="separator"></span>
                   <span class="time-icon"></span>
-                  <p>10:00</p>
+                  <p class="time-sched">10:00 - 10:30</p>
                 </div>
               </td>
             </tr>
@@ -168,7 +172,7 @@
                 <div>
                   <span class="separator"></span>
                   <span class="time-icon"></span>
-                  <p>10:00</p>
+                  <p class="time-sched">10:00 - 10:30</p>
                 </div>
               </td>
             </tr>
@@ -179,7 +183,7 @@
                 <div>
                   <span class="separator"></span>
                   <span class="time-icon"></span>
-                  <p>10:00</p>
+                  <p class="time-sched">10:00 - 10:30</p>
                 </div>
               </td>
             </tr>
@@ -190,7 +194,7 @@
                 <div>
                   <span class="separator"></span>
                   <span class="time-icon"></span>
-                  <p>14:00</p>
+                  <p class="time-sched">14:00 - 14:30</p>
                 </div>
               </td>
             </tr>
@@ -201,7 +205,7 @@
                 <div>
                   <span class="separator"></span>
                   <span class="time-icon"></span>
-                  <p>11:00</p>
+                  <p class="time-sched">11:00 - 11:30</p>
                 </div>
               </td>
             </tr>
@@ -1005,14 +1009,21 @@
 <!-- functions.js minified DECLARE -->
 <script src="assets/js/min/functions-min.js"></script>
 
-<!-- jquery.sticky.js minified DECLARE -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.sticky/1.0.4/jquery.sticky.min.js"></script>
-
 <!-- footer.js minified DECLARE -->
 <script src="assets/js/min/footer-min.js"></script>
 
-<script>
-  console.log("version : 4 sept 12:06");
+<!-- calendar.js minified DECLARE -->
+<script src="assets/js/jquery-watch.min.js"></script>
+
+<script type="text/javascript">
+
+  $(".schedule-selector").click(function () {
+    $(".rdv-time").css("opacity","1");
+    $(".p-date-rdv").text("Le "+$(this).children("p").text()+" | "+$(this).find("div > .time-sched").text());
+  });
+
+</script>
+
 </script>
 
 </body>

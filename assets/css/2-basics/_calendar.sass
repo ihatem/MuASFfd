@@ -52,8 +52,6 @@
       margin: 0
   .aujourd-selection
     display: flex
-    //position: absolute
-    //right: 0
     span
       display: block
       height: 20px
@@ -82,7 +80,7 @@
         border-bottom-right-radius: 8px
         border-left: 4px solid $white
 
-table
+#table-week, #table-mon
   width: 100%
   .days-row td:hover
     background: transparent
@@ -102,10 +100,6 @@ table
       text-align: center
       font-weight: 100
       font-size: 18px
-
-      //box-sizing: border-box
-      //border-width: 20px 30px
-      //border: 20px solid transparent
 
       padding: 20px 0
 
@@ -134,24 +128,21 @@ table
       span
         width: 100px
         padding: 5px
-        //border-radius: 100%
-
-
 
 
 .dispo-active
-  color: $white
+  color: $white !important
   background: $green-light
   cursor: pointer
   transition: 300ms all ease-in-out
   &:hover
-    background: $green-dark
+    background: $green-dark !important
 
 .dispo-disable
   color: lighten($gray-light, 20%)
 
-.reded
-  color: red !important
-
 .grayed
   color: lighten($gray-light, 20%)
+
+.rdv-time
+  opacity: 0

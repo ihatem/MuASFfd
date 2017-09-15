@@ -603,7 +603,10 @@ $(".td-week").watch({
     properties: "attr_class",
     callback: function () {
 
+        $(".rdv-time").css("opacity","1");
+
         $(".p-date-rdv").text(get_rdv_date(rdv_date).toString("dddd")+" le "+get_rdv_date(rdv_date).toString("dd MMMM yyyy")+" à "+$('#table-week tr:nth-child(' + tr_index + ') td:nth-child(' + td_index + ')').text());
+
     }
 });
 

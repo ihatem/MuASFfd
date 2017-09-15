@@ -509,18 +509,18 @@ th {
         border-bottom-right-radius: 8px;
         border-left: 4px solid white; }
 
-table {
+#table-week, #table-mon {
   width: 100%; }
-  table .days-row td:hover {
+  #table-week .days-row td:hover, #table-mon .days-row td:hover {
     background: transparent; }
-  table .dispo-disable:hover {
+  #table-week .dispo-disable:hover, #table-mon .dispo-disable:hover {
     background: transparent; }
-  table tr {
+  #table-week tr, #table-mon tr {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     width: 100%; }
-    table tr td {
+    #table-week tr td, #table-mon tr td {
       width: calc(100%/7);
       display: -webkit-box;
       display: -ms-flexbox;
@@ -544,41 +544,41 @@ table {
       cursor: pointer;
       -webkit-transition: 150ms all ease-in-out;
       transition: 150ms all ease-in-out; }
-      table tr td:last-child {
+      #table-week tr td:last-child, #table-mon tr td:last-child {
         border-right: 0; }
-      table tr td:hover {
+      #table-week tr td:hover, #table-mon tr td:hover {
         background: #e0f7f8; }
-      table tr td p {
+      #table-week tr td p, #table-mon tr td p {
         margin: 0; }
-      table tr td .round-date {
+      #table-week tr td .round-date, #table-mon tr td .round-date {
         color: white;
         width: 20px;
         padding: 5px;
         background: #a984bf;
         border-radius: 100%; }
-      table tr td .dd {
+      #table-week tr td .dd, #table-mon tr td .dd {
         padding: 5px; }
-      table tr td span {
+      #table-week tr td span, #table-mon tr td span {
         width: 100px;
         padding: 5px; }
 
 .dispo-active {
-  color: white;
+  color: white !important;
   background: #32c5d2;
   cursor: pointer;
   -webkit-transition: 300ms all ease-in-out;
   transition: 300ms all ease-in-out; }
   .dispo-active:hover {
-    background: #27a8b4; }
+    background: #27a8b4 !important; }
 
 .dispo-disable {
   color: #c1c1c1; }
 
-.reded {
-  color: red !important; }
-
 .grayed {
   color: #c1c1c1; }
+
+.rdv-time {
+  opacity: 0; }
 
 @font-face {
   font-family: "Graphik";
@@ -725,6 +725,9 @@ table {
 
 .copy-icon {
   background: url("../img/icons/copy.svg"); }
+
+.rdv-time {
+  background: url("../img/icons/rdv-time.svg"); }
 
 a {
   font-family: "graphik";
@@ -2569,3 +2572,76 @@ ul {
     background-size: 20px 20px !important;
   box-shadow: none !important;
   border: 2px solid #e74c3c !important; }
+
+.table-clctv {
+  width: 100%; }
+  .table-clctv .days-row td {
+    padding: 20px 0; }
+  .table-clctv .days-row td:hover {
+    background: transparent; }
+  .table-clctv td {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    color: #343e46;
+    text-align: center;
+    font-weight: 100;
+    font-size: 18px;
+    cursor: pointer;
+    -webkit-transition: 150ms all ease-in-out;
+    transition: 150ms all ease-in-out; }
+    .table-clctv td:hover {
+      background: #e0f7f8; }
+  .table-clctv .schedule-selector {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 0 30px; }
+    .table-clctv .schedule-selector p {
+      margin: 0; }
+    .table-clctv .schedule-selector div {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      height: 100%; }
+      .table-clctv .schedule-selector div .separator {
+        display: block;
+        width: 4px;
+        height: 60px;
+        background: white;
+        margin-right: 30px; }
+      .table-clctv .schedule-selector div .time-icon {
+        display: block;
+        width: 20px;
+        height: 20px;
+        margin-right: 10px; }
+      .table-clctv .schedule-selector div p {
+        text-align: left;
+        width: 120px; }
