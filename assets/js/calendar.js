@@ -107,17 +107,22 @@ function add_rounddate_week() {
 
   $(".dd").removeClass("round-date");
 
-  var month_temp_value = $(".mois-p-sem").text();
+  var bool_temp = false;
+  var i=1;
 
-  month_temp_value = month_temp_value.substr(0,month_temp_value.length - 1);
-
-  for (var i=1 ; i<=7 ; i++)
+  while ((i<=7) && (bool_temp === false))
   {
-    if ((tdy.toString("MMMM") === month_temp_value) && (tdy.toString("yyyy") === $(".annee-p-sem").text()) && ($(".days-row td:nth-child(" + i + ") .dd ").text() === tdy.toString("dd")))
+    var day_temp_date = new XDate (parseInt($(".days-row td:nth-child("+i+")").attr("date-sem-value")));
+
+    if (tdy.toString("dd MMMM yyyy") === day_temp_date.toString("dd MMMM yyyy"))
     {
-      console.log("sja");
       $(".days-row td:nth-child(" + i + ") .dd ").addClass("round-date");
+      bool_temp = true;
     }
+    else {
+      i++;
+    }
+
   }
 
 }
@@ -126,28 +131,35 @@ function add_rounddate_mon() {
 
   $("span").removeClass("round-date");
 
-  var month_temp_value_mon = $(".mois-p-mon").text();
-
-  month_temp_value_mon = month_temp_value_mon.substr(0,month_temp_value_mon.length - 1);
-
+  var bool_temp = false;
+  var i=1;
   var trn = 2;
   var tdn = 1;
 
-  for (var i=1 ; i<=42 ; i++)
+  while ((i<=42) && (bool_temp === false))
   {
-    if ((tdy.toString("MMMM") === month_temp_value_mon) && (tdy.toString("yyyy") === $(".annee-p-mon").text()) && ($('#table-mon tr:nth-child('+trn+') td:nth-child(' + tdn + ') span').text() === tdy.toString("dd")))
+
+    var day_temp_date = new XDate (parseInt($('#table-mon tr:nth-child('+trn+') td:nth-child('+tdn+')').attr("date-value")));
+
+    if (day_temp_date.toString("dd MMMM yyyy") === tdy.toString("dd MMMM yyyy"))
     {
       $('#table-mon tr:nth-child('+trn+') td:nth-child(' + tdn + ') span').addClass("round-date");
+      bool_temp = true;
     }
 
-    tdn++;
-
-    if (tdn>7)
-    {
+    else if (tdn>7) {
       tdn=1;
       trn++;
     }
+
+    else {
+      tdn++;
+      i++;
+    }
+
   }
+
+
 
 }
 
@@ -180,167 +192,61 @@ function get_rdv_date (rdv_date) {
 
 function month_check_prec() {
 
-  $(".dd").each(function () {
+  var month_temp_date = new XDate (parseInt($(".mois-p-sem").attr("sem-mois-value")));
+  var bool_temp = false;
+  var i=1;
 
-    var rgxLundi = new RegExp("^lundi");
-    var rgxMardi = new RegExp("^mardi");
-    var rgxMercredi = new RegExp("^mercredi");
-    var rgxJeudi = new RegExp("^jeudi");
-    var rgxVendredi = new RegExp("^vendredi");
-    var rgxSamedi = new RegExp("^samedi");
-    var rgxDimanche = new RegExp("^dimanche");
+  while ((i<=7) && (bool_temp === false))
+  {
 
-    if ($(this).text() === "01")
+    var day_temp_date = new XDate (parseInt($(".days-row td:nth-child("+i+")").attr("date-sem-value")));
+
+    if (day_temp_date.getMonth() < month_temp_date.getMonth())
     {
+      $(".mois-p-sem").text(day_temp_date.toString("MMMM"));
+      $(".mois-p-sem").append("&nbsp;");
+      $(".annee-p-sem").text(day_temp_date.toString("yyyy"));
 
-      if (rgxLundi.test($(this).parent().prev().attr("class")))
-      {
-        $(".mois-p-sem").text(monday.clone().toString("MMMM"));
-        $(".mois-p-sem").append("&nbsp;");
-        $(".annee-p-sem").text(monday.clone().toString("yyyy"));
+      $(".mois-p-sem").attr("sem-mois-value",day_temp_date);
+      $(".annee-p-sem").attr("sem-annee-value",day_temp_date);
 
-        $(".mois-p-sem").attr("sem-mois-value",monday.clone());
-        $(".annee-p-sem").attr("sem-annee-value",monday.clone());
-      }
-      else if (rgxMardi.test($(this).parent().prev().attr("class")))
-      {
-        $(".mois-p-sem").text(tuesday.clone().toString("MMMM"));
-        $(".mois-p-sem").append("&nbsp;");
-        $(".annee-p-sem").text(tuesday.clone().toString("yyyy"));
-
-        $(".mois-p-sem").attr("sem-mois-value",tuesday.clone());
-        $(".annee-p-sem").attr("sem-annee-value",tuesday.clone());
-      }
-      else if (rgxMercredi.test($(this).parent().prev().attr("class")))
-      {
-        $(".mois-p-sem").text(wednesday.clone().toString("MMMM"));
-        $(".mois-p-sem").append("&nbsp;");
-        $(".annee-p-sem").text(wednesday.clone().toString("yyyy"));
-
-        $(".mois-p-sem").attr("sem-mois-value",wednesday.clone());
-        $(".annee-p-sem").attr("sem-annee-value",wednesday.clone());
-      }
-      else if (rgxJeudi.test($(this).parent().prev().attr("class")))
-      {
-        $(".mois-p-sem").text(thursday.clone().toString("MMMM"));
-        $(".mois-p-sem").append("&nbsp;");
-        $(".annee-p-sem").text(thursday.clone().toString("yyyy"));
-
-        $(".mois-p-sem").attr("sem-mois-value",thursday.clone());
-        $(".annee-p-sem").attr("sem-annee-value",thursday.clone());
-      }
-      else if (rgxVendredi.test($(this).parent().prev().attr("class")))
-      {
-        $(".mois-p-sem").text(friday.clone().toString("MMMM"));
-        $(".mois-p-sem").append("&nbsp;");
-        $(".annee-p-sem").text(friday.clone().toString("yyyy"));
-
-        $(".mois-p-sem").attr("sem-mois-value",friday.clone());
-        $(".annee-p-sem").attr("sem-annee-value",friday.clone());
-      }
-      else if (rgxSamedi.test($(this).parent().prev().attr("class")))
-      {
-        $(".mois-p-sem").text(saturday.clone().toString("MMMM"));
-        $(".mois-p-sem").append("&nbsp;");
-        $(".annee-p-sem").text(saturday.clone().toString("yyyy"));
-
-        $(".mois-p-sem").attr("sem-mois-value",saturday.clone());
-        $(".annee-p-sem").attr("sem-annee-value",saturday.clone());
-      }
-      else if (rgxDimanche.test($(this).parent().prev().attr("class")))
-      {
-        $(".mois-p-sem").text(sunday.clone().toString("MMMM"));
-        $(".mois-p-sem").append("&nbsp;");
-        $(".annee-p-sem").text(sunday.clone().toString("yyyy"));
-
-        $(".mois-p-sem").attr("sem-mois-value",sunday.clone());
-        $(".annee-p-sem").attr("sem-annee-value",sunday.clone());
-      }
+      bool_temp = true;
     }
-  });
+    else {
+      i++;
+    }
+
+  }
 
 }
 
 function month_check_suiv() {
 
-  $(".dd").each(function () {
+  var month_temp_date = new XDate (parseInt($(".mois-p-sem").attr("sem-mois-value")));
+  var bool_temp = false;
+  var i=1;
 
-    var rgxLundi = new RegExp("^lundi");
-    var rgxMardi = new RegExp("^mardi");
-    var rgxMercredi = new RegExp("^mercredi");
-    var rgxJeudi = new RegExp("^jeudi");
-    var rgxVendredi = new RegExp("^vendredi");
-    var rgxSamedi = new RegExp("^samedi");
-    var rgxDimanche = new RegExp("^dimanche");
+  while ((i<=7) && (bool_temp === false))
+  {
 
-    if ($(this).text() === "01")
+    var day_temp_date = new XDate (parseInt($(".days-row td:nth-child("+i+")").attr("date-sem-value")));
+
+    if (day_temp_date.getMonth() > month_temp_date.getMonth())
     {
+      $(".mois-p-sem").text(day_temp_date.toString("MMMM"));
+      $(".mois-p-sem").append("&nbsp;");
+      $(".annee-p-sem").text(day_temp_date.toString("yyyy"));
 
-      if (rgxLundi.test($(this).parent().attr("class")))
-      {
-        $(".mois-p-sem").text(monday.clone().toString("MMMM"));
-        $(".mois-p-sem").append("&nbsp;");
-        $(".annee-p-sem").text(monday.clone().toString("yyyy"));
+      $(".mois-p-sem").attr("sem-mois-value",day_temp_date);
+      $(".annee-p-sem").attr("sem-annee-value",day_temp_date);
 
-        $(".mois-p-sem").attr("sem-mois-value",monday.clone());
-        $(".annee-p-sem").attr("sem-annee-value",monday.clone());
-      }
-      else if (rgxMardi.test($(this).parent().attr("class")))
-      {
-        $(".mois-p-sem").text(tuesday.clone().toString("MMMM"));
-        $(".mois-p-sem").append("&nbsp;");
-        $(".annee-p-sem").text(tuesday.clone().toString("yyyy"));
-
-        $(".mois-p-sem").attr("sem-mois-value",tuesday.clone());
-        $(".annee-p-sem").attr("sem-annee-value",tuesday.clone());
-      }
-      else if (rgxMercredi.test($(this).parent().attr("class")))
-      {
-        $(".mois-p-sem").text(wednesday.clone().toString("MMMM"));
-        $(".mois-p-sem").append("&nbsp;");
-        $(".annee-p-sem").text(wednesday.clone().toString("yyyy"));
-
-        $(".mois-p-sem").attr("sem-mois-value",wednesday.clone());
-        $(".annee-p-sem").attr("sem-annee-value",wednesday.clone());
-      }
-      else if (rgxJeudi.test($(this).parent().attr("class")))
-      {
-        $(".mois-p-sem").text(thursday.clone().toString("MMMM"));
-        $(".mois-p-sem").append("&nbsp;");
-        $(".annee-p-sem").text(thursday.clone().toString("yyyy"));
-
-        $(".mois-p-sem").attr("sem-mois-value",thursday.clone());
-        $(".annee-p-sem").attr("sem-annee-value",thursday.clone());
-      }
-      else if (rgxVendredi.test($(this).parent().attr("class")))
-      {
-        $(".mois-p-sem").text(friday.clone().toString("MMMM"));
-        $(".mois-p-sem").append("&nbsp;");
-        $(".annee-p-sem").text(friday.clone().toString("yyyy"));
-
-        $(".mois-p-sem").attr("sem-mois-value",friday.clone());
-        $(".annee-p-sem").attr("sem-annee-value",friday.clone());
-      }
-      else if (rgxSamedi.test($(this).parent().attr("class")))
-      {
-        $(".mois-p-sem").text(saturday.clone().toString("MMMM"));
-        $(".mois-p-sem").append("&nbsp;");
-        $(".annee-p-sem").text(saturday.clone().toString("yyyy"));
-
-        $(".mois-p-sem").attr("sem-mois-value",saturday.clone());
-        $(".annee-p-sem").attr("sem-annee-value",saturday.clone());
-      }
-      else if (rgxDimanche.test($(this).parent().attr("class")))
-      {
-        $(".mois-p-sem").text(sunday.clone().toString("MMMM"));
-        $(".mois-p-sem").append("&nbsp;");
-        $(".annee-p-sem").text(sunday.clone().toString("yyyy"));
-
-        $(".mois-p-sem").attr("sem-mois-value",sunday.clone());
-        $(".annee-p-sem").attr("sem-annee-value",sunday.clone());
-      }
+      bool_temp = true;
     }
-  });
+    else {
+      i++;
+    }
+
+  }
 
 }
 
@@ -348,7 +254,6 @@ function set_today () {
 
   if (tdy.getDay() === 1)
   {
-
     monday = tdy.clone();
     tuesday = tdy.clone().addDays(1);
     wednesday = tdy.clone().addDays(2);
@@ -356,24 +261,9 @@ function set_today () {
     friday = tdy.clone().addDays(4);
     saturday = tdy.clone().addDays(5);
     sunday = tdy.clone().addDays(6);
-
-    $(".lundi > .dd").text(monday.toUTCString("dd"));
-    $(".mardi > .dd").text(tuesday.toUTCString("dd"));
-    $(".mercredi > .dd").text(wednesday.toUTCString("dd"));
-    $(".jeudi > .dd").text(thursday.toUTCString("dd"));
-    $(".vendredi > .dd").text(friday.toUTCString("dd"));
-    $(".samedi > .dd").text(saturday.toUTCString("dd"));
-    $(".dimanche > .dd").text(sunday.toUTCString("dd"));
-
-    $(".mois-p-sem").text(tdy.clone().toString("MMMM"));
-    $(".mois-p-sem").append("&nbsp;");
-    $(".annee-p-sem").text(tdy.clone().toString("yyyy"));
-
   }
   else if (tdy.getDay() === 2)
   {
-
-
     monday = tdy.clone().addDays(-1);
     tuesday = tdy.clone();
     wednesday = tdy.clone().addDays(1);
@@ -381,23 +271,9 @@ function set_today () {
     friday = tdy.clone().addDays(3);
     saturday = tdy.clone().addDays(4);
     sunday = tdy.clone().addDays(5);
-
-    $(".lundi > .dd").text(monday.toUTCString("dd"));
-    $(".mardi > .dd").text(tuesday.toUTCString("dd"));
-    $(".mercredi > .dd").text(wednesday.toUTCString("dd"));
-    $(".jeudi > .dd").text(thursday.toUTCString("dd"));
-    $(".vendredi > .dd").text(friday.toUTCString("dd"));
-    $(".samedi > .dd").text(saturday.toUTCString("dd"));
-    $(".dimanche > .dd").text(sunday.toUTCString("dd"));
-
-    $(".mois-p-sem").text(tdy.clone().toString("MMMM"));
-    $(".mois-p-sem").append("&nbsp;");
-    $(".annee-p-sem").text(tdy.clone().toString("yyyy"));
-
   }
   else if (tdy.getDay() === 3)
   {
-
     monday = tdy.clone().addDays(-2);
     tuesday = tdy.clone().addDays(-1);
     wednesday = tdy.clone();
@@ -405,23 +281,9 @@ function set_today () {
     friday = tdy.clone().addDays(2);
     saturday = tdy.clone().addDays(3);
     sunday = tdy.clone().addDays(4);
-
-    $(".lundi > .dd").text(monday.toUTCString("dd"));
-    $(".mardi > .dd").text(tuesday.toUTCString("dd"));
-    $(".mercredi > .dd").text(wednesday.toUTCString("dd"));
-    $(".jeudi > .dd").text(thursday.toUTCString("dd"));
-    $(".vendredi > .dd").text(friday.toUTCString("dd"));
-    $(".samedi > .dd").text(saturday.toUTCString("dd"));
-    $(".dimanche > .dd").text(sunday.toUTCString("dd"));
-
-    $(".mois-p-sem").text(tdy.clone().toString("MMMM"));
-    $(".mois-p-sem").append("&nbsp;");
-    $(".annee-p-sem").text(tdy.clone().toString("yyyy"));
-
   }
   else if (tdy.getDay() === 4)
   {
-
     monday = tdy.clone().addDays(-3);
     tuesday = tdy.clone().addDays(-2);
     wednesday = tdy.clone().addDays(-1);
@@ -429,23 +291,9 @@ function set_today () {
     friday = tdy.clone().addDays(1);
     saturday = tdy.clone().addDays(2);
     sunday = tdy.clone().addDays(3);
-
-    $(".lundi > .dd").text(monday.toUTCString("dd"));
-    $(".mardi > .dd").text(tuesday.toUTCString("dd"));
-    $(".mercredi > .dd").text(wednesday.toUTCString("dd"));
-    $(".jeudi > .dd").text(thursday.toUTCString("dd"));
-    $(".vendredi > .dd").text(friday.toUTCString("dd"));
-    $(".samedi > .dd").text(saturday.toUTCString("dd"));
-    $(".dimanche > .dd").text(sunday.toUTCString("dd"));
-
-    $(".mois-p-sem").text(tdy.clone().toString("MMMM"));
-    $(".mois-p-sem").append("&nbsp;");
-    $(".annee-p-sem").text(tdy.clone().toString("yyyy"));
-
   }
   else if (tdy.getDay() === 5)
   {
-
     monday = tdy.clone().addDays(-4);
     tuesday = tdy.clone().addDays(-3);
     wednesday = tdy.clone().addDays(-2);
@@ -453,23 +301,9 @@ function set_today () {
     friday = tdy.clone();
     saturday = tdy.clone().addDays(1);
     sunday = tdy.clone().addDays(2);
-
-    $(".lundi > .dd").text(monday.toUTCString("dd"));
-    $(".mardi > .dd").text(tuesday.toUTCString("dd"));
-    $(".mercredi > .dd").text(wednesday.toUTCString("dd"));
-    $(".jeudi > .dd").text(thursday.toUTCString("dd"));
-    $(".vendredi > .dd").text(friday.toUTCString("dd"));
-    $(".samedi > .dd").text(saturday.toUTCString("dd"));
-    $(".dimanche > .dd").text(sunday.toUTCString("dd"));
-
-    $(".mois-p-sem").text(tdy.clone().toString("MMMM"));
-    $(".mois-p-sem").append("&nbsp;");
-    $(".annee-p-sem").text(tdy.clone().toString("yyyy"));
-
   }
   else if (tdy.getDay() === 6)
   {
-
     monday = tdy.clone().addDays(-5);
     tuesday = tdy.clone().addDays(-4);
     wednesday = tdy.clone().addDays(-3);
@@ -477,23 +311,9 @@ function set_today () {
     friday = tdy.clone().addDays(-1);
     saturday = tdy.clone();
     sunday = tdy.clone().addDays(1);
-
-    $(".lundi > .dd").text(monday.toUTCString("dd"));
-    $(".mardi > .dd").text(tuesday.toUTCString("dd"));
-    $(".mercredi > .dd").text(wednesday.toUTCString("dd"));
-    $(".jeudi > .dd").text(thursday.toUTCString("dd"));
-    $(".vendredi > .dd").text(friday.toUTCString("dd"));
-    $(".samedi > .dd").text(saturday.toUTCString("dd"));
-    $(".dimanche > .dd").text(sunday.toUTCString("dd"));
-
-    $(".mois-p-sem").text(tdy.clone().toString("MMMM"));
-    $(".mois-p-sem").append("&nbsp;");
-    $(".annee-p-sem").text(tdy.clone().toString("yyyy"));
-
   }
   else if (tdy.getDay() === 0)
   {
-
     monday = tdy.clone().addDays(-6);
     tuesday = tdy.clone().addDays(-5);
     wednesday = tdy.clone().addDays(-4);
@@ -501,20 +321,26 @@ function set_today () {
     friday = tdy.clone().addDays(-2);
     saturday = tdy.clone().addDays(-1);
     sunday = tdy.clone();
-
-    $(".lundi > .dd").text(monday.toUTCString("dd"));
-    $(".mardi > .dd").text(tuesday.toUTCString("dd"));
-    $(".mercredi > .dd").text(wednesday.toUTCString("dd"));
-    $(".jeudi > .dd").text(thursday.toUTCString("dd"));
-    $(".vendredi > .dd").text(friday.toUTCString("dd"));
-    $(".samedi > .dd").text(saturday.toUTCString("dd"));
-    $(".dimanche > .dd").text(sunday.toUTCString("dd"));
-
-    $(".mois-p-sem").text(tdy.clone().toString("MMMM"));
-    $(".mois-p-sem").append("&nbsp;");
-    $(".annee-p-sem").text(tdy.clone().toString("yyyy"));
-
   }
+
+  $(".lundi > .dd").text(monday.toUTCString("dd"));
+  $(".lundi").attr("date-sem-value", monday);
+  $(".mardi > .dd").text(tuesday.toUTCString("dd"));
+  $(".mardi").attr("date-sem-value", tuesday);
+  $(".mercredi > .dd").text(wednesday.toUTCString("dd"));
+  $(".mercredi").attr("date-sem-value", wednesday);
+  $(".jeudi > .dd").text(thursday.toUTCString("dd"));
+  $(".jeudi").attr("date-sem-value", thursday);
+  $(".vendredi > .dd").text(friday.toUTCString("dd"));
+  $(".vendredi").attr("date-sem-value", friday);
+  $(".samedi > .dd").text(saturday.toUTCString("dd"));
+  $(".samedi").attr("date-sem-value", saturday);
+  $(".dimanche > .dd").text(sunday.toUTCString("dd"));
+  $(".dimanche").attr("date-sem-value", sunday);
+
+  $(".mois-p-sem").text(tdy.clone().toString("MMMM"));
+  $(".mois-p-sem").append("&nbsp;");
+  $(".annee-p-sem").text(tdy.clone().toString("yyyy"));
 
   $(".mois-p-sem").attr("sem-mois-value",tdy.clone());
   $(".annee-p-sem").attr("sem-annee-value",tdy.clone());
@@ -532,12 +358,19 @@ function set_suiv () {
   sunday = saturday.clone().addDays(1);
 
   $(".lundi > .dd").text(monday.toUTCString("dd"));
+  $(".lundi").attr("date-sem-value", monday);
   $(".mardi > .dd").text(tuesday.toUTCString("dd"));
+  $(".mardi").attr("date-sem-value", tuesday);
   $(".mercredi > .dd").text(wednesday.toUTCString("dd"));
+  $(".mercredi").attr("date-sem-value", wednesday);
   $(".jeudi > .dd").text(thursday.toUTCString("dd"));
+  $(".jeudi").attr("date-sem-value", thursday);
   $(".vendredi > .dd").text(friday.toUTCString("dd"));
+  $(".vendredi").attr("date-sem-value", friday);
   $(".samedi > .dd").text(saturday.toUTCString("dd"));
+  $(".samedi").attr("date-sem-value", saturday);
   $(".dimanche > .dd").text(sunday.toUTCString("dd"));
+  $(".dimanche").attr("date-sem-value", sunday);
 
   $(".dispo-active").removeClass("dispo-active");
 
@@ -559,12 +392,19 @@ function set_prec () {
   monday = tuesday.clone().addDays(-1);
 
   $(".lundi > .dd").text(monday.toUTCString("dd"));
+  $(".lundi").attr("date-sem-value", monday);
   $(".mardi > .dd").text(tuesday.toUTCString("dd"));
+  $(".mardi").attr("date-sem-value", tuesday);
   $(".mercredi > .dd").text(wednesday.toUTCString("dd"));
+  $(".mercredi").attr("date-sem-value", wednesday);
   $(".jeudi > .dd").text(thursday.toUTCString("dd"));
+  $(".jeudi").attr("date-sem-value", thursday);
   $(".vendredi > .dd").text(friday.toUTCString("dd"));
+  $(".vendredi").attr("date-sem-value", friday);
   $(".samedi > .dd").text(saturday.toUTCString("dd"));
+  $(".samedi").attr("date-sem-value", saturday);
   $(".dimanche > .dd").text(sunday.toUTCString("dd"));
+  $(".dimanche").attr("date-sem-value", sunday);
 
   $(".dispo-active").removeClass("dispo-active");
 
@@ -580,24 +420,19 @@ add_rounddate_week();
 
 $(".sem-ajd-sem").click(function () {
   set_today();
-
   add_rounddate_week();
 });
 
 $(".sem-suiv-sem").click(function () {
   set_suiv();
   month_check_suiv();
-
   add_rounddate_week();
 });
 
 $(".sem-prec-sem").click(function () {
-
   set_prec();
   month_check_prec();
-
   add_rounddate_week();
-
 });
 
 $(".td-week").watch({
@@ -633,7 +468,6 @@ function fill_table() {
 
   for (var i=0 ; i <= 42 - index_first_day ; i++)
   {
-
     $('#table-mon tr:nth-child('+trn+') td:nth-child(' + tdn + ') span').text(currentDate.toString("dd"));
     $('#table-mon tr:nth-child('+trn+') td:nth-child(' + tdn + ')').attr("date-value",currentDate);
 
@@ -739,12 +573,19 @@ $(".semaine-mois-button > span").click(function () {
     }
 
     $(".lundi > .dd").text(monday.toUTCString("dd"));
+    $(".lundi").attr("date-sem-value", monday);
     $(".mardi > .dd").text(tuesday.toUTCString("dd"));
+    $(".mardi").attr("date-sem-value", tuesday);
     $(".mercredi > .dd").text(wednesday.toUTCString("dd"));
+    $(".mercredi").attr("date-sem-value", wednesday);
     $(".jeudi > .dd").text(thursday.toUTCString("dd"));
+    $(".jeudi").attr("date-sem-value", thursday);
     $(".vendredi > .dd").text(friday.toUTCString("dd"));
+    $(".vendredi").attr("date-sem-value", friday);
     $(".samedi > .dd").text(saturday.toUTCString("dd"));
+    $(".samedi").attr("date-sem-value", saturday);
     $(".dimanche > .dd").text(sunday.toUTCString("dd"));
+    $(".dimanche").attr("date-sem-value", sunday);
 
     var month_temp = new XDate(sunday);
     month_temp.setDate(1);
@@ -817,13 +658,6 @@ $(".semaine-mois-button > span").click(function () {
       monthi = 11;
     }
 
-    console.log(monthi);
-
-    //index_first_day.setMonth(monthi);
-    //index_first_day.setFullYear($(".annee-p-sem").text());
-
-    //console.log("sjajsajasj : "+index_first_day.toString("dd MMMM yyyy"));
-
     var ksa = new XDate ();
 
     ksa.setMonth(monthi);
@@ -850,7 +684,6 @@ $(".semaine-mois-button > span").click(function () {
 });
 
 $(".sem-suiv-mon").click(function () {
-
   currentDate.setDate(1);
   trn = 2;
   tdn = currentDate.clone().getDay();
@@ -859,11 +692,9 @@ $(".sem-suiv-mon").click(function () {
   fill_table();
 
   add_rounddate_mon();
-
 });
 
 $(".sem-prec-mon").click(function () {
-
   currentDate.addMonths(-2);
   currentDate.setDate(1);
 
@@ -872,13 +703,10 @@ $(".sem-prec-mon").click(function () {
   index_first_day = currentDate.clone().getDay();
 
   fill_table();
-
   add_rounddate_mon();
-
 });
 
 $(".sem-ajd-mon").click(function () {
-
   currentDate = today.clone();
   currentDate.setDate(1);
 
@@ -887,9 +715,7 @@ $(".sem-ajd-mon").click(function () {
   index_first_day = currentDate.clone().getDay();
 
   fill_table();
-
   add_rounddate_mon();
-
 });
 
 $(".td-mon").click(function () {
@@ -905,15 +731,6 @@ $(".td-mon").click(function () {
     friday = date_mon_selected.clone().addDays(-2);
     saturday = date_mon_selected.clone().addDays(-1);
     sunday = date_mon_selected.clone();
-
-    $(".lundi > .dd").text(monday.toUTCString("dd"));
-    $(".mardi > .dd").text(tuesday.toUTCString("dd"));
-    $(".mercredi > .dd").text(wednesday.toUTCString("dd"));
-    $(".jeudi > .dd").text(thursday.toUTCString("dd"));
-    $(".vendredi > .dd").text(friday.toUTCString("dd"));
-    $(".samedi > .dd").text(saturday.toUTCString("dd"));
-    $(".dimanche > .dd").text(sunday.toUTCString("dd"));
-
   }
   else
   {
@@ -924,17 +741,22 @@ $(".td-mon").click(function () {
     friday = date_mon_selected.clone().addDays(- date_mon_selected.getDay() + 5);
     saturday = date_mon_selected.clone().addDays(- date_mon_selected.getDay() + 6);
     sunday = date_mon_selected.clone().addDays(- date_mon_selected.getDay() + 7);
-
-    $(".lundi > .dd").text(monday.toUTCString("dd"));
-    $(".mardi > .dd").text(tuesday.toUTCString("dd"));
-    $(".mercredi > .dd").text(wednesday.toUTCString("dd"));
-    $(".jeudi > .dd").text(thursday.toUTCString("dd"));
-    $(".vendredi > .dd").text(friday.toUTCString("dd"));
-    $(".samedi > .dd").text(saturday.toUTCString("dd"));
-    $(".dimanche > .dd").text(sunday.toUTCString("dd"));
-
   }
 
+  $(".lundi > .dd").text(monday.toUTCString("dd"));
+  $(".lundi").attr("date-sem-value", monday);
+  $(".mardi > .dd").text(tuesday.toUTCString("dd"));
+  $(".mardi").attr("date-sem-value", tuesday);
+  $(".mercredi > .dd").text(wednesday.toUTCString("dd"));
+  $(".mercredi").attr("date-sem-value", wednesday);
+  $(".jeudi > .dd").text(thursday.toUTCString("dd"));
+  $(".jeudi").attr("date-sem-value", thursday);
+  $(".vendredi > .dd").text(friday.toUTCString("dd"));
+  $(".vendredi").attr("date-sem-value", friday);
+  $(".samedi > .dd").text(saturday.toUTCString("dd"));
+  $(".samedi").attr("date-sem-value", saturday);
+  $(".dimanche > .dd").text(sunday.toUTCString("dd"));
+  $(".dimanche").attr("date-sem-value", sunday);
 
   $(".semaine-select").addClass("semaine-mois-selected");
   $(".mois-select").removeClass("semaine-mois-selected");
@@ -946,7 +768,5 @@ $(".td-mon").click(function () {
   $(".mois-p-sem").append("&nbsp;");
   $(".annee-p-sem").text(sunday.toString("yyyy"));
 
-  $(".dd").removeClass("round-date");
   add_rounddate_week();
-
 });
