@@ -28,14 +28,12 @@ function(data)
     $(".video-title-text").text("Video not found");
   }
 
-  var videodesc = data.items[0].snippet.description.replace(/\n/g, "<br /><br />");;
+  var videodesc = data.items[0].snippet.description.replace(/\n/g, "<br /><br />");
   var videoduration = moment.duration(data.items[0].contentDetails.duration,moment.ISO_8601);
 
   $(".video-title-text").text(data.items[0].snippet.title);
   $(".video-description-text").html(videodesc);
-  $(".duration-icon").next("p").text(Math.floor(videoduration._milliseconds / 60000)
-  +":"+
-  ((videoduration._milliseconds % 60000) / 1000).toFixed(0));
+  $(".duration-icon").next("p").text(Math.floor(videoduration._milliseconds / 60000)+":"+((videoduration._milliseconds % 60000) / 1000).toFixed(0));
   $(".comment-icon").next("p").text(data.items[0].statistics.viewCount);
   $(".likes-icon").next("p").text(data.items[0].statistics.likeCount);
 

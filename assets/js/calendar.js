@@ -115,6 +115,7 @@ function add_rounddate_week() {
   {
     if ((tdy.toString("MMMM") === month_temp_value) && (tdy.toString("yyyy") === $(".annee-p-sem").text()) && ($(".days-row td:nth-child(" + i + ") .dd ").text() === tdy.toString("dd")))
     {
+      console.log("sja");
       $(".days-row td:nth-child(" + i + ") .dd ").addClass("round-date");
     }
   }
